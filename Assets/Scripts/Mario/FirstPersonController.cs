@@ -68,7 +68,7 @@ public class FirstPersonController : MonoBehaviour
 
             //Establecemos una fuerza hacia arriba
             
-            rb.AddForce(-_grScript.gravityDirection * jumpForce); 
+            rb.AddForce(transform.up * jumpForce); 
 
             hasDoubleJumped = true;
         }
