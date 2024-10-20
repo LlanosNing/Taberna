@@ -13,7 +13,7 @@ public class MG_PlayerController : MonoBehaviour
 
     [Header("JUMP")]
     public float jumpForce = 500f;
-    public bool isGrounded, hasDoubleJumped;
+    public bool isGrounded;
     public Collider[] detectedColliders;
 
     [Header("GROUND CHECKER")]
@@ -26,10 +26,17 @@ public class MG_PlayerController : MonoBehaviour
     private Vector3 _direction;
     private GravityBody _gravityBody;
 
+    [Header("RESPAWN POINT")]
+    public Vector3 spawnPosition;
+    public Quaternion spawnRotation;
+
     void Start()
     {
         _rigidbody = transform.GetComponent<Rigidbody>();
         _gravityBody = transform.GetComponent<GravityBody>();
+
+        spawnPosition = transform.position;
+        spawnRotation = transform.rotation;
     }
 
     void Update()
@@ -38,13 +45,11 @@ public class MG_PlayerController : MonoBehaviour
         GroundCheck();
         //_animator.SetBool("isJumping", !isGrounded);
 
-        if (Input.GetKeyDown(KeyCode.Space) && (isGrounded || !hasDoubleJumped))
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             _rigidbody.velocity = new Vector3(_rigidbody.velocity.x, 0f, _rigidbody.velocity.z);
 
             _rigidbody.AddForce(-_gravityBody.GravityDirection * jumpForce, ForceMode.Impulse);
-
-            hasDoubleJumped = true;
         }
     }
 
@@ -72,13 +77,18 @@ public class MG_PlayerController : MonoBehaviour
         if (detectedColliders.Length > 0)
         {
             isGrounded = true;
-
-            hasDoubleJumped = false;
         }
         else
         {
             isGrounded = false;
         }
+    }
+
+    public void Respawn()
+    {
+        transform.position = spawnPosition; 
+        transform.rotation = spawnRotation;
+        _rigidbody.velocity = Vector3.zero;
     }
 
     private void OnDrawGizmos()
