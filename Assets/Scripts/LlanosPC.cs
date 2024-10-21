@@ -61,6 +61,7 @@ public class ThirdPersonController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded == true)
         {
             rb.AddForce(Vector3.up * jumpForce);
+            Debug.Log("Has saltado");
         }
 
         GroundCheck();
