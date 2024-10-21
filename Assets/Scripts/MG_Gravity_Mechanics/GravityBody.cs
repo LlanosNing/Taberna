@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class GravityBody : MonoBehaviour
 {
-    private static float GRAVITY_FORCE = 800;
+    public static float GRAVITY_FORCE = 900;
 
     public Vector3 GravityDirection
     {
