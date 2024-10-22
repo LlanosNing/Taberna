@@ -10,6 +10,7 @@ public class MG_PlayerController : MonoBehaviour
     public float groundCheckRadius = 0.3f;
     public float speed = 8;
     public float turnSpeed = 1500f;
+    public float bounceForce;
 
     [Header("JUMP")]
     public float jumpForce = 500f;
@@ -82,6 +83,13 @@ public class MG_PlayerController : MonoBehaviour
         {
             isGrounded = false;
         }
+    }
+
+    public void Bounce()
+    {
+        _rigidbody.velocity = new Vector3(_rigidbody.velocity.x, 0f, _rigidbody.velocity.z);
+
+        _rigidbody.AddForce(-_gravityBody.GravityDirection * bounceForce, ForceMode.Impulse);
     }
 
     public void Respawn()
