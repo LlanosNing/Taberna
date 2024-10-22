@@ -7,6 +7,7 @@ public class Collectionable : MonoBehaviour
     public GameObject coin;
     public Animator anim;
     public AudioSource audioRef;
+    public Collider cll;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -14,13 +15,15 @@ public class Collectionable : MonoBehaviour
         {
             anim.SetTrigger("CatchCoin");
             audioRef.Play();
+            
             StartCoroutine(delayDestroy());
         }
     }
 
     public IEnumerator delayDestroy()
     {
-        yield return new WaitForSeconds(1f);
+        cll.enabled = false;
+        yield return new WaitForSeconds(0.7f);
         Destroy(coin);
     }
 }

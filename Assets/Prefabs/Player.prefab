@@ -26,13 +26,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4031782095820245292}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.33445275, y: 0.000000011699517, z: 0.00000002797364, w: 0.94241256}
-  m_LocalPosition: {x: 0.01, y: 7.6, z: -5.65}
+  m_LocalRotation: {x: 0.20295492, y: 0.000000007779748, z: 0.000000029306634, w: 0.97918814}
+  m_LocalPosition: {x: 0.01, y: 4.42, z: -6.38}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4927390891543453261}
-  m_LocalEulerAnglesHint: {x: 39.079, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 23.42, y: 0, z: 0}
 --- !u!20 &4268840466088900011
 Camera:
   m_ObjectHideFlags: 0
@@ -244,20 +244,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be241fa69a2f600468151a47a6a13d71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cam: {fileID: 8369743060841808257}
-  groundCheckRadius: 0.3
-  speed: 10
-  turnSpeed: 2500
+  moveSpeed: 5
+  rotationCameraSpeed: 400
+  camXRot: 0
   jumpForce: 12
   isGrounded: 0
-  detectedColliders: []
-  groundCheckCenter: {fileID: 8259229875694829588}
+  groundCheckerCenter: {fileID: 8259229875694829588}
   groundCheckSize: {x: 0.8, y: 0.2, z: 0.8}
+  detectedColliders: []
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
-  spawnPosition: {x: 0, y: 0, z: 0}
-  spawnRotation: {x: 0, y: 0, z: 0, w: 0}
+  spawnPosition: {x: -0.1254358, y: 48.35325, z: -0.9146792}
+  spawnRotation: {x: 0, y: 180, z: 0, w: 0}
 --- !u!114 &7570936797116097325
 MonoBehaviour:
   m_ObjectHideFlags: 0
