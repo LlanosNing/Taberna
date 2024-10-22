@@ -87,9 +87,9 @@ public class MG_PlayerController : MonoBehaviour
 
     public void Bounce()
     {
-        _rigidbody.velocity = new Vector3(_rigidbody.velocity.x, 0f, _rigidbody.velocity.z);
+        _rigidbody.velocity =Vector3.zero;
 
-        _rigidbody.AddForce(-_gravityBody.GravityDirection * bounceForce, ForceMode.Impulse);
+        _rigidbody.velocity = -_gravityBody.GravityDirection * bounceForce;
     }
 
     public void Respawn()
