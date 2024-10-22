@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class Collectionable : MonoBehaviour
 {
+    public GameObject coin;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            gameObject.SetActive(false);
+            Destroy(coin);
         }
     }
 }
