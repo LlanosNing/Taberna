@@ -10,9 +10,15 @@ public class Pickup : MonoBehaviour
     public bool isCoin;
     public bool isBomb;
 
+    public int coinValue;
+
+    private UIController _uIRef;
+
     private void Start()
     {
         _playerInventory = GameObject.Find("Player").GetComponent<Inventory>();
+
+        _uIRef = GameObject.FindWithTag("Canvas").GetComponent<UIController>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -21,12 +27,15 @@ public class Pickup : MonoBehaviour
         {
             if(isCoin)
             {
+                _uIRef.UpdateScore(coinValue);
+
                 Destroy(gameObject);
             }
 
             if(isBomb)
             {
                 _playerInventory.hasBomb = true;
+
                 Destroy(gameObject);
             }
         }
