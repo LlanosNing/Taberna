@@ -106,6 +106,7 @@ GameObject:
   - component: {fileID: 754352065136254611}
   - component: {fileID: 8159525549786093616}
   - component: {fileID: 2234519942547749561}
+  - component: {fileID: 3752891394836463242}
   - component: {fileID: 7570936797116097325}
   - component: {fileID: 171397356480519803}
   m_Layer: 0
@@ -239,7 +240,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4748911710057323828}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: be241fa69a2f600468151a47a6a13d71, type: 3}
   m_Name: 
@@ -257,6 +258,32 @@ MonoBehaviour:
     m_Bits: 8
   spawnPosition: {x: -0.1254358, y: 48.35325, z: -0.9146792}
   spawnRotation: {x: 0, y: 180, z: 0, w: 0}
+--- !u!114 &3752891394836463242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4748911710057323828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7dc7e900e27c9a44a8352372501cfbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cam: {fileID: 8369743060841808257}
+  groundCheckRadius: 0.3
+  speed: 8
+  turnSpeed: 1500
+  jumpForce: 500
+  isGrounded: 0
+  detectedColliders: []
+  groundCheckCenter: {fileID: 8259229875694829588}
+  groundCheckSize: {x: 1, y: 0.43, z: 1}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  spawnPosition: {x: 0, y: 0, z: 0}
+  spawnRotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!114 &7570936797116097325
 MonoBehaviour:
   m_ObjectHideFlags: 0
