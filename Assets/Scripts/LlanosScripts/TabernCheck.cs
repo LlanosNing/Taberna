@@ -5,17 +5,17 @@ using UnityEngine;
 public class TabernCheck : MonoBehaviour
 {
     public GameObject letter;
-    private Item itemRef;
+    private PlayerInventory _playerI;
 
     private void Start()
     {
         letter.SetActive(false);
-        itemRef = GameObject.Find("carne").GetComponent<Item>();
+        _playerI = GameObject.Find("Player").GetComponent<PlayerInventory>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") && itemRef.hasItem == true)
+        if (other.CompareTag("Player") && _playerI.hasMeat == true)
         {
             letter.SetActive(true);
         }

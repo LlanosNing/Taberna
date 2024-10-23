@@ -6,14 +6,19 @@ public class Item : MonoBehaviour
 {
     public GameObject item;
     public Collider cll;
-    public bool hasItem = false;
+    private PlayerInventory _playerI;
+
+    private void Start()
+    {
+        _playerI = GameObject.Find("Player").GetComponent<PlayerInventory>();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             StartCoroutine(delayDestroy());
-            hasItem = true;
+            _playerI.hasMeat = true;
         }
     }
     public IEnumerator delayDestroy()
