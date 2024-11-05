@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/PolPlaneta.unity
-    guid: ac551a6c818249c4fbb00fbdc30f80cf
+    path: Assets/Scenes/PolTesteo.unity
+    guid: 8acad36945e0649469e5274fd303f87b
   m_configObjects: {}

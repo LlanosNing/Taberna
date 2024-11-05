@@ -105,7 +105,6 @@ GameObject:
   - component: {fileID: 2824061214906590507}
   - component: {fileID: 754352065136254611}
   - component: {fileID: 8159525549786093616}
-  - component: {fileID: 2234519942547749561}
   - component: {fileID: 3752891394836463242}
   - component: {fileID: 7570936797116097325}
   - component: {fileID: 171397356480519803}
@@ -214,7 +213,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4748911710057323828}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 50
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -233,31 +232,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &2234519942547749561
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4748911710057323828}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be241fa69a2f600468151a47a6a13d71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 5
-  rotationCameraSpeed: 400
-  camXRot: 0
-  jumpForce: 12
-  isGrounded: 0
-  groundCheckerCenter: {fileID: 8259229875694829588}
-  groundCheckSize: {x: 0.8, y: 0.2, z: 0.8}
-  detectedColliders: []
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 8
-  spawnPosition: {x: -0.1254358, y: 48.35325, z: -0.9146792}
-  spawnRotation: {x: 0, y: 180, z: 0, w: 0}
 --- !u!114 &3752891394836463242
 MonoBehaviour:
   m_ObjectHideFlags: 0
