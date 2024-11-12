@@ -16,7 +16,7 @@ public class Pickup : MonoBehaviour
 
     private void Start()
     {
-        _playerInventory = GameObject.Find("Player").GetComponent<Inventory>();
+        _playerInventory = GameObject.FindWithTag("Player").GetComponent<Inventory>();
 
         _uIRef = GameObject.FindWithTag("Canvas").GetComponent<UIController>();
     }

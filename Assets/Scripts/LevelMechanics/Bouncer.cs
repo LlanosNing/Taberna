@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Bouncer : MonoBehaviour
 {
-    private MG_PlayerController _playerController;
+    private ThirdPersonController _playerController;
     // Start is called before the first frame update
     void Start()
     {
-        _playerController = GameObject.FindWithTag("Player").GetComponent<MG_PlayerController>();
+        _playerController = GameObject.FindWithTag("Player").GetComponent<ThirdPersonController>();
     }
 
     private void OnTriggerEnter(Collider other)
