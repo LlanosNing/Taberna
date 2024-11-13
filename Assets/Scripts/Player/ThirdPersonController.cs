@@ -8,6 +8,7 @@ public class ThirdPersonController : MonoBehaviour
     public float rotationSpeed = 200f;
     //La rotacion de la camara en el eje X
     public float camXRot = 0f;
+    public float changePlayerDirectionSpeed = 5f;
     public float jumpForce = 10f;
     public float bounceForce = 20f;
     public bool isGrounded = true;
@@ -49,9 +50,10 @@ public class ThirdPersonController : MonoBehaviour
         float _vertical = Input.GetAxisRaw("Vertical");
         //Guardamos el input para usarlo en FixedUpdate
         input = new Vector3(_horizontal, 0f, _vertical);
-        //Para que se mueva en la direccion correcta respecto hacia donde mira,
+        //Para que se mueva en la direccion correcta respecto hacia donde mira la cámara,
         //hay que transformar el input para que sea en espacio local y no en espacio global
-        input = transform.TransformDirection(input);
+        input = cameraPivot.TransformDirection(input); 
+        input.y = 0f;
 
         //El eje de movimiento del raton es el X, pero la rotacion del objeto es
         //en el eje Y
@@ -64,7 +66,15 @@ public class ThirdPersonController : MonoBehaviour
         //Limitamos el valor de la rotacion X a -60 y 60 grados
         camXRot = Mathf.Clamp(camXRot, -60, 60);
         //Asignamos la rotacion en X a los angulos del pivote de la camara
-        cameraPivot.localEulerAngles = new Vector3(camXRot, 0, 0);
+        cameraPivot.eulerAngles = new Vector3(camXRot, cameraPivot.eulerAngles.y, 0);
+        cameraPivot.Rotate(0, _rotMouseX * rotationSpeed * Time.deltaTime, 0f);
+        cameraPivot.position = transform.position;
+
+        if(input != Vector3.zero)
+        {
+            //Quaternion _rot = Quaternion.LookRotation(input, transform.up);
+            //transform.rotation = Quaternion.Slerp(transform.rotation, _rot, Time.deltaTime * changePlayerDirectionSpeed);
+        }
 
         //SALTO
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded == true)
