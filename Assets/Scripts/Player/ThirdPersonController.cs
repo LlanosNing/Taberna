@@ -4,20 +4,23 @@ using UnityEngine;
 
 public class ThirdPersonController : MonoBehaviour
 {
+    [Header ("MOVEMENT")]
     public float moveSpeed = 5f;
-    public float rotationSpeed = 200f;
-    //La rotacion de la camara en el eje X
-    public float camXRot = 0f;
-    public float changePlayerDirectionSpeed = 5f;
     public float jumpForce = 10f;
     public float bounceForce = 20f;
-    public bool isGrounded = true;
+
+    [Header ("CAMERA")]
+    //La rotacion de la camara en el eje X
+    public float camXRot = 0f;
+    public float rotationSpeed = 200f;
+    public float changePlayerDirectionSpeed = 5f;
     //El pivote de la camara que tiene que rotar en el eje X
     public Transform cameraPivot;
 
     [Header("GROUND CHECKER")]
     public Transform groundCheckCenter;
     public Vector3 groundCheckSize = Vector3.one;
+    public bool isGrounded = true;
     //Para guardar los colliders que detecta el ground checker
     private Collider[] detectedColliders;
     //Para que el ground checker solo detecte la layer que nos interesa (Ground)
@@ -46,25 +49,23 @@ public class ThirdPersonController : MonoBehaviour
 
     void Update()
     {
-        float _horizontal = Input.GetAxisRaw("Horizontal");
-        float _vertical = Input.GetAxisRaw("Vertical");
         //Guardamos el input para usarlo en FixedUpdate
-        input = new Vector3(_horizontal, 0f, _vertical);
-        //Para que se mueva en la direccion correcta respecto hacia donde mira la cámara,
-        //hay que transformar el input para que sea en espacio local y no en espacio global
+        input = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical"));
+
+        //Para que se mueva en la direccion correcta respecto hacia donde mira la cámara, transformamos el input para que sea en local, no en global
         input = cameraPivot.TransformDirection(input); 
         input.y = 0f;
 
-        //El eje de movimiento del raton es el X, pero la rotacion del objeto es
-        //en el eje Y
+        //El eje de movimiento del raton es el X, pero la rotacion del objeto es en el eje Y
         float _rotMouseX = Input.GetAxisRaw("Mouse X");
         transform.Rotate(0, _rotMouseX * rotationSpeed * Time.deltaTime, 0);
 
-        //Hay que ir acumulando el valor de la rotacion en X de la camara
-        //para que aumente o disminuya conforme movemos el raton arriba y abajo
+        //Hay que ir acumulando el valor de la rotacion en X de la camara para que aumente o disminuya conforme movemos el raton arriba y abajo
         camXRot -= Input.GetAxisRaw("Mouse Y") * rotationSpeed * Time.deltaTime;
+
         //Limitamos el valor de la rotacion X a -60 y 60 grados
         camXRot = Mathf.Clamp(camXRot, -60, 60);
+
         //Asignamos la rotacion en X a los angulos del pivote de la camara
         cameraPivot.eulerAngles = new Vector3(camXRot, cameraPivot.eulerAngles.y, 0);
         cameraPivot.Rotate(0, _rotMouseX * rotationSpeed * Time.deltaTime, 0f);
