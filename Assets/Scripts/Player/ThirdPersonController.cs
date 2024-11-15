@@ -57,19 +57,26 @@ public class ThirdPersonController : MonoBehaviour
         input.y = 0f;
 
         //El eje de movimiento del raton es el X, pero la rotacion del objeto es en el eje Y
-        float _rotMouseX = Input.GetAxisRaw("Mouse X");
-        transform.Rotate(0, _rotMouseX * rotationSpeed * Time.deltaTime, 0);
+        //float _rotMouseX = Input.GetAxisRaw("Mouse X");
+        //transform.Rotate(0, _rotMouseX * rotationSpeed * Time.deltaTime, 0);
 
         //Hay que ir acumulando el valor de la rotacion en X de la camara para que aumente o disminuya conforme movemos el raton arriba y abajo
-        camXRot -= Input.GetAxisRaw("Mouse Y") * rotationSpeed * Time.deltaTime;
+        //camXRot -= Input.GetAxisRaw("Mouse Y") * rotationSpeed * Time.deltaTime;
 
         //Limitamos el valor de la rotacion X a -60 y 60 grados
-        camXRot = Mathf.Clamp(camXRot, -60, 60);
+        //camXRot = Mathf.Clamp(camXRot, -60, 60);
 
         //Asignamos la rotacion en X a los angulos del pivote de la camara
-        cameraPivot.eulerAngles = new Vector3(camXRot, cameraPivot.eulerAngles.y, 0);
-        cameraPivot.Rotate(0, _rotMouseX * rotationSpeed * Time.deltaTime, 0f);
+        //cameraPivot.eulerAngles = new Vector3(camXRot, cameraPivot.eulerAngles.y, 0);
+        //cameraPivot.Rotate(0, _rotMouseX * rotationSpeed * Time.deltaTime, 0f);
+
         cameraPivot.position = transform.position;
+        cameraPivot.localEulerAngles = new Vector3(transform.localEulerAngles.x, cameraPivot.localEulerAngles.y, transform.localEulerAngles.z);
+
+        if(Input.GetAxis("Horizontal Dpad") > 0.1f || Input.GetAxis("Horizontal Dpad") < -0.1f)
+        {
+            cameraPivot.localEulerAngles += new Vector3(0f, Input.GetAxis("Horizontal Dpad") * rotationSpeed * Time.deltaTime, 0f);
+        }
 
         if(input != Vector3.zero)
         {
