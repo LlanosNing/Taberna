@@ -11,6 +11,8 @@ public class MG_PlayerController1 : MonoBehaviour
     public float speed = 8;
     public float turnSpeed = 1500f;
 
+    public bool canMove = true;
+
     [Header("JUMP")]
     public float jumpForce = 500f;
     public bool isGrounded;
@@ -41,6 +43,7 @@ public class MG_PlayerController1 : MonoBehaviour
 
     void Update()
     {
+        
         _direction = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical")).normalized;
         GroundCheck();
         //_animator.SetBool("isJumping", !isGrounded);
@@ -55,19 +58,22 @@ public class MG_PlayerController1 : MonoBehaviour
 
     void FixedUpdate()
     {
-        bool isRunning = _direction.magnitude > 0.1f;
-
-        if (isRunning)
+        if(canMove)
         {
-            Vector3 direction = transform.forward * _direction.z;
-            _rigidbody.MovePosition(_rigidbody.position + direction * (speed * Time.fixedDeltaTime));
+            bool isRunning = _direction.magnitude > 0.1f;
 
-            Quaternion rightDirection = Quaternion.Euler(0f, _direction.x * (turnSpeed * Time.fixedDeltaTime), 0f);
-            Quaternion newRotation = Quaternion.Slerp(_rigidbody.rotation, _rigidbody.rotation * rightDirection, Time.fixedDeltaTime * 3f); ;
-            _rigidbody.MoveRotation(newRotation);
+            if (isRunning)
+            {
+                Vector3 direction = transform.forward * _direction.z;
+                _rigidbody.MovePosition(_rigidbody.position + direction * (speed * Time.fixedDeltaTime));
+
+                Quaternion rightDirection = Quaternion.Euler(0f, _direction.x * (turnSpeed * Time.fixedDeltaTime), 0f);
+                Quaternion newRotation = Quaternion.Slerp(_rigidbody.rotation, _rigidbody.rotation * rightDirection, Time.fixedDeltaTime * 3f); ;
+                _rigidbody.MoveRotation(newRotation);
+            }
+
+            //_animator.SetBool("isRunning", isRunning);
         }
-
-        //_animator.SetBool("isRunning", isRunning);
     }
 
     private void GroundCheck()

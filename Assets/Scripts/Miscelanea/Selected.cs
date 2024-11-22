@@ -12,11 +12,22 @@ public class Selected : MonoBehaviour
     public GameObject TextDetect;
     GameObject ultimoObjetoRegistrado = null;
 
+    public MG_PlayerController1 pMRef;
+
+    public bool isActive;
+
+    public float timeDuration;
+    public float maxtimeDuration = 1;
+
     void Start()
     {
         mask = LayerMask.GetMask("Raycast Detect");
 
         TextDetect.SetActive(false);
+
+        pMRef = GameObject.FindWithTag("Player").GetComponent<MG_PlayerController1>();
+
+        maxtimeDuration = 1;
     }
 
     void Update()
@@ -30,9 +41,20 @@ public class Selected : MonoBehaviour
 
             if (hit.collider.tag == "Nota")
             {
-                if (Input.GetKeyDown(KeyCode.E))
+                if (Input.GetKeyDown(KeyCode.E) && isActive == false && timeDuration <= 0)
                 {
-                    hit.collider.transform.GetComponent<InteractiveObject>().ActivarObjeto();
+                    hit.collider.transform.GetComponent<InteractiveObject>().MostrarNota();
+                    isActive = true;
+                    timeDuration = maxtimeDuration;
+                    pMRef.canMove = false;
+                }
+
+                else if(Input.GetKeyDown(KeyCode.E) && isActive == true && timeDuration <= 0)
+                {
+                    pMRef.canMove = true;
+                    hit.collider.transform.GetComponent<InteractiveObject>().OcultarNota();
+                    timeDuration = maxtimeDuration;
+                    isActive = false;
                 }
             }
             Debug.DrawRay(transform.position,transform.TransformDirection(Vector3.forward) * distancia, Color.red);
@@ -41,6 +63,11 @@ public class Selected : MonoBehaviour
         else
         {
             Deselect();
+        }
+
+        if(timeDuration > 0)
+        {
+            timeDuration -= Time.deltaTime;
         }
     }
 
