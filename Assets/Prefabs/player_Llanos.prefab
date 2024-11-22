@@ -66,7 +66,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 92.6
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -107,11 +107,12 @@ GameObject:
   - component: {fileID: 5137609347099095977}
   - component: {fileID: 8970382950344873827}
   - component: {fileID: 165947523304433599}
+  - component: {fileID: 1412914663467368349}
   - component: {fileID: 4331409877352163194}
   m_Layer: 0
   m_Name: player_Llanos
-  m_TagString: Untagged
-  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_TagString: Player
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -161,7 +162,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a41e3108dd7042f4bb6e34c4f8100fa6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -190,7 +191,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1161780221163230128}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 7e56c0c85c9e064468fd10f0a8ed8d66, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -240,7 +241,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1161780221163230128}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: be241fa69a2f600468151a47a6a13d71, type: 3}
   m_Name: 
@@ -271,6 +272,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d5d4a6ca0c623f47b9a178df3da2946, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1412914663467368349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1161780221163230128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 447062eefd6c51a4b827f15437fc8451, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasMeat: 0
+  hasLetter: 0
 --- !u!114 &4331409877352163194
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -278,12 +293,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1161780221163230128}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 49698e9b52b336548bd89e9c4d068871, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 12.58
   rotationSpeed: 500
   camXRot: 0
   jumpForce: 700
@@ -291,11 +306,9 @@ MonoBehaviour:
   cameraPivot: {fileID: 6983605219397586658}
   groundCheckCenter: {fileID: 3504520129944042722}
   groundCheckSize: {x: 1, y: 1, z: 1}
-  detectedColliders: []
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
-  rb: {fileID: 0}
 --- !u!1 &1572165873328401640
 GameObject:
   m_ObjectHideFlags: 0
@@ -309,7 +322,7 @@ GameObject:
   - component: {fileID: 3980715407744022418}
   - component: {fileID: 8308375545289358120}
   m_Layer: 0
-  m_Name: Capsule
+  m_Name: ojos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -323,9 +336,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1572165873328401640}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 0.7071071, w: 0.70710653}
-  m_LocalPosition: {x: 0.04, y: 0.433, z: 0.415}
-  m_LocalScale: {x: 0.39012, y: 0.39012, z: 0.39012}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 0.03999996, y: 0.43299866, z: 0.47}
+  m_LocalScale: {x: 0.39012, y: 0.36194944, z: 0.39012}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3974318701870696196}
@@ -358,7 +371,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: ea54074fde1f5fa41b26f6ab616ed2ba, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
