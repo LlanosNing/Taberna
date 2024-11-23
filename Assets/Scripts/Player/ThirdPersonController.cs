@@ -9,13 +9,17 @@ public class ThirdPersonController : MonoBehaviour
     public float jumpForce = 10f;
     public float bounceForce = 20f;
 
+    Vector3 normalVector;
+    public bool slowDown;
+
     [Header ("CAMERA")]
     //La rotacion de la camara en el eje X
     public float camXRot = 0f;
     public float rotationSpeed = 200f;
     public float changePlayerDirectionSpeed = 5f;
-    //El pivote de la camara que tiene que rotar en el eje X
-    public Transform cameraPivot;
+
+    public Transform playerVisual;
+    public Transform cameraArmTransform;
 
     [Header("GROUND CHECKER")]
     public Transform groundCheckCenter;
@@ -49,12 +53,30 @@ public class ThirdPersonController : MonoBehaviour
 
     void Update()
     {
+        input = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
+        Vector3 cameraRotation = new Vector3(0, Camera.main.transform.localEulerAngles.y + cameraArmTransform.localEulerAngles.y, 0);
+        Vector3 Dir = Quaternion.Euler(cameraRotation) * input;
+        Vector3 movement_dir = (transform.forward * Dir.z + transform.right * Dir.x);
+        Vector3 currentNormalVelocity = Vector3.Project(rb.velocity, normalVector.normalized);
+        rb.velocity = currentNormalVelocity + (movement_dir * moveSpeed);
+        
+
+        if (movement_dir != Vector3.zero)
+        {
+            //anim.SetBool("IsMoving", true);
+            playerVisual.localRotation = Quaternion.LookRotation(Dir);
+        }
+        else
+        {
+            //anim.SetBool("IsMoving", false);
+        }
+        if (slowDown)
+            rb.velocity *= .5f;
         //Guardamos el input para usarlo en FixedUpdate
-        input = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical"));
+        //input = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical"));
 
         //Para que se mueva en la direccion correcta respecto hacia donde mira la cámara, transformamos el input para que sea en local, no en global
-        input = cameraPivot.TransformDirection(input); 
-        input.y = 0f;
+        //input.y = 0f;
 
         //El eje de movimiento del raton es el X, pero la rotacion del objeto es en el eje Y
         //float _rotMouseX = Input.GetAxisRaw("Mouse X");
@@ -70,19 +92,19 @@ public class ThirdPersonController : MonoBehaviour
         //cameraPivot.eulerAngles = new Vector3(camXRot, cameraPivot.eulerAngles.y, 0);
         //cameraPivot.Rotate(0, _rotMouseX * rotationSpeed * Time.deltaTime, 0f);
 
-        cameraPivot.position = transform.position;
-        cameraPivot.localEulerAngles = new Vector3(transform.localEulerAngles.x, cameraPivot.localEulerAngles.y, transform.localEulerAngles.z);
+        //cameraPivot.position = transform.position;
+        //cameraPivot.localEulerAngles = new Vector3(transform.localEulerAngles.x, cameraPivot.localEulerAngles.y, transform.localEulerAngles.z);
 
-        if(Input.GetAxis("Horizontal Dpad") > 0.1f || Input.GetAxis("Horizontal Dpad") < -0.1f)
-        {
-            cameraPivot.localEulerAngles += new Vector3(0f, Input.GetAxis("Horizontal Dpad") * rotationSpeed * Time.deltaTime, 0f);
-        }
+        //if(Input.GetAxis("Horizontal Dpad") > 0.1f || Input.GetAxis("Horizontal Dpad") < -0.1f)
+        //{
+        //    cameraPivot.localEulerAngles += new Vector3(0f, Input.GetAxis("Horizontal Dpad") * rotationSpeed * Time.deltaTime, 0f);
+        //}
 
-        if(input != Vector3.zero)
-        {
-            //Quaternion _rot = Quaternion.LookRotation(input, transform.up);
-            //transform.rotation = Quaternion.Slerp(transform.rotation, _rot, Time.deltaTime * changePlayerDirectionSpeed);
-        }
+        //if(input != Vector3.zero)
+        //{
+        //Quaternion _rot = Quaternion.LookRotation(input, transform.up);
+        //transform.rotation = Quaternion.Slerp(transform.rotation, _rot, Time.deltaTime * changePlayerDirectionSpeed);
+        //}
 
         //SALTO
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded == true)
