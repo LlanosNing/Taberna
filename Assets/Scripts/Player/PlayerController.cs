@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
@@ -9,9 +10,13 @@ public class PlayerController : MonoBehaviour
     public float gravity;
     private float tmpGravity;
     public float jumpForce;
+    public float bounceForce;
     private Rigidbody rb;
     public Transform currentPlanet;
     public Transform playerVisual;
+
+    public Vector3 spawnPosition;
+    public Quaternion spawnRotation;
 
     RaycastHit[] hits;
     Vector3 planetDir;
@@ -22,6 +27,9 @@ public class PlayerController : MonoBehaviour
     private Transform MainCameraTransform;
     public Transform CameraArmTransform;
 
+    public PlayerControls playerControls;
+    //Animator anim;
+
     bool CanJump = true;
     bool slowDown = false;
 
@@ -29,8 +37,25 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         MainCameraTransform = Camera.main.transform;
+        //anim = GetComponent<Animator>();
         tmpGravity = gravity;
         tmpRotationSpeed = rotationSpeed;
+
+        playerControls = new PlayerControls();
+        playerControls.Movement.GamepadEastButton.performed += Jump;
+
+        spawnPosition = transform.position;
+        spawnRotation = transform.rotation;
+    }
+
+    private void OnEnable()
+    {
+        playerControls.Enable();
+    }
+
+    private void OnDisable()
+    {
+        playerControls.Disable();
     }
 
     private void FixedUpdate()
@@ -40,7 +65,7 @@ public class PlayerController : MonoBehaviour
         ApplyPlanetRotation();
     }
 
-    void Jump()
+    void Jump(InputAction.CallbackContext context)
     {
         if (!CanJump) return;
         rb.velocity *= 0;
@@ -49,6 +74,20 @@ public class PlayerController : MonoBehaviour
         Invoke(nameof(RestoreGravity), 1f);
         CanJump = false;
         rotationSpeed = tmpRotationSpeed / 2f;
+    }
+
+    public void Bounce()
+    {
+        rb.velocity = Vector3.zero;
+
+        rb.AddForce(normalVector * bounceForce, ForceMode.Impulse);
+    }
+
+    public void Respawn()
+    {
+        transform.position = spawnPosition;
+        transform.rotation = spawnRotation;
+        rb.velocity = Vector3.zero;
     }
 
     void RestoreGravity()
@@ -60,10 +99,10 @@ public class PlayerController : MonoBehaviour
 
     public void EnterNewGravityField()
     {
-        gravity = tmpGravity / 4f;
-        rb.velocity *= .5f;
+        //gravity = tmpGravity / 4f;
+        //rb.velocity *= .5f;
         rotationSpeed = tmpRotationSpeed / 10f;
-        slowDown = true;
+        //slowDown = true;
         CanJump = false;
         Invoke(nameof(RestoreGravity), .5f);
     }
@@ -165,5 +204,4 @@ public class PlayerController : MonoBehaviour
             isTouchingPlanetSurface = false;
         }
     }
-
 }

@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class SetSpawnPoint : MonoBehaviour
 {
-    private ThirdPersonController _playerController;
+    private PlayerController _playerController;
 
     private void Start()
     {
-        _playerController = GameObject.FindWithTag("Player").GetComponent<ThirdPersonController>();
+        _playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
     }
     private void OnTriggerEnter(Collider other)
     {

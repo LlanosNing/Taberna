@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class ThirdPersonController : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class ThirdPersonController : MonoBehaviour
 
     Vector3 normalVector;
     public bool slowDown;
+    PlayerControls playerControls;
 
     [Header ("CAMERA")]
     //La rotacion de la camara en el eje X
@@ -49,9 +51,22 @@ public class ThirdPersonController : MonoBehaviour
 
         spawnPosition = transform.position;
         spawnRotation = transform.rotation;
+
+        //playerControls.Movement.GamepadEastButton.performed += Jump();
     }
 
     void Update()
+    {
+        GroundCheck();
+
+        if (Input.GetButtonDown("Jump") && isGrounded)
+        {
+            Debug.Log("Probando probando");
+            Jump();
+        }
+    }
+
+    private void FixedUpdate()
     {
         input = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
         Vector3 cameraRotation = new Vector3(0, Camera.main.transform.localEulerAngles.y + cameraArmTransform.localEulerAngles.y, 0);
@@ -59,7 +74,7 @@ public class ThirdPersonController : MonoBehaviour
         Vector3 movement_dir = (transform.forward * Dir.z + transform.right * Dir.x);
         Vector3 currentNormalVelocity = Vector3.Project(rb.velocity, normalVector.normalized);
         rb.velocity = currentNormalVelocity + (movement_dir * moveSpeed);
-        
+        //rb.velocity = new Vector3(currentNormalVelocity.x + (movement_dir.x * moveSpeed), rb.velocity.y, currentNormalVelocity.z + (movement_dir.z * moveSpeed));
 
         if (movement_dir != Vector3.zero)
         {
@@ -72,57 +87,6 @@ public class ThirdPersonController : MonoBehaviour
         }
         if (slowDown)
             rb.velocity *= .5f;
-        //Guardamos el input para usarlo en FixedUpdate
-        //input = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical"));
-
-        //Para que se mueva en la direccion correcta respecto hacia donde mira la cámara, transformamos el input para que sea en local, no en global
-        //input.y = 0f;
-
-        //El eje de movimiento del raton es el X, pero la rotacion del objeto es en el eje Y
-        //float _rotMouseX = Input.GetAxisRaw("Mouse X");
-        //transform.Rotate(0, _rotMouseX * rotationSpeed * Time.deltaTime, 0);
-
-        //Hay que ir acumulando el valor de la rotacion en X de la camara para que aumente o disminuya conforme movemos el raton arriba y abajo
-        //camXRot -= Input.GetAxisRaw("Mouse Y") * rotationSpeed * Time.deltaTime;
-
-        //Limitamos el valor de la rotacion X a -60 y 60 grados
-        //camXRot = Mathf.Clamp(camXRot, -60, 60);
-
-        //Asignamos la rotacion en X a los angulos del pivote de la camara
-        //cameraPivot.eulerAngles = new Vector3(camXRot, cameraPivot.eulerAngles.y, 0);
-        //cameraPivot.Rotate(0, _rotMouseX * rotationSpeed * Time.deltaTime, 0f);
-
-        //cameraPivot.position = transform.position;
-        //cameraPivot.localEulerAngles = new Vector3(transform.localEulerAngles.x, cameraPivot.localEulerAngles.y, transform.localEulerAngles.z);
-
-        //if(Input.GetAxis("Horizontal Dpad") > 0.1f || Input.GetAxis("Horizontal Dpad") < -0.1f)
-        //{
-        //    cameraPivot.localEulerAngles += new Vector3(0f, Input.GetAxis("Horizontal Dpad") * rotationSpeed * Time.deltaTime, 0f);
-        //}
-
-        //if(input != Vector3.zero)
-        //{
-        //Quaternion _rot = Quaternion.LookRotation(input, transform.up);
-        //transform.rotation = Quaternion.Slerp(transform.rotation, _rot, Time.deltaTime * changePlayerDirectionSpeed);
-        //}
-
-        //SALTO
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded == true)
-        {
-            rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
-        }
-
-        GroundCheck();
-    }
-
-    private void FixedUpdate()
-    {
-        //Hay que normalizar el input para que no se mueva mas rapido en diagonal
-        Vector3 _velocity = input.normalized * moveSpeed * Time.fixedDeltaTime;
-
-        rb.MovePosition(rb.position + _velocity);
-        //_velocity.y = rb.velocity.y;
-        //rb.velocity = _velocity;
     }
 
     void GroundCheck()
@@ -140,6 +104,18 @@ public class ThirdPersonController : MonoBehaviour
         {
             isGrounded = false;
         }
+    }
+
+    void Jump()
+    {
+        if (!isGrounded) return;
+        rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
+
+        //rb.AddForce(normalVector * jumpForce, ForceMode.Impulse);
+
+        //gravity = tmpGravity / 2f;
+        //Invoke(nameof(RestoreGravity), 1f);
+        //rotationSpeed = tmpRotationSpeed / 2f;
     }
 
     public void Bounce()

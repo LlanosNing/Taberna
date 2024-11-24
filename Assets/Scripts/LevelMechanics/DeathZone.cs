@@ -8,7 +8,7 @@ public class DeathZone : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            other.GetComponent<ThirdPersonController>().Respawn();
+            other.GetComponent<PlayerController>().Respawn();
         }
     }
 }
