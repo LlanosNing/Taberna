@@ -32,7 +32,7 @@ public class CameraArmController : MonoBehaviour
     {
         Vector2 input = playerControls.Movement.RightAnalogStick.ReadValue<Vector2>();
         input *= sensitivity;
-        transform.localRotation = Quaternion.Euler(new Vector3(input.y, input.x * -1f, 0) + transform.localRotation.eulerAngles);
+        transform.localRotation = Quaternion.Euler(new Vector3(input.y, input.x, 0) + transform.localRotation.eulerAngles);
 
         float clamped_x = 0;
 
