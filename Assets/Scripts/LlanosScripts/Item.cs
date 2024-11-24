@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Item : MonoBehaviour
 {
     public GameObject item;
     public Collider cll;
     private PlayerInventory _playerI;
+    public bool isWater;
+    public GameObject waterPanel;
 
     private void Start()
     {
@@ -18,6 +21,10 @@ public class Item : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             StartCoroutine(delayDestroy());
+            if(isWater == true)
+            {
+                waterPanel.SetActive(true);
+            }
             _playerI.hasMeat = true;
         }
     }

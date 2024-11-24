@@ -5,7 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/LlanosPlaneta.unity
     guid: d3be058bbb1a90d41bafbab076927e95
+  - enabled: 1
+    path: Assets/Scenes/Nivel2.unity
+    guid: f8b97e6a24418bc40ab2167dbed48c91
   m_configObjects: {}
