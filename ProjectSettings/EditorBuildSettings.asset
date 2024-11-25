@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/PolTesteo.unity
-    guid: 8acad36945e0649469e5274fd303f87b
+    path: Assets/Scenes/PolTesteo 2.unity
+    guid: bf0ce8eaa489c4e44bc6e8d3d169a239
   m_configObjects: {}
