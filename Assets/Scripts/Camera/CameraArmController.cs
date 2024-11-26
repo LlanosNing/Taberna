@@ -30,7 +30,7 @@ public class CameraArmController : MonoBehaviour
 
     void AdjustCamera()
     {
-        Vector2 input = playerControls.Movement.RightAnalogStick.ReadValue<Vector2>();
+        Vector2 input = playerControls.Movement.RightAnalogStick.ReadValue<Vector2>() + new Vector2 (Input.GetAxis("Horizontal Dpad"), Input.GetAxis("Vertical Dpad"));
         input *= sensitivity;
         transform.localRotation = Quaternion.Euler(new Vector3(input.y, input.x, 0) + transform.localRotation.eulerAngles);
 
