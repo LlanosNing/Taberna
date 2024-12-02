@@ -8,12 +8,14 @@ public class InteractiveObject : MonoBehaviour
     public Image papel;
     public Sprite spritePapel;
     public GameObject activarObjeto;
+    public bool isRead;
 
-    
+    public UI uiRef;
+
 
     private void Start()
     {
-        
+        uiRef = GameObject.FindWithTag("UI").GetComponent<UI>();
     }
 
     public void ActivarObjeto()
@@ -25,6 +27,13 @@ public class InteractiveObject : MonoBehaviour
     {
         activarObjeto.SetActive(true);
         activarObjeto.GetComponent<Animator>().SetBool("isActive", true);
+
+        if(isRead == false)
+        {
+            uiRef.UpdateCounter();
+
+            isRead = true;
+        }
 
         papel.sprite = spritePapel;
     }

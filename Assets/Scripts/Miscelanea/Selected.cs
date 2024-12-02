@@ -11,6 +11,7 @@ public class Selected : MonoBehaviour
     public Texture2D puntero;
     public GameObject TextDetect;
     GameObject ultimoObjetoRegistrado = null;
+    
 
     public MG_PlayerController1 pMRef;
 
