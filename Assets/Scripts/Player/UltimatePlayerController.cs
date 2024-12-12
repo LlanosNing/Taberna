@@ -55,6 +55,11 @@ public class UltimatePlayerController : MonoBehaviour
         {
             Jump();
         }
+        if (currentPlanet != null)
+        {
+            //normalVector = (transform.position - currentPlanet.position).normalized;
+            normalVector = -gravityScript.GravityDirection;
+        }
     }
 
     private void FixedUpdate()

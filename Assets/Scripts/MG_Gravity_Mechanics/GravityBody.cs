@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class GravityBody : MonoBehaviour
 {
-    private static float GRAVITY_FORCE = 1500;
+    public float gravityForce = 1500;
 
     public Vector3 GravityDirection
     {
@@ -28,7 +28,7 @@ public class GravityBody : MonoBehaviour
 
     void FixedUpdate()
     {
-        _rigidbody.AddForce(GravityDirection * (GRAVITY_FORCE * Time.fixedDeltaTime), ForceMode.Acceleration);
+        _rigidbody.AddForce(GravityDirection * (gravityForce * Time.fixedDeltaTime), ForceMode.Acceleration);
 
         Quaternion upRotation = Quaternion.FromToRotation(transform.up, -GravityDirection);
         transform.rotation = Quaternion.Slerp(transform.rotation, upRotation * transform.rotation, Time.fixedDeltaTime * 3f); ;

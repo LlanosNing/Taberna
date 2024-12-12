@@ -4696,6 +4696,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d5d4a6ca0c623f47b9a178df3da2946, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gravityForce: 5000
+  maxGravityForce: 0
 --- !u!54 &864162067
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8472,6 +8474,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d5d4a6ca0c623f47b9a178df3da2946, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gravityForce: 1500
+  maxGravityForce: 0
 --- !u!114 &1457971823
 MonoBehaviour:
   m_ObjectHideFlags: 0
