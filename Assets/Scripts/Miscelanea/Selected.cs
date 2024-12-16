@@ -18,7 +18,7 @@ public class Selected : MonoBehaviour
     public bool isActive;
 
     public float timeDuration;
-    public float maxtimeDuration = 1;
+    public float maxtimeDuration = 1f;
 
     void Start()
     {
@@ -28,7 +28,7 @@ public class Selected : MonoBehaviour
 
         pMRef = GameObject.FindWithTag("Player").GetComponent<MG_PlayerController1>();
 
-        maxtimeDuration = 1;
+        maxtimeDuration = 1f;
     }
 
     void Update()
