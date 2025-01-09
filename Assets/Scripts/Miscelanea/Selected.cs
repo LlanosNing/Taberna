@@ -12,7 +12,6 @@ public class Selected : MonoBehaviour
     public GameObject TextDetect;
     GameObject ultimoObjetoRegistrado = null;
     
-
     public MG_PlayerController1 pMRef;
 
     public bool isActive;
@@ -24,7 +23,7 @@ public class Selected : MonoBehaviour
     {
         mask = LayerMask.GetMask("Raycast Detect");
 
-        TextDetect.SetActive(false);
+        //TextDetect.SetActive(false);
 
         pMRef = GameObject.FindWithTag("Player").GetComponent<MG_PlayerController1>();
 
@@ -40,24 +39,33 @@ public class Selected : MonoBehaviour
             Deselect();
             SelectedObject(hit.transform);
 
-            if (hit.collider.tag == "Nota")
-            {
-                if (Input.GetKeyDown(KeyCode.E) && isActive == false && timeDuration <= 0)
-                {
-                    hit.collider.transform.GetComponent<InteractiveObject>().MostrarNota();
-                    isActive = true;
-                    timeDuration = maxtimeDuration;
-                    pMRef.canMove = false;
-                }
+            //if (hit.collider.tag == "Nota")
+            //{
+            //    if (Input.GetKeyDown(KeyCode.E) && isActive == false && timeDuration <= 0)
+            //    {
+            //        hit.collider.transform.GetComponent<InteractiveObject>().MostrarNota();
+            //        isActive = true;
+            //        timeDuration = maxtimeDuration;
+            //        pMRef.canMove = false;
+            //    }
 
-                else if(Input.GetKeyDown(KeyCode.E) && isActive == true && timeDuration <= 0)
+            //    else if(Input.GetKeyDown(KeyCode.E) && isActive == true && timeDuration <= 0)
+            //    {
+            //        pMRef.canMove = true;
+            //        hit.collider.transform.GetComponent<InteractiveObject>().OcultarNota();
+            //        timeDuration = maxtimeDuration;
+            //        isActive = false;
+            //    }
+            //}
+
+            if (hit.collider.tag == "Fruit")
+            {
+                if(Input.GetKeyDown(KeyCode.E))
                 {
-                    pMRef.canMove = true;
-                    hit.collider.transform.GetComponent<InteractiveObject>().OcultarNota();
-                    timeDuration = maxtimeDuration;
-                    isActive = false;
+                    hit.collider.transform.GetComponent<wildFruits>().ObtenerFruta();
                 }
             }
+
             Debug.DrawRay(transform.position,transform.TransformDirection(Vector3.forward) * distancia, Color.red);
             
         }
@@ -92,14 +100,14 @@ public class Selected : MonoBehaviour
         Rect rect = new(Screen.width / 2, Screen.height / 2, puntero.width, puntero.height);
         GUI.DrawTexture(rect, puntero);
 
-        if(ultimoObjetoRegistrado)
-        {
-            TextDetect.SetActive(true);
-        }
-        else
-        {
-            TextDetect.SetActive(false);
-        }
+        //if (ultimoObjetoRegistrado)
+        //{
+        //    TextDetect.SetActive(true);
+        //}
+        //else
+        //{
+        //    TextDetect.SetActive(false);
+        //}
     }
 
 }

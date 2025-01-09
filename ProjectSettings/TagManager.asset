@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Nota
   - UI
+  - Fruit
   layers:
   - Default
   - TransparentFX
