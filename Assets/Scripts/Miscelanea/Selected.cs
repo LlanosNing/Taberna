@@ -19,6 +19,8 @@ public class Selected : MonoBehaviour
     public float timeDuration;
     public float maxtimeDuration = 1f;
 
+    public Material oldMaterialFruit1;
+
     void Start()
     {
         mask = LayerMask.GetMask("Raycast Detect");
@@ -90,7 +92,7 @@ public class Selected : MonoBehaviour
     {
         if(ultimoObjetoRegistrado)
         {
-            ultimoObjetoRegistrado.GetComponent<Renderer>().material.color = Color.white;
+            ultimoObjetoRegistrado.GetComponent<Renderer>().material = oldMaterialFruit1;
             ultimoObjetoRegistrado = null;
         }
     }

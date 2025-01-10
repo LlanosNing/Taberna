@@ -32,6 +32,11 @@ public class MG_PlayerController1 : MonoBehaviour
     public Vector3 spawnPosition;
     public Quaternion spawnRotation;
 
+    public Transform cameraPivot;
+    public float camXRot = 0f;
+    public float rotationSpeed = 200f;
+
+
     void Start()
     {
         _rigidbody = transform.GetComponent<Rigidbody>();
@@ -39,12 +44,14 @@ public class MG_PlayerController1 : MonoBehaviour
 
         spawnPosition = transform.position;
         spawnRotation = transform.rotation;
+
+        cameraPivot = GameObject.Find("CameraPivot").transform;
     }
 
     void Update()
     {
-        
         _direction = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical")).normalized;
+        //_direction = transform.TransformDirection(_direction);
         GroundCheck();
         //_animator.SetBool("isJumping", !isGrounded);
 
@@ -54,6 +61,16 @@ public class MG_PlayerController1 : MonoBehaviour
 
             _rigidbody.AddForce(-_gravityBody.GravityDirection * jumpForce, ForceMode.Impulse);
         }
+
+        float _rotMouseX = Input.GetAxisRaw("Mouse X");
+        transform.Rotate(0f, _rotMouseX * rotationSpeed * Time.deltaTime, 0f);
+
+        //Hay que ir acumulando el valor de la rotación en X
+        camXRot -= Input.GetAxisRaw("Mouse Y") * rotationSpeed * Time.deltaTime;
+        //Límite del valor de la rotación
+        camXRot = Mathf.Clamp(camXRot, -40f, 50f);
+
+        cameraPivot.localEulerAngles = new Vector3(camXRot, 0f, 0f);
     }
 
     void FixedUpdate()
@@ -64,12 +81,10 @@ public class MG_PlayerController1 : MonoBehaviour
 
             if (isRunning)
             {
-                Vector3 direction = transform.forward * _direction.z;
-                _rigidbody.MovePosition(_rigidbody.position + direction * (speed * Time.fixedDeltaTime));
-
-                Quaternion rightDirection = Quaternion.Euler(0f, _direction.x * (turnSpeed * Time.fixedDeltaTime), 0f);
-                Quaternion newRotation = Quaternion.Slerp(_rigidbody.rotation, _rigidbody.rotation * rightDirection, Time.fixedDeltaTime * 3f); ;
-                _rigidbody.MoveRotation(newRotation);
+                Vector3 directionX = transform.right * _direction.x;
+                Vector3 directionZ = transform.forward * _direction.z;
+               
+                _rigidbody.MovePosition(_rigidbody.position + (directionX + directionZ) * (speed * Time.fixedDeltaTime));              
             }
 
             //_animator.SetBool("isRunning", isRunning);
