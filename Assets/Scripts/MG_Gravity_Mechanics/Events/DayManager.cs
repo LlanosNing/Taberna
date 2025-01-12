@@ -10,6 +10,8 @@ public class DayManager : MonoBehaviour
 
     public static DayManager Instance;
 
+    public UiManager uiManager;
+
     void Awake()
     {
         Instance = this;        
@@ -19,6 +21,7 @@ public class DayManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F1))
         {
+            uiManager.SumarDias();
             NextDay();
         }
     }
