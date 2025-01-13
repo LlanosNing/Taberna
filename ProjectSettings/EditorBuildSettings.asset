@@ -6,6 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/LogoScreen.unity
+    guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/TitleScreen.unity
+    guid: 116b8b7184d378748842031211feb4f5
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 98d0d8e6451d1a148b03522969495f43
+  - enabled: 1
     path: Assets/Scenes/MarioPlaneta.unity
     guid: e9cd09b157cabdb488becef6e874e593
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.addressableassets: {fileID: 11400000, guid: d93c4cd5c1315a64294bfb8075d54ad8, type: 2}
+    com.unity.input.settings: {fileID: 11400000, guid: fda5ffa596e7d184c99b649f4fa8a7a6, type: 2}
+    com.unity.localization.settings: {fileID: 11400000, guid: 8ae4b5431e2baf745af2ffcab085e619, type: 2}

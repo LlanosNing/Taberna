@@ -1,0 +1,125 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: MainMenu Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: MainMenu
+  m_TableCollectionNameGuidString: d22aaf67773c88a49a203a8adabb1804
+  m_Entries:
+  - m_Id: 118831128576
+    m_Key: PressAnyButton
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1001874726912
+    m_Key: NewGame
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334290096128
+    m_Key: LoadGame
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1573096988672
+    m_Key: Settings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1776269074432
+    m_Key: Exit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2076241502208
+    m_Key: General_Title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2481096695808
+    m_Key: General_Language
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2519856259072
+    m_Key: General_Difficulty
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2554987749376
+    m_Key: General_Tutorials
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5350243901440
+    m_Key: Sound_Title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5383336960000
+    m_Key: Sound_Global
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5416186748928
+    m_Key: Sound_Music
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5417721864192
+    m_Key: Sound_SFX
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5418934018048
+    m_Key: Sound_Environment
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6820175486976
+    m_Key: Screen_Title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6821945483264
+    m_Key: Screen_ScreenMode
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6823673536512
+    m_Key: Screen_Resolution
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6825447727104
+    m_Key: Screen_FPSLimit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6827427438592
+    m_Key: Screen_VisualQuality
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6829377789952
+    m_Key: Screen_Brightness
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8952362508288
+    m_Key: Controls_Title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8957521502208
+    m_Key: Controls_ControlType
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8958544912384
+    m_Key: Sensitivity
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9732331085824
+    m_Key: Back
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 632962670516764696
+  references:
+    version: 2
+    RefIds:
+    - rid: 632962670516764696
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables,
+        asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1733743871219
