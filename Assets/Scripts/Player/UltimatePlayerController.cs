@@ -71,7 +71,7 @@ public class UltimatePlayerController : MonoBehaviour
         }
 
         Vector3 cameraRotation = new Vector3(0, MainCameraTransform.localEulerAngles.y + CameraArmTransform.localEulerAngles.y, 0);
-        Vector3 Dir = Quaternion.Euler(cameraRotation) * input;
+        Vector3 Dir = Quaternion.Euler(cameraRotation) * input.normalized;
         Vector3 movement_dir = (transform.forward * Dir.z + transform.right * Dir.x);
         Vector3 currentNormalVelocity = Vector3.Project(rb.velocity, normalVector.normalized);
 

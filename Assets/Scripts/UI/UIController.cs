@@ -10,26 +10,38 @@ public class UIController : MonoBehaviour
     public TextMeshProUGUI scoreText, collectibleText;
 
     public float lifeAmount = 100f;
+    float maxLifeAmount;
+
+    public float lifeLossAmount;
+    public float lifeLossSpeed = 5f;
+
     public Image lifeBar;
 
     public GameObject optionsScreen;
-
-
 
     private void Start()
     {
         score = 0;
         scoreText.text = score.ToString();
+
+        maxLifeAmount = lifeAmount;
     }
 
     private void Update()
     {
         UpdateLifeBar();
 
+        if(lifeLossAmount > 0)
+        {
+            lifeLossAmount -= lifeLossSpeed * Time.deltaTime;
+            lifeAmount -= lifeLossSpeed * Time.deltaTime;
+        }
+
         if (Input.GetKeyDown(KeyCode.Escape)) 
         {
             OptionsScreen();
         }
+
     }
 
     public void UpdateScore(int addScore)
@@ -50,7 +62,12 @@ public class UIController : MonoBehaviour
     {
         lifeAmount -= Time.deltaTime;
 
-        lifeBar.fillAmount = lifeAmount / 100;
+        lifeBar.fillAmount = lifeAmount / maxLifeAmount;
+    }
+
+    public void LifeBarLossAnimation(float amount)
+    {
+        lifeLossAmount = amount;
     }
 
     public void OptionsScreen()
