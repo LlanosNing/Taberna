@@ -12,10 +12,12 @@ public class GameOver : MonoBehaviour
     public bool shouldFade, shouldUnfade;
 
     UIController uIRef;
+    Respawn respawnRef;
     // Start is called before the first frame update
     void Start()
     {
         uIRef = GetComponent<UIController>();
+        respawnRef = GameObject.FindWithTag("GameManager").GetComponent<Respawn>();
     }
 
     // Update is called once per frame
@@ -25,7 +27,7 @@ public class GameOver : MonoBehaviour
         {
             GameOverPanelFadeIn();
 
-            if(gameOverPanel.color.a >= 0.7f)
+            if(gameOverPanel.color.a >= 0.85f)
             {
                 shouldFade = false;
             }
@@ -44,7 +46,7 @@ public class GameOver : MonoBehaviour
 
     void GameOverPanelFadeIn()
     {
-        gameOverPanel.color = new Color(gameOverPanel.color.r, gameOverPanel.color.g, gameOverPanel.color.b, Mathf.MoveTowards(gameOverPanel.color.a, 0.7f, fadeSpeed * Time.deltaTime));
+        gameOverPanel.color = new Color(gameOverPanel.color.r, gameOverPanel.color.g, gameOverPanel.color.b, Mathf.MoveTowards(gameOverPanel.color.a, 0.85f, fadeSpeed * Time.deltaTime));
     }
 
     void GameOverPanelFadeOut()
@@ -61,11 +63,9 @@ public class GameOver : MonoBehaviour
     {
         shouldFade = true;
 
-        yield return new WaitForSeconds(0.5f);
-
         lifeBarAnim.SetTrigger("ScaleUp");
 
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1f);
 
         uIRef.LifeBarLossAnimation(20f);
 
@@ -75,6 +75,10 @@ public class GameOver : MonoBehaviour
 
         yield return new WaitForSeconds(0.5f);
 
-        shouldUnfade = true; 
+        shouldUnfade = true;
+
+        yield return new WaitForSeconds(0.5f);
+
+        respawnRef.RespawnPlayer();
     }
 }

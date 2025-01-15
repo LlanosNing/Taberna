@@ -51,11 +51,11 @@ public class UIController : MonoBehaviour
         scoreText.text = score.ToString();
     }
 
-    public void UpdateCollectibles(int addNumber)
+    public void UpdateCollectibles()
     {
-        collectibles += addNumber;
+        collectibles++;
 
-        collectibleText.text = score.ToString();
+        collectibleText.text = collectibles.ToString();
     }
 
     void UpdateLifeBar()

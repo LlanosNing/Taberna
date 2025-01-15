@@ -5,6 +5,7 @@ using UnityEngine;
 public class BreakableWall : MonoBehaviour
 {
     private Inventory _playerInventory;
+    public GameObject bombVisual;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +16,8 @@ public class BreakableWall : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            bombVisual.gameObject.SetActive(false);
+
             if (_playerInventory.hasBomb)
             {
                 transform.parent.gameObject.SetActive(false);
@@ -23,6 +26,14 @@ public class BreakableWall : MonoBehaviour
             {
                 Debug.Log("Necesitas una bomba!");
             }
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            bombVisual.gameObject.SetActive(false);
         }
     }
 }

@@ -9,6 +9,7 @@ public class Pickup : MonoBehaviour
     [Header ("PICKUP CLASS")]
     public bool isCoin;
     public bool isBomb;
+    public bool isCollectible;
 
     public int coinValue;
 
@@ -28,16 +29,19 @@ public class Pickup : MonoBehaviour
             if(isCoin)
             {
                 _uIRef.UpdateScore(coinValue);
-
-                Destroy(gameObject);
             }
 
             if(isBomb)
             {
                 _playerInventory.hasBomb = true;
-
-                Destroy(gameObject);
             }
+
+            if(isCollectible)
+            {
+                _uIRef.UpdateCollectibles();
+            }
+
+            Destroy(gameObject);
         }
     }
 }
