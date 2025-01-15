@@ -18,6 +18,7 @@ public class UIController : MonoBehaviour
     public Image lifeBar;
 
     public GameObject optionsScreen;
+    public bool canAccessOptions;
 
     private void Start()
     {
@@ -37,7 +38,7 @@ public class UIController : MonoBehaviour
             lifeAmount -= lifeLossSpeed * Time.deltaTime;
         }
 
-        if (Input.GetKeyDown(KeyCode.Escape)) 
+        if (Input.GetKeyDown(KeyCode.Escape) && canAccessOptions) 
         {
             OptionsScreen();
         }
