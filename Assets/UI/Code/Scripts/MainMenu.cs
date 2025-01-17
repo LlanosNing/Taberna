@@ -10,7 +10,6 @@ public class MainMenu : MonoBehaviour
     public Button mainButton;
 
     public float timeToDeactivateFS;
-    public GameObject fadeScreen;
 
     private CameraTraveling _cameraTraveling;
 
@@ -26,8 +25,6 @@ public class MainMenu : MonoBehaviour
         {
             Debug.Log("Falta asignar el botón principal!!");
         }
-
-        StartCoroutine("DeactivateFadeScreenCO");
     }
 
     // Update is called once per frame
@@ -37,13 +34,6 @@ public class MainMenu : MonoBehaviour
         {
             Escape();
         }
-    }
-
-    private IEnumerator DeactivateFadeScreenCO()
-    {
-        yield return new WaitForSeconds(timeToDeactivateFS);
-
-        fadeScreen.SetActive(false);
     }
 
     public void Escape()

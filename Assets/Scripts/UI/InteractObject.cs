@@ -21,7 +21,7 @@ public class InteractObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && isTutorial && inTrigger && !tutorialActive)
+        if (Input.GetKeyDown(KeyCode.E) && isTutorial && inTrigger && !tutorialActive && uIRef.canAccessTutorials)
         {
             tutorialCanvas.SetActive(true);
 

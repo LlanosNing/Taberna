@@ -71,25 +71,28 @@ public class UltimatePlayerController : MonoBehaviour
             normalVector = -gravityScript.GravityDirection;
         }
 
-        Vector3 cameraRotation = new Vector3(0, MainCameraTransform.localEulerAngles.y + CameraArmTransform.localEulerAngles.y, 0);
-        Vector3 Dir = Quaternion.Euler(cameraRotation) * input.normalized;
-        Vector3 movement_dir = (transform.forward * Dir.z + transform.right * Dir.x);
-        Vector3 currentNormalVelocity = Vector3.Project(rb.velocity, normalVector.normalized);
-
-
-        rb.velocity = currentNormalVelocity + (movement_dir * speed);
-
-        if (movement_dir != Vector3.zero)
+        if (canMove)
         {
-            //anim.SetBool("IsMoving", true);
-            playerVisual.localRotation = Quaternion.LookRotation(Dir);
-        }
-        else
-        {
-            //anim.SetBool("IsMoving", false);
-        }
+            Vector3 cameraRotation = new Vector3(0, MainCameraTransform.localEulerAngles.y + CameraArmTransform.localEulerAngles.y, 0);
+            Vector3 Dir = Quaternion.Euler(cameraRotation) * input.normalized;
+            Vector3 movement_dir = (transform.forward * Dir.z + transform.right * Dir.x);
+            Vector3 currentNormalVelocity = Vector3.Project(rb.velocity, normalVector.normalized);
 
-        ApplyPlanetRotation();
+
+            rb.velocity = currentNormalVelocity + (movement_dir * speed);
+
+            if (movement_dir != Vector3.zero)
+            {
+                //anim.SetBool("IsMoving", true);
+                playerVisual.localRotation = Quaternion.LookRotation(Dir);
+            }
+            else
+            {
+                //anim.SetBool("IsMoving", false);
+            }
+
+            ApplyPlanetRotation();
+        }
     }
 
     void ApplyPlanetRotation()

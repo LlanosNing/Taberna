@@ -2600,7 +2600,6 @@ MonoBehaviour:
   mainCameraWaypoint: {fileID: 23581287}
   mainButton: {fileID: 1194880145}
   timeToDeactivateFS: 1
-  fadeScreen: {fileID: 1759093199}
 --- !u!4 &253127654
 Transform:
   m_ObjectHideFlags: 0
@@ -13355,6 +13354,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1747593253}
+        m_TargetAssemblyTypeName: ChangeSceneScript, Assembly-CSharp
+        m_MethodName: ChangeScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1759093201}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: FadeOut
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1194880146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18893,6 +18916,7 @@ GameObject:
   - component: {fileID: 1747593251}
   - component: {fileID: 1747593250}
   - component: {fileID: 1747593249}
+  - component: {fileID: 1747593253}
   m_Layer: 5
   m_Name: NewGame_Canvas
   m_TagString: Untagged
@@ -18983,6 +19007,20 @@ RectTransform:
   m_AnchoredPosition: {x: -1.8710418, y: 5.59571}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1747593253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1747593248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1e06e8eaf16cce44a7a55a8ede16c73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneToLoad: MarioPlaneta
+  timeToChange: 3.5
 --- !u!1 &1751995595
 GameObject:
   m_ObjectHideFlags: 0

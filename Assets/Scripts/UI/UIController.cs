@@ -17,8 +17,10 @@ public class UIController : MonoBehaviour
 
     public Image lifeBar;
 
-    public GameObject optionsScreen;
+    public GameObject optionsScreen, winScreen;
+    UltimatePlayerController playerRef;
     public bool canAccessOptions;
+    public bool canAccessTutorials;
 
     private void Start()
     {
@@ -26,6 +28,8 @@ public class UIController : MonoBehaviour
         scoreText.text = score.ToString();
 
         maxLifeAmount = lifeAmount;
+
+        playerRef = GameObject.FindWithTag("Player").GetComponent<UltimatePlayerController>();
     }
 
     private void Update()
@@ -43,6 +47,10 @@ public class UIController : MonoBehaviour
             OptionsScreen();
         }
 
+        if(Input.GetKeyDown(KeyCode.F1) || lifeAmount <= 0f || collectibles >= 3)
+        {
+            WinScreen();
+        }
     }
 
     public void UpdateScore(int addScore)
@@ -76,12 +84,23 @@ public class UIController : MonoBehaviour
         if (!optionsScreen.activeInHierarchy)
         {
             optionsScreen.SetActive(true);
+            canAccessTutorials = false;
             Time.timeScale = 0f;
         }
         else
         {
             optionsScreen.SetActive(false);
+            canAccessTutorials = true;
             Time.timeScale = 1f;
         }
+    }
+
+    void WinScreen()
+    {
+        canAccessOptions = false;
+
+        playerRef.canMove = false;
+
+        winScreen.SetActive(true);
     }
 }
