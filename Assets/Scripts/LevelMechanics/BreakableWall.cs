@@ -6,21 +6,30 @@ public class BreakableWall : MonoBehaviour
 {
     private Inventory _playerInventory;
     public GameObject bombVisual;
+
+    public bool canDestroy;
     // Start is called before the first frame update
     void Start()
     {
         _playerInventory = GameObject.FindWithTag("Player").GetComponent<Inventory>();
     }
 
+    private void Update()
+    {
+        if (canDestroy && Input.GetKeyDown(KeyCode.E))
+        {
+            transform.parent.gameObject.SetActive(false);
+        }
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            bombVisual.gameObject.SetActive(false);
+            bombVisual.gameObject.SetActive(true);
 
             if (_playerInventory.hasBomb)
             {
-                transform.parent.gameObject.SetActive(false);
+                canDestroy = true;
             }
             else
             {
@@ -34,6 +43,8 @@ public class BreakableWall : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             bombVisual.gameObject.SetActive(false);
+
+            canDestroy = false;
         }
     }
 }

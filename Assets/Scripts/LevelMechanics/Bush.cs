@@ -14,9 +14,13 @@ public class Bush : MonoBehaviour
     public int coinValue = 50;
     UIController uiRef;
 
+    Animator animRef;
+
     private void Start()
     {
         uiRef = GameObject.FindWithTag("Canvas").GetComponent<UIController>();
+
+        animRef = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -25,8 +29,9 @@ public class Bush : MonoBehaviour
         if(canPick && Input.GetKeyDown(KeyCode.E))
         {
             pickCounter++;
+            animRef.SetTrigger("Jiggle");
 
-            if (pickCounter >= maxPickCounter)
+            if (pickCounter >= maxPickCounter && !isPicked)
             {
                 peppers.SetActive(false);
                 isPicked = true;

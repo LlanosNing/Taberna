@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class InteractObject : MonoBehaviour
 {
-    public bool isTutorial, isPlaceBomb;
+    public bool isTutorial;
     public GameObject worldCanvas;
 
     public bool inTrigger;
@@ -28,6 +28,8 @@ public class InteractObject : MonoBehaviour
             Time.timeScale = 0;
 
             uIRef.canAccessOptions = false;
+
+            tutorialActive = true;
         }
         else if((Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Escape)) && isTutorial && inTrigger && tutorialActive)
         {
@@ -36,20 +38,28 @@ public class InteractObject : MonoBehaviour
             Time.timeScale = 1f;
 
             uIRef.canAccessOptions = true;
+
+            tutorialActive = false;
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        worldCanvas.SetActive(true);
+        if (other.CompareTag("Player"))
+        {
+            worldCanvas.SetActive(true);
 
-        inTrigger = true;
+            inTrigger = true;
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        worldCanvas.SetActive(false);
+        if (other.CompareTag("Player"))
+        {
+            worldCanvas.SetActive(false);
 
-        inTrigger = false;
+            inTrigger = false;
+        }
     }
 }

@@ -10,6 +10,7 @@ public class UltimatePlayerController : MonoBehaviour
     public float jumpForce;
     public float bounceForce;
     public bool antiGravity;
+    public bool canMove = true;
 
     private Rigidbody rb;
     public Transform currentPlanet;
