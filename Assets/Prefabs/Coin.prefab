@@ -69,6 +69,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isCoin: 1
   isBomb: 0
+  isCollectible: 0
   coinValue: 10
 --- !u!1001 &4328804225933204969
 PrefabInstance:
@@ -125,11 +126,11 @@ PrefabInstance:
     - target: {fileID: 3280164192678292224, guid: af71158b77c9a7d478d251b0018ae463, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: ce173a05bd0a1d840a097a2d1c11a7bf, type: 2}
+      objectReference: {fileID: 2100000, guid: 180103a7ec5d46b438baecddbb54e4e0, type: 2}
     - target: {fileID: 4962763744567227829, guid: af71158b77c9a7d478d251b0018ae463, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 6c5bf90515ba71a49bcbf99be4d81a8c, type: 2}
+      objectReference: {fileID: 2100000, guid: c8d9fd2802bd0264badd32232aa52da1, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

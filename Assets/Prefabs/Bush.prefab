@@ -90,7 +90,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 67419013150d09c459d355766c93c44c, type: 2}
+  - {fileID: 2100000, guid: 5bb1f17ce11bbe6419df6ebb545ebebe, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -187,7 +187,7 @@ PrefabInstance:
     - target: {fileID: 213652572921008384, guid: a709502416f7df843b5b5e3b23a73f59, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 67419013150d09c459d355766c93c44c, type: 2}
+      objectReference: {fileID: 2100000, guid: 760ef2b0374de844d800d1e6d75cccd6, type: 2}
     - target: {fileID: 919132149155446097, guid: a709502416f7df843b5b5e3b23a73f59, type: 3}
       propertyPath: m_Name
       value: Pepper
@@ -195,7 +195,7 @@ PrefabInstance:
     - target: {fileID: 1546299690171478277, guid: a709502416f7df843b5b5e3b23a73f59, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 4ceeffc5f04f5654dbf049a51a5f136d, type: 2}
+      objectReference: {fileID: 2100000, guid: 8a8dae29e971af348b83ea955f300aa1, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -392,7 +392,7 @@ PrefabInstance:
     - target: {fileID: 213652572921008384, guid: a709502416f7df843b5b5e3b23a73f59, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 67419013150d09c459d355766c93c44c, type: 2}
+      objectReference: {fileID: 2100000, guid: 760ef2b0374de844d800d1e6d75cccd6, type: 2}
     - target: {fileID: 919132149155446097, guid: a709502416f7df843b5b5e3b23a73f59, type: 3}
       propertyPath: m_Name
       value: Pepper (3)
@@ -400,7 +400,7 @@ PrefabInstance:
     - target: {fileID: 1546299690171478277, guid: a709502416f7df843b5b5e3b23a73f59, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 4ceeffc5f04f5654dbf049a51a5f136d, type: 2}
+      objectReference: {fileID: 2100000, guid: 8a8dae29e971af348b83ea955f300aa1, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -478,7 +478,7 @@ PrefabInstance:
     - target: {fileID: 213652572921008384, guid: a709502416f7df843b5b5e3b23a73f59, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 67419013150d09c459d355766c93c44c, type: 2}
+      objectReference: {fileID: 2100000, guid: 760ef2b0374de844d800d1e6d75cccd6, type: 2}
     - target: {fileID: 919132149155446097, guid: a709502416f7df843b5b5e3b23a73f59, type: 3}
       propertyPath: m_Name
       value: Pepper (2)
@@ -486,7 +486,7 @@ PrefabInstance:
     - target: {fileID: 1546299690171478277, guid: a709502416f7df843b5b5e3b23a73f59, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 4ceeffc5f04f5654dbf049a51a5f136d, type: 2}
+      objectReference: {fileID: 2100000, guid: 8a8dae29e971af348b83ea955f300aa1, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -743,7 +743,7 @@ PrefabInstance:
     - target: {fileID: 213652572921008384, guid: a709502416f7df843b5b5e3b23a73f59, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 67419013150d09c459d355766c93c44c, type: 2}
+      objectReference: {fileID: 2100000, guid: 760ef2b0374de844d800d1e6d75cccd6, type: 2}
     - target: {fileID: 919132149155446097, guid: a709502416f7df843b5b5e3b23a73f59, type: 3}
       propertyPath: m_Name
       value: Pepper (1)
@@ -751,7 +751,7 @@ PrefabInstance:
     - target: {fileID: 1546299690171478277, guid: a709502416f7df843b5b5e3b23a73f59, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 4ceeffc5f04f5654dbf049a51a5f136d, type: 2}
+      objectReference: {fileID: 2100000, guid: 8a8dae29e971af348b83ea955f300aa1, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -829,7 +829,7 @@ PrefabInstance:
     - target: {fileID: 213652572921008384, guid: a709502416f7df843b5b5e3b23a73f59, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 67419013150d09c459d355766c93c44c, type: 2}
+      objectReference: {fileID: 2100000, guid: 760ef2b0374de844d800d1e6d75cccd6, type: 2}
     - target: {fileID: 919132149155446097, guid: a709502416f7df843b5b5e3b23a73f59, type: 3}
       propertyPath: m_Name
       value: Pepper (4)
@@ -837,7 +837,7 @@ PrefabInstance:
     - target: {fileID: 1546299690171478277, guid: a709502416f7df843b5b5e3b23a73f59, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 4ceeffc5f04f5654dbf049a51a5f136d, type: 2}
+      objectReference: {fileID: 2100000, guid: 8a8dae29e971af348b83ea955f300aa1, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
