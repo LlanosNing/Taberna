@@ -10,10 +10,12 @@ public class Pickup : MonoBehaviour
     public bool isCoin;
     public bool isBomb;
     public bool isCollectible;
+    public bool showsOnMinimap;
 
     public int coinValue;
 
     private UIController _uIRef;
+    public GameObject minimapRepresentation;
 
     private void Start()
     {
@@ -42,6 +44,11 @@ public class Pickup : MonoBehaviour
             }
 
             Destroy(gameObject);
+
+            if (showsOnMinimap)
+            {
+                minimapRepresentation.SetActive(false);
+            }
         }
     }
 }
