@@ -35,7 +35,7 @@ public class LogoSettings : MonoBehaviour
             }
         }
 
-        transform.position = Vector3.Lerp(transform.position, positions[positionIndex].position, rotationSpeed * Time.deltaTime);
+        transform.position = Vector3.Lerp(transform.position, positions[positionIndex].position, rotationSpeed * Time.unscaledDeltaTime);
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -61,7 +61,7 @@ public class LogoSettings : MonoBehaviour
         }
     }
 
-    private void ResetPosition()
+    public void ResetPosition()
     {
         positionIndex = startPosition;
     }

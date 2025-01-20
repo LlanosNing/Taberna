@@ -17,10 +17,14 @@ public class UIController : MonoBehaviour
 
     public Image lifeBar;
 
-    public GameObject optionsScreen, winScreen;
+    public GameObject optionsScreen, settingsScreen, winScreen;
     UltimatePlayerController playerRef;
     public bool canAccessOptions;
+
     public bool canAccessTutorials;
+
+    public Button mainOptionButton;
+    public bool isSettingsOn;
 
     private void Start()
     {
@@ -44,7 +48,15 @@ public class UIController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape) && canAccessOptions) 
         {
-            OptionsScreen();
+            if(isSettingsOn)
+            {
+                isSettingsOn = false;
+                settingsScreen.SetActive(false);
+            }
+            else
+            {
+                OptionsScreen();
+            }
         }
 
         if(Input.GetKeyDown(KeyCode.F1) || lifeAmount <= 0f || collectibles >= 3)
@@ -85,6 +97,7 @@ public class UIController : MonoBehaviour
         {
             optionsScreen.SetActive(true);
             canAccessTutorials = false;
+            mainOptionButton.Select();
             Time.timeScale = 0f;
         }
         else
@@ -102,5 +115,10 @@ public class UIController : MonoBehaviour
         playerRef.canMove = false;
 
         winScreen.SetActive(true);
+    }
+
+    public void AccessSettings()
+    {
+        isSettingsOn = true;
     }
 }

@@ -112,4 +112,10 @@ public class PanelSettings : MonoBehaviour
     {
         settingsOn = true;
     }
+
+    public void ResetSettings()
+    {
+        panelIndex = 0;
+        ChangePanel();
+    }
 }
