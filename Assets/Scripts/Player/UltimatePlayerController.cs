@@ -52,7 +52,7 @@ public class UltimatePlayerController : MonoBehaviour
 
         GroundCheck();
 
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && canMove)
         {
             Jump();
         }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UIController : MonoBehaviour
 {
@@ -51,6 +52,7 @@ public class UIController : MonoBehaviour
             if(isSettingsOn)
             {
                 isSettingsOn = false;
+                mainOptionButton.Select();
                 settingsScreen.SetActive(false);
             }
             else
@@ -97,14 +99,16 @@ public class UIController : MonoBehaviour
         {
             optionsScreen.SetActive(true);
             canAccessTutorials = false;
+            playerRef.canMove = false;
             mainOptionButton.Select();
             Time.timeScale = 0f;
         }
         else
         {
             optionsScreen.SetActive(false);
-            canAccessTutorials = true;
             Time.timeScale = 1f;
+            playerRef.canMove = true;
+            canAccessTutorials = true;
         }
     }
 
@@ -120,5 +124,10 @@ public class UIController : MonoBehaviour
     public void AccessSettings()
     {
         isSettingsOn = true;
+    }
+
+    public void CantAccessOptions()
+    {
+        canAccessOptions = false;
     }
 }
