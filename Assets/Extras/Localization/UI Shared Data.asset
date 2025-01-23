@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
-  m_Name: MainMenu Shared Data
+  m_Name: UI Shared Data
   m_EditorClassIdentifier: 
-  m_TableCollectionName: MainMenu
+  m_TableCollectionName: UI
   m_TableCollectionNameGuidString: d22aaf67773c88a49a203a8adabb1804
   m_Entries:
   - m_Id: 118831128576
@@ -111,6 +111,56 @@ MonoBehaviour:
     m_Key: Back
     m_Metadata:
       m_Items: []
+  - m_Id: 16378495007662080
+    m_Key: Continue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16378544764690432
+    m_Key: Options_SaveGame
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16378653539770368
+    m_Key: Options_File1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16378683138973696
+    m_Key: 'Options_File2
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16378703674286080
+    m_Key: Options_Flie3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16378736423411712
+    m_Key: Options_Settings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16379069144965120
+    m_Key: Options_ReturnToTavern
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16379202389614592
+    m_Key: Options_MainMenu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16379245871964160
+    m_Key: WinScreen_WorldClear
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16379378944647168
+    m_Key: WinScreen_FinalScore
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16379451225088000
+    m_Key: WinScreen_Collectibles
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16379529574686720
+    m_Key: WinScreen_RemainingEnergy
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
@@ -119,7 +169,6 @@ MonoBehaviour:
     version: 2
     RefIds:
     - rid: 632962670516764696
-      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables,
-        asm: Unity.Localization}
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
       data:
         m_CustomEpoch: 1733743871219

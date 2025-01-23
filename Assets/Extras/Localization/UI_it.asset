@@ -10,108 +10,156 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
-  m_Name: MainMenu_en
+  m_Name: UI_it
   m_EditorClassIdentifier: 
   m_LocaleId:
-    m_Code: en
+    m_Code: it
   m_SharedData: {fileID: 11400000, guid: d22aaf67773c88a49a203a8adabb1804, type: 2}
   m_Metadata:
     m_Items: []
   m_TableData:
   - m_Id: 118831128576
-    m_Localized: Press Any Button
+    m_Localized: Premere un pulsante qualsiasi
     m_Metadata:
       m_Items: []
   - m_Id: 1001874726912
-    m_Localized: NEW GAME
+    m_Localized: NUOVO GIOCO
     m_Metadata:
       m_Items: []
   - m_Id: 1334290096128
-    m_Localized: LOAD GAME
+    m_Localized: CARICA GIOCO
     m_Metadata:
       m_Items: []
   - m_Id: 1573096988672
-    m_Localized: SETTINGS
+    m_Localized: IMPOSTAZIONE
     m_Metadata:
       m_Items: []
   - m_Id: 1776269074432
-    m_Localized: EXIT
+    m_Localized: USCITA
     m_Metadata:
       m_Items: []
   - m_Id: 2076241502208
-    m_Localized: General
+    m_Localized: Generale
     m_Metadata:
       m_Items: []
   - m_Id: 2481096695808
-    m_Localized: Language
+    m_Localized: Lingua
     m_Metadata:
       m_Items: []
   - m_Id: 2519856259072
-    m_Localized: Difficulty
+    m_Localized: Difficolta
     m_Metadata:
       m_Items: []
   - m_Id: 2554987749376
-    m_Localized: Tutorials
+    m_Localized: Tutorial
     m_Metadata:
       m_Items: []
   - m_Id: 5350243901440
-    m_Localized: Sound
+    m_Localized: Suono
     m_Metadata:
       m_Items: []
   - m_Id: 5383336960000
-    m_Localized: Global
+    m_Localized: Globale
     m_Metadata:
       m_Items: []
   - m_Id: 5416186748928
-    m_Localized: Music
+    m_Localized: Musica
     m_Metadata:
       m_Items: []
   - m_Id: 5417721864192
-    m_Localized: SFX
+    m_Localized: "Effetti sonori\r"
     m_Metadata:
       m_Items: []
   - m_Id: 5418934018048
-    m_Localized: Environment
+    m_Localized: Ambiente
     m_Metadata:
       m_Items: []
   - m_Id: 6820175486976
-    m_Localized: Screen
+    m_Localized: Schermo
     m_Metadata:
       m_Items: []
   - m_Id: 6821945483264
-    m_Localized: Screen Mode
+    m_Localized: "Modalita schermo\r"
     m_Metadata:
       m_Items: []
   - m_Id: 6823673536512
-    m_Localized: Resolution
+    m_Localized: Risoluzione
     m_Metadata:
       m_Items: []
   - m_Id: 6825447727104
-    m_Localized: FPS Limit
+    m_Localized: "Limite FPS\r"
     m_Metadata:
       m_Items: []
   - m_Id: 6827427438592
-    m_Localized: Visual Quality
+    m_Localized: "Qualita visiva\r"
     m_Metadata:
       m_Items: []
   - m_Id: 6829377789952
-    m_Localized: Brightness
+    m_Localized: Luminosita
     m_Metadata:
       m_Items: []
   - m_Id: 8952362508288
-    m_Localized: Controls
+    m_Localized: Controlli
     m_Metadata:
       m_Items: []
   - m_Id: 8957521502208
-    m_Localized: Control Type
+    m_Localized: "Tipo di controllo\r"
     m_Metadata:
       m_Items: []
   - m_Id: 8958544912384
-    m_Localized: Sensitivity
+    m_Localized: Sensibilita
     m_Metadata:
       m_Items: []
   - m_Id: 9732331085824
-    m_Localized: BACK
+    m_Localized: INDIETRO
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16378495007662080
+    m_Localized: Continuare
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16378544764690432
+    m_Localized: Salva
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16378653539770368
+    m_Localized: File 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16378683138973696
+    m_Localized: File 2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16378703674286080
+    m_Localized: File 3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16378736423411712
+    m_Localized: Impostazioni
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16379069144965120
+    m_Localized: "Ritorno alla taverna\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16379202389614592
+    m_Localized: "Men\xF9 principale\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16379245871964160
+    m_Localized: "Mondo chiaro!\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16379378944647168
+    m_Localized: "Punteggio finale\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16379451225088000
+    m_Localized: Collezionabiles
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16379529574686720
+    m_Localized: "Energia rimanente\r"
     m_Metadata:
       m_Items: []
   references:

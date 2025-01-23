@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
-  m_Name: MainMenu_ja
+  m_Name: UI_ja
   m_EditorClassIdentifier: 
   m_LocaleId:
     m_Code: ja
@@ -112,6 +112,54 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 9732331085824
     m_Localized: "\u623B\u308B"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16378495007662080
+    m_Localized: "\u7D9A\u304F"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16378544764690432
+    m_Localized: "\u4FDD\u5B58"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16378653539770368
+    m_Localized: "\u30D5\u30A1\u30A4\u30EB 1"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16378683138973696
+    m_Localized: "\u30D5\u30A1\u30A4\u30EB 2"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16378703674286080
+    m_Localized: "\u30D5\u30A1\u30A4\u30EB 3"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16378736423411712
+    m_Localized: "\u8A2D\u5B9A"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16379069144965120
+    m_Localized: "\u5C45\u9152\u5C4B\u306B\u623B\u308B\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16379202389614592
+    m_Localized: "\u30E1\u30A4\u30F3\u30E1\u30CB\u30E5\u30FC\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16379245871964160
+    m_Localized: "\u30EF\u30FC\u30EB\u30C9\u30AF\u30EA\u30A2\uFF01\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16379378944647168
+    m_Localized: "\u6700\u7D42\u30B9\u30B3\u30A2\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16379451225088000
+    m_Localized: "\u53CE\u96C6\u54C1\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16379529574686720
+    m_Localized: "\u30A8\u30CD\u30EB\u30AE\u30FC\u6B8B\u91CF\r"
     m_Metadata:
       m_Items: []
   references:
