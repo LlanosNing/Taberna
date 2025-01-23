@@ -10,7 +10,7 @@ public class InteractObject : MonoBehaviour
     public bool inTrigger;
     public bool tutorialActive;
 
-    public GameObject tutorialCanvas;
+    public GameObject tutorialCanvas, whatTutorial;
     UIController uIRef;
     // Start is called before the first frame update
     void Start()
@@ -25,6 +25,8 @@ public class InteractObject : MonoBehaviour
         {
             tutorialCanvas.SetActive(true);
 
+            whatTutorial.SetActive(true);
+
             Time.timeScale = 0;
 
             uIRef.canAccessOptions = false;
@@ -33,6 +35,8 @@ public class InteractObject : MonoBehaviour
         }
         else if((Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Escape)) && isTutorial && inTrigger && tutorialActive)
         {
+            whatTutorial.SetActive(false);
+
             tutorialCanvas.SetActive(false);
 
             Time.timeScale = 1f;
