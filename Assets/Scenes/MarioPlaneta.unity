@@ -7735,10 +7735,50 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -4306348957808230960, guid: 015e641113fd8c94bb80ff9045e9dc02, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7eb66e1da882aaf4da4ab3fd7eca7c1b, type: 2}
+    - target: {fileID: -3939635551387197141, guid: 015e641113fd8c94bb80ff9045e9dc02, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 00ae11d1adb4feb44b28ffd780a3fdee, type: 2}
+    - target: {fileID: -2052841496573710244, guid: 015e641113fd8c94bb80ff9045e9dc02, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6c53b0709cd16a346833429f7f6db120, type: 2}
     - target: {fileID: 919132149155446097, guid: 015e641113fd8c94bb80ff9045e9dc02, type: 3}
       propertyPath: m_Name
       value: Johnny_LowPoly@T-Pose
       objectReference: {fileID: 0}
+    - target: {fileID: 2795697627070333845, guid: 015e641113fd8c94bb80ff9045e9dc02, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: dc0929bb002a964449bd44bb3df5d268, type: 2}
+    - target: {fileID: 5178110790678471577, guid: 015e641113fd8c94bb80ff9045e9dc02, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2bd7b96ff677f354a8573a3bb739f40a, type: 2}
+    - target: {fileID: 5866666021909216657, guid: 015e641113fd8c94bb80ff9045e9dc02, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: c9c3003d178edef41847720c103e5891, type: 2}
+    - target: {fileID: 5866666021909216657, guid: 015e641113fd8c94bb80ff9045e9dc02, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6341119541397085964, guid: 015e641113fd8c94bb80ff9045e9dc02, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.0000003659674
+      objectReference: {fileID: 0}
+    - target: {fileID: 6341119541397085964, guid: 015e641113fd8c94bb80ff9045e9dc02, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.00089296733
+      objectReference: {fileID: 0}
+    - target: {fileID: 7194886644440173779, guid: 015e641113fd8c94bb80ff9045e9dc02, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9050f89c9e465f74f852d829085756ec, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12640,6 +12680,11 @@ MonoBehaviour:
   blendDistance: 0
   weight: 1
   priority: 0
+--- !u!95 &1250497329 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 015e641113fd8c94bb80ff9045e9dc02, type: 3}
+  m_PrefabInstance: {fileID: 718280423}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1250952204
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14413,6 +14458,7 @@ MonoBehaviour:
   spawnPosition: {x: 0, y: 0, z: 0}
   spawnRotation: {x: 0, y: 0, z: 0, w: 0}
   CameraArmTransform: {fileID: 2131852991}
+  animRef: {fileID: 1250497329}
 --- !u!54 &1457971824
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -33,6 +34,9 @@ public class UltimatePlayerController : MonoBehaviour
     private Transform MainCameraTransform;
     public Transform CameraArmTransform;
 
+    public Animator animRef;
+    public bool isDancing;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -43,12 +47,19 @@ public class UltimatePlayerController : MonoBehaviour
         spawnRotation = transform.rotation;
 
         gravityScript = GetComponent<GravityBody>();
+
+        GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
         input = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
+
+        float HVMagnitud = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).magnitude;
+
+        animRef.SetFloat("HV_Magnitud", HVMagnitud);
+        animRef.SetBool("isGrounded", isGrounded);
 
         GroundCheck();
 
@@ -60,6 +71,11 @@ public class UltimatePlayerController : MonoBehaviour
         {
             //normalVector = (transform.position - currentPlanet.position).normalized;
             normalVector = -gravityScript.GravityDirection;
+        }
+
+        if(Input.GetKeyDown(KeyCode.F2)) 
+        {
+            Dance();
         }
     }
 
@@ -127,6 +143,13 @@ public class UltimatePlayerController : MonoBehaviour
         rb.velocity = Vector3.zero;
     }
 
+    public void Dance()
+    {
+        if (isDancing) isDancing = false;
+        else if (!isDancing) isDancing = true;
+
+        animRef.SetBool("isDancing", isDancing);
+    }
     private void GroundCheck()
     {
         detectedColliders = Physics.OverlapBox(groundCheckCenter.position, groundCheckSize * 0.5f, Quaternion.Euler(0, 0, 0), groundLayer);
