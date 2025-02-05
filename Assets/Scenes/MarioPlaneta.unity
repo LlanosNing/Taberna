@@ -14459,6 +14459,7 @@ MonoBehaviour:
   spawnRotation: {x: 0, y: 0, z: 0, w: 0}
   CameraArmTransform: {fileID: 2131852991}
   animRef: {fileID: 1250497329}
+  isDancing: 0
 --- !u!54 &1457971824
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -20755,6 +20756,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plateau_L
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 42179f9a97f42fb4db87ad43783818b9, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -22733,6 +22738,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 782954272}
+    - target: {fileID: 1162055369647382721, guid: d051bfdcc5ce3574aaeabfcf8aa11c81, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1228322635033423383, guid: d051bfdcc5ce3574aaeabfcf8aa11c81, type: 3}
       propertyPath: m_Name
       value: Planeta
@@ -22861,6 +22870,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: c4a6462f0f7d5684baa51f49abe6495b, type: 2}
+    - target: {fileID: 1829343360209816033, guid: d051bfdcc5ce3574aaeabfcf8aa11c81, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1840308499864692092, guid: d051bfdcc5ce3574aaeabfcf8aa11c81, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -22897,6 +22910,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1594417078}
+    - target: {fileID: 2109916380526094595, guid: d051bfdcc5ce3574aaeabfcf8aa11c81, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2151298059787599966, guid: d051bfdcc5ce3574aaeabfcf8aa11c81, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -23017,6 +23034,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1700186398}
+    - target: {fileID: 2797403749403386539, guid: d051bfdcc5ce3574aaeabfcf8aa11c81, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2826172665002326056, guid: d051bfdcc5ce3574aaeabfcf8aa11c81, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -23101,6 +23122,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 183365857}
+    - target: {fileID: 3244063248450129109, guid: d051bfdcc5ce3574aaeabfcf8aa11c81, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3297960613363630945, guid: d051bfdcc5ce3574aaeabfcf8aa11c81, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -23429,6 +23454,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -0.516
       objectReference: {fileID: 0}
+    - target: {fileID: 5605239344843160815, guid: d051bfdcc5ce3574aaeabfcf8aa11c81, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5653793855793873247, guid: d051bfdcc5ce3574aaeabfcf8aa11c81, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -23573,6 +23602,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 2123057369}
+    - target: {fileID: 7286816481151701175, guid: d051bfdcc5ce3574aaeabfcf8aa11c81, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7401754518933896815, guid: d051bfdcc5ce3574aaeabfcf8aa11c81, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
