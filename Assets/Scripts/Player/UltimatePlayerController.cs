@@ -63,7 +63,7 @@ public class UltimatePlayerController : MonoBehaviour
 
         GroundCheck();
 
-        if (Input.GetButtonDown("Jump") && canMove)
+        if (Input.GetButtonDown("Jump") && canMove && animRef.GetCurrentAnimatorStateInfo(0).IsTag("Locomotion"))
         {
             Jump();
         }
@@ -87,7 +87,7 @@ public class UltimatePlayerController : MonoBehaviour
             normalVector = -gravityScript.GravityDirection;
         }
 
-        if (canMove)
+        if (canMove && animRef.GetCurrentAnimatorStateInfo(0).IsTag("Locomotion"))
         {
             Vector3 cameraRotation = new Vector3(0, MainCameraTransform.localEulerAngles.y + CameraArmTransform.localEulerAngles.y, 0);
             Vector3 Dir = Quaternion.Euler(cameraRotation) * input.normalized;
