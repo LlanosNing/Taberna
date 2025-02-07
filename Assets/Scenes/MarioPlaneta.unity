@@ -3407,7 +3407,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dd7a90d25063a4479874cd7f85acc9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  followDamping: 0.329
+  followDamping: 0.25
   playerTransform: {fileID: 1457971825}
 --- !u!4 &420750388
 Transform:
@@ -3418,7 +3418,7 @@ Transform:
   m_GameObject: {fileID: 420750386}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 23.55, z: 0}
+  m_LocalPosition: {x: 0, y: 24, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
