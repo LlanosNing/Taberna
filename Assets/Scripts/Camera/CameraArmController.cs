@@ -14,7 +14,7 @@ public class CameraArmController : MonoBehaviour
 
     void AdjustCamera()
     {
-        Vector2 input = new Vector2 (Input.GetAxis("Horizontal Dpad"), Input.GetAxis("Vertical Dpad"));
+        Vector2 input = new Vector2 (Input.GetAxis("Horizontal Dpad"), Input.GetAxis("Vertical Dpad")) + new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
         input *= sensitivity;
         transform.localRotation = Quaternion.Euler(new Vector3(input.y, input.x, 0) + transform.localRotation.eulerAngles);
 
