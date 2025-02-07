@@ -8,6 +8,7 @@ public class UltimatePlayerController : MonoBehaviour
 {
     public float speed;
     public float rotSpeed;
+    public float lookRotSpeed;
     public float jumpForce;
     public float bounceForce;
     public bool antiGravity;
@@ -99,8 +100,8 @@ public class UltimatePlayerController : MonoBehaviour
 
             if (movement_dir != Vector3.zero)
             {
-                //anim.SetBool("IsMoving", true);
-                playerVisual.localRotation = Quaternion.LookRotation(Dir);
+                Quaternion lookDirection = Quaternion.LookRotation(Dir);
+                playerVisual.localRotation = Quaternion.Slerp(playerVisual.localRotation, lookDirection, Time.deltaTime * lookRotSpeed); 
             }
             else
             {

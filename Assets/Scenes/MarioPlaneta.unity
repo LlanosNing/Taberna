@@ -14491,6 +14491,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   rotSpeed: 100
+  lookRotSpeed: 100
   jumpForce: 400
   bounceForce: 800
   antiGravity: 0
