@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Canvas
+  - MainPlanet
+  - GameManager
+  - TutorialCanvas
+  - PanelSettings
   layers:
   - Default
   - TransparentFX
@@ -11,8 +16,8 @@ TagManager:
   - Ground
   - Water
   - UI
-  - 
-  - 
+  - Player
+  - Minimap
   - 
   - 
   - 
