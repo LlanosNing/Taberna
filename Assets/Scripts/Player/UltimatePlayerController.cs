@@ -66,6 +66,7 @@ public class UltimatePlayerController : MonoBehaviour
 
         if (Input.GetButtonDown("Jump") && canMove && animRef.GetCurrentAnimatorStateInfo(0).IsTag("Locomotion"))
         {
+            Debug.Log("Salto");
             Jump();
         }
         if (currentPlanet != null)
