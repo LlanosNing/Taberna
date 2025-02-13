@@ -502,7 +502,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -77.686584, y: -3.343872}
+  m_AnchoredPosition: {x: -77.68652, y: -3.34375}
   m_SizeDelta: {x: 320.1173, y: 170.5171}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &176797847
@@ -2150,7 +2150,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -49.1941, y: -173.861}
+  m_AnchoredPosition: {x: -49.194336, y: -173.86108}
   m_SizeDelta: {x: 403.9712, y: 109.2845}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &415951396
@@ -2605,7 +2605,7 @@ GameObject:
   - component: {fileID: 466299145}
   - component: {fileID: 466299144}
   - component: {fileID: 466299146}
-  - component: {fileID: 466299147}
+  - component: {fileID: 466299149}
   - component: {fileID: 466299148}
   m_Layer: 0
   m_Name: Player_Tavern
@@ -2669,33 +2669,6 @@ MonoBehaviour:
   lookRotSpeed: 10
   cameraTransform: {fileID: 1672681541}
   playerVisual: {fileID: 1652253070}
---- !u!54 &466299147
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 466299125}
-  serializedVersion: 4
-  m_Mass: 27
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 112
-  m_CollisionDetection: 0
 --- !u!136 &466299148
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2719,6 +2692,32 @@ CapsuleCollider:
   m_Height: 2.1157382
   m_Direction: 1
   m_Center: {x: 0, y: 0.3761562, z: 0}
+--- !u!143 &466299149
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 466299125}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &477536793
 GameObject:
   m_ObjectHideFlags: 0
@@ -2753,7 +2752,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -250.11499, y: -86.33411}
+  m_AnchoredPosition: {x: -250.11523, y: -86.333984}
   m_SizeDelta: {x: 361.6659, y: 172.6682}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &477536795

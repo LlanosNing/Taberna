@@ -9,18 +9,18 @@ public class TavernPlayerController : MonoBehaviour
     public float lookRotSpeed = 10f;
     Vector2 input;
     public Transform cameraTransform; // Arrastra aquí la cámara fija
-    Rigidbody rb;
+    CharacterController controller;
     public Transform playerVisual;
 
 
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        controller = GetComponent<CharacterController>();
     }
 
     void Update()
     {
-        input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 
         Move();
     }
@@ -33,17 +33,12 @@ public class TavernPlayerController : MonoBehaviour
         Vector3 moveDir = cameraTransform.forward * direction.z + cameraTransform.right * direction.x;
         moveDir.y = 0f; // Evitar que el personaje se incline
 
-        rb.velocity = moveDir.normalized * moveSpeed;
+        controller.Move(moveDir * moveSpeed * Time.deltaTime);
 
         Quaternion lookDirection = Quaternion.LookRotation(moveDir);
         if(moveDir !=  Vector3.zero)
         {
             playerVisual.localRotation = Quaternion.Slerp(playerVisual.localRotation, lookDirection, Time.deltaTime * lookRotSpeed);
-        }
-
-        if(input == Vector2.zero)
-        {
-            rb.velocity = Vector3.zero;
         }
     }
 }
