@@ -17,7 +17,7 @@ public class teletransportePuertaArcana : MonoBehaviour
 
     public IEnumerator delayEnterPortal()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.25f);
         playerREf.position = destinyPoint.position;
         playerREf.rotation = destinyPoint.rotation;
     }

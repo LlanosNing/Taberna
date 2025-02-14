@@ -35,10 +35,10 @@ public class TavernPlayerController : MonoBehaviour
 
         controller.Move(moveDir * moveSpeed * Time.deltaTime);
 
-        Quaternion lookDirection = Quaternion.LookRotation(moveDir);
-        if(moveDir !=  Vector3.zero)
-        {
-            playerVisual.localRotation = Quaternion.Slerp(playerVisual.localRotation, lookDirection, Time.deltaTime * lookRotSpeed);
-        }
+        //Quaternion lookDirection = Quaternion.LookRotation(moveDir);
+        //if(moveDir !=  Vector3.zero)
+        //{
+        //    playerVisual.localRotation = Quaternion.Slerp(playerVisual.localRotation, lookDirection, Time.deltaTime * lookRotSpeed);
+        //}
     }
 }

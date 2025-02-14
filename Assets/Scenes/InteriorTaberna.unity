@@ -6152,14 +6152,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1081644863}
-  - component: {fileID: 1081644864}
+  - component: {fileID: 1081644865}
   m_Layer: 0
   m_Name: GameManager
-  m_TagString: Untagged
+  m_TagString: GameManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1081644863
 Transform:
   m_ObjectHideFlags: 0
@@ -6175,7 +6175,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1987982859}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1081644864
+--- !u!114 &1081644865
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6184,10 +6184,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1081644862}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e43ab43f5089c9488b241834daea4fe, type: 3}
+  m_Script: {fileID: 11500000, guid: d1e06e8eaf16cce44a7a55a8ede16c73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelToLoad: 
+  sceneToLoad: PolPlaneta
+  timeToChange: 0
 --- !u!1 &1091680556
 GameObject:
   m_ObjectHideFlags: 0
@@ -10801,7 +10802,7 @@ GameObject:
   - component: {fileID: 2018997389}
   - component: {fileID: 2018997388}
   - component: {fileID: 2018997387}
-  - component: {fileID: 2018997386}
+  - component: {fileID: 2018997390}
   m_Layer: 0
   m_Name: exitTavern
   m_TagString: Untagged
@@ -10809,18 +10810,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2018997386
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2018997385}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bead86170060a4c479bf53a90a595fdc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &2018997387
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10865,6 +10854,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2018997390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2018997385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a43e069d6f77a74d8b25e6f3ab29c2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &2024751064 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2860448402281112564, guid: 0c37b2fe40687004c8a60ed4711a64b1, type: 3}

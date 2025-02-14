@@ -7,6 +7,14 @@ public class ChangeSceneScript : MonoBehaviour
 {
     public string sceneToLoad;
     public float timeToChange;
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            ChangeScene();
+        }
+    }
     public void ChangeScene()
     {
         StartCoroutine("ChangeSceneCO");
