@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class teletransportePuertaArcana : MonoBehaviour
 {
+    public bool isOtherPlanet;
     public Transform destinyPoint;
     public Transform playerREf;
 
@@ -11,7 +13,14 @@ public class teletransportePuertaArcana : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            StartCoroutine(delayEnterPortal());
+            if(isOtherPlanet)
+            {
+                SceneManager.LoadScene("MarioPlaneta");
+            }
+            else
+            {
+                StartCoroutine(delayEnterPortal());
+            }
         }
     }
 
