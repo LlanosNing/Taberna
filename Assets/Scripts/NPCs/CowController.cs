@@ -6,11 +6,13 @@ public class CowController : MonoBehaviour
 {
     public Transform planet; // Referencia al planeta
     public float moveSpeed = 5f; // Velocidad de movimiento
+    public bool isMoving;
     public float rotationSpeed = 5f; // Velocidad de rotación
     public LayerMask groundLayer; // Capa del suelo
 
     private Rigidbody rb;
-    private Vector3 moveDirection;
+    public Vector3 hitDirection;
+    Vector3 moveDirection;
     public Transform cowVisual;
 
     void Start()
@@ -34,11 +36,20 @@ public class CowController : MonoBehaviour
             Quaternion targetRotation = Quaternion.FromToRotation(transform.up, surfaceNormal) * transform.rotation;
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
 
-            moveDirection = (transform.forward /** vertical*/ + transform.right /** horizontal*/).normalized;
-            rb.MovePosition(rb.position + moveDirection * moveSpeed * Time.deltaTime);
+            if (isMoving)
+            {
+                moveDirection = (transform.forward * hitDirection.z + transform.right * hitDirection.x).normalized;
+                rb.MovePosition(rb.position + moveDirection * moveSpeed * Time.deltaTime);
 
-            Quaternion lookDirection = Quaternion.LookRotation(moveDirection, cowVisual.up);
-            cowVisual.rotation = Quaternion.Slerp(cowVisual.rotation, lookDirection, Time.deltaTime * rotationSpeed);
+                Quaternion lookDirection = Quaternion.LookRotation(moveDirection, cowVisual.up);
+                cowVisual.rotation = Quaternion.Slerp(cowVisual.rotation, lookDirection, Time.deltaTime * rotationSpeed);
+            }
+            
         }
+    }
+
+    public void ApplyMovement()
+    {
+        isMoving = true;
     }
 }
