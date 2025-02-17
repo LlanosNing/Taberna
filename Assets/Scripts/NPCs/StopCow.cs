@@ -15,8 +15,7 @@ public class StopCow : MonoBehaviour
     {
         if (other.gameObject.layer == 3)
         {
-            controller.isMoving = false;
-            controller.hitDirection = Vector3.zero;
+            controller.StopCow();
         }
     }
 }

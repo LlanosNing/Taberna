@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem.XR;
 
 public class CowController : MonoBehaviour
 {
@@ -16,6 +17,9 @@ public class CowController : MonoBehaviour
     public bool canHit;
     public Transform cowVisual;
     Transform playerTransform;
+
+    public float maxMovingDuration = 2.5f;
+    float movingTimer;
 
     void Start()
     {
@@ -38,24 +42,40 @@ public class CowController : MonoBehaviour
 
             // 2. Alinear al NPC con la superficie
             Quaternion targetRotation = Quaternion.FromToRotation(transform.up, surfaceNormal) * transform.rotation;
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
-
-            if(canHit && Input.GetButtonDown("Interact"))
-            {
-                hitDirection = (transform.position - playerTransform.position).normalized;
-                isMoving = true;
-            }
-
-            if (isMoving)
-            {
-                moveDirection = (transform.forward * hitDirection.z + transform.right * hitDirection.x).normalized;
-                rb.MovePosition(rb.position + moveDirection * moveSpeed * Time.deltaTime);
-
-                Quaternion lookDirection = Quaternion.LookRotation(moveDirection, cowVisual.up);
-                cowVisual.rotation = Quaternion.Slerp(cowVisual.rotation, lookDirection, Time.deltaTime * rotationSpeed);
-            }
-            
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);            
         }
+
+        if (canHit && Input.GetButtonDown("Interact"))
+        {
+            hitDirection = (transform.position - playerTransform.position).normalized;
+            movingTimer = maxMovingDuration;
+            isMoving = true;
+        }
+
+        if (isMoving)
+        {
+            moveDirection = (transform.forward * hitDirection.z + transform.right * hitDirection.x).normalized;
+            rb.MovePosition(rb.position + moveDirection * moveSpeed * Time.deltaTime);
+
+            Quaternion lookDirection = Quaternion.LookRotation(moveDirection, cowVisual.up);
+            cowVisual.rotation = Quaternion.Slerp(cowVisual.rotation, lookDirection, Time.deltaTime * rotationSpeed);
+        }
+
+        if(movingTimer > 0)
+        {
+            movingTimer -= Time.deltaTime;
+        }
+
+        if(movingTimer <= 0f)
+        {
+            StopCow();
+        }
+    }
+
+    public void StopCow()
+    {
+        isMoving = false;
+        hitDirection = Vector3.zero;
     }
 
     private void OnTriggerEnter(Collider other)

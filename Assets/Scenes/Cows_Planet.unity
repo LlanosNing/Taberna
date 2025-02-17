@@ -302,6 +302,7 @@ MonoBehaviour:
   hitDirection: {x: 0, y: 0, z: 0}
   canHit: 0
   cowVisual: {fileID: 1682996314}
+  maxMovingDuration: 3
 --- !u!114 &130518362
 MonoBehaviour:
   m_ObjectHideFlags: 0
