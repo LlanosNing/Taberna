@@ -13,13 +13,17 @@ public class CowController : MonoBehaviour
     private Rigidbody rb;
     public Vector3 hitDirection;
     Vector3 moveDirection;
+    public bool canHit;
     public Transform cowVisual;
+    Transform playerTransform;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         rb.useGravity = false; // Desactivar la gravedad de Unity para usar la propia
         rb.freezeRotation = true; // Evitar rotaciones raras
+
+        playerTransform = GameObject.FindWithTag("Player").GetComponent<Transform>();
     }
 
     void Update()
@@ -36,6 +40,12 @@ public class CowController : MonoBehaviour
             Quaternion targetRotation = Quaternion.FromToRotation(transform.up, surfaceNormal) * transform.rotation;
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
 
+            if(canHit && Input.GetButtonDown("Interact"))
+            {
+                hitDirection = (transform.position - playerTransform.position).normalized;
+                isMoving = true;
+            }
+
             if (isMoving)
             {
                 moveDirection = (transform.forward * hitDirection.z + transform.right * hitDirection.x).normalized;
@@ -48,8 +58,19 @@ public class CowController : MonoBehaviour
         }
     }
 
-    public void ApplyMovement()
+    private void OnTriggerEnter(Collider other)
     {
-        isMoving = true;
+        if (other.CompareTag("Player"))
+        {
+            canHit = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            canHit = false;
+        }
     }
 }
