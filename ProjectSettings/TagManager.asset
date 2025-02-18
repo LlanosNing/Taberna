@@ -9,6 +9,7 @@ TagManager:
   - GameManager
   - TutorialCanvas
   - PanelSettings
+  - Cow
   layers:
   - Default
   - TransparentFX
