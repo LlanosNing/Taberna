@@ -6,7 +6,6 @@ using UnityEngine;
 public class Constrain4Map : MonoBehaviour
 {
     public Transform target;
-    public Transform map_obj; //Plano Minimapa para saber a qué altura está
     public bool rotationContrain = true;
 
     void Start()
