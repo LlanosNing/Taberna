@@ -75,8 +75,11 @@ public class CowController : MonoBehaviour
         if(other.CompareTag("Cow"))
         {
             if(!other.GetComponent<CowController>().isMoving)
-            other.GetComponent<CowController>().MoveCowToDirection(playerTransform.position);
+                other.GetComponent<CowController>().MoveCowToDirection(playerTransform.position);
         }
+
+        if(other.CompareTag("Mole"))
+            MoveCowToDirection(other.transform.position);
     }
 
     public void StopCow()

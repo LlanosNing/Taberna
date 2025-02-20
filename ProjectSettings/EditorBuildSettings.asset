@@ -27,6 +27,6 @@ EditorBuildSettings:
     path: Assets/Scenes/MarioPlaneta.unity
     guid: e9cd09b157cabdb488becef6e874e593
   m_configObjects:
-    com.unity.addressableassets: {fileID: 11400000, guid: d93c4cd5c1315a64294bfb8075d54ad8, type: 2}
+    com.unity.addressableassets: {fileID: 11400000, guid: 6e016ca8c24bc5a4ca815e9192f2d28e, type: 2}
     com.unity.input.settings: {fileID: 11400000, guid: fda5ffa596e7d184c99b649f4fa8a7a6, type: 2}
     com.unity.localization.settings: {fileID: 11400000, guid: 8ae4b5431e2baf745af2ffcab085e619, type: 2}

@@ -10,6 +10,7 @@ TagManager:
   - TutorialCanvas
   - PanelSettings
   - Cow
+  - Mole
   layers:
   - Default
   - TransparentFX
