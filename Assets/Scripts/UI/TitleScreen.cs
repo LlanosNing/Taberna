@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TitleScreen : MonoBehaviour
 {
+    public string sceneToLoad;
+    public float transitionDuration;
     public Animator pABAnim, titleAnim, fadeAnim;
     public AudioSource selectAudio;
-    private ChangeSceneScript _changeSceneScript;
 
     public Transform cameraWaypoint;
     private CameraTraveling _cameraTravelingScript;
@@ -14,8 +16,6 @@ public class TitleScreen : MonoBehaviour
     private void Start()
     {
         _cameraTravelingScript = Camera.main.GetComponent<CameraTraveling>();
-
-        _changeSceneScript = GetComponent<ChangeSceneScript>();
     }
 
     // Update is called once per frame
@@ -31,10 +31,22 @@ public class TitleScreen : MonoBehaviour
 
                 _cameraTravelingScript.target = cameraWaypoint;
 
-                _changeSceneScript.ChangeScene();
+                NextScene();
 
                 selectAudio.Play();
             }
         }
+    }
+
+    void NextScene()
+    {
+        StartCoroutine(NextSceneCO());
+    }
+
+    IEnumerator NextSceneCO()
+    {
+        yield return new WaitForSeconds(transitionDuration);
+
+        SceneManager.LoadScene(sceneToLoad);
     }
 }

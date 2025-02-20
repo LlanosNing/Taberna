@@ -1,21 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ChangeSceneTrigger : MonoBehaviour
 {
-    ChangeSceneScript changeSceneRef;
-    // Start is called before the first frame update
-    void Start()
-    {
-        changeSceneRef = GameObject.FindWithTag("GameManager").GetComponent<ChangeSceneScript>();
-    }
-
+    public string sceneToLoad;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            changeSceneRef.ChangeScene();
+            LoadScene(0.5f);
+        }
+    }
+
+    public void LoadScene(float timeToLoad)
+    {
+        StartCoroutine(LoadSceneCO(timeToLoad));
+    }
+
+    IEnumerator LoadSceneCO(float timeToLoad)
+    {
+        yield return new WaitForSeconds(timeToLoad);
+
+        if(sceneToLoad != "")
+        {
+            SceneManager.LoadScene(sceneToLoad);
         }
     }
 }

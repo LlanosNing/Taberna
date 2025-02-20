@@ -15,6 +15,12 @@ EditorBuildSettings:
     path: Assets/Scenes/InteriorTaberna.unity
     guid: a3700f03670ad0a48a354e6bbbcfd825
   - enabled: 1
+    path: Assets/Scenes/Lobby.unity
+    guid: 331cc254b180f4146991edfa36dd914c
+  - enabled: 1
+    path: Assets/Scenes/Cows_Planet.unity
+    guid: 7d5c08e0b7afedc4e8e462bd829ae43f
+  - enabled: 1
     path: Assets/Scenes/PolPlaneta.unity
     guid: 0d83d53c609301940998ca6d8abaa5e5
   - enabled: 1

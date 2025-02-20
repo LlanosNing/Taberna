@@ -26,8 +26,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.4511547, y: -7.0315437, z: -1.2515793}
-  m_LocalScale: {x: 0.79669, y: 0.79669, z: 0.79669}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2352353828983830295}
   m_Father: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 5805955087749909656}
   - component: {fileID: 1946164762612258273}
   - component: {fileID: 1305098297676119403}
-  - component: {fileID: 3365381810882516994}
+  - component: {fileID: 6339592137007384747}
   m_Layer: 0
   m_Name: portal
   m_TagString: Untagged
@@ -138,7 +138,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3365381810882516994
+--- !u!114 &6339592137007384747
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -147,11 +147,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8630513976118779632}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c20bd62b45651384fa12443d943fbf0b, type: 3}
+  m_Script: {fileID: 11500000, guid: 7a43e069d6f77a74d8b25e6f3ab29c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destinyPoint: {fileID: 0}
-  playerREf: {fileID: 0}
+  sceneToLoad: Cows_Planet
 --- !u!1001 &2823620787513135356
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -162,43 +161,43 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: d8f3f71582954b7468dd216a97f29f77, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.5837078
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d8f3f71582954b7468dd216a97f29f77, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.43095
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d8f3f71582954b7468dd216a97f29f77, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 13.4375515
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d8f3f71582954b7468dd216a97f29f77, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.37158987
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d8f3f71582954b7468dd216a97f29f77, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.9019377
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d8f3f71582954b7468dd216a97f29f77, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.07335275
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d8f3f71582954b7468dd216a97f29f77, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.20748189
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d8f3f71582954b7468dd216a97f29f77, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -224.486
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d8f3f71582954b7468dd216a97f29f77, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -26.628998
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d8f3f71582954b7468dd216a97f29f77, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -1.757019
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: d8f3f71582954b7468dd216a97f29f77, type: 3}
       propertyPath: m_Materials.Array.data[0]

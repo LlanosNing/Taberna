@@ -13,7 +13,7 @@ public class StopCow : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer == 3)
+        if (other.gameObject.layer == 3 || other.CompareTag("Cow"))
         {
             controller.StopCow();
         }
