@@ -478,7 +478,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   hitDirection: {x: 0, y: 0, z: 0}
-  canHit: 0
+  hitRequiredDistance: 4
   cowVisual: {fileID: 4823152557617263683}
   maxMovingDuration: 3
 --- !u!114 &710314051201272671

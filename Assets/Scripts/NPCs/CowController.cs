@@ -14,7 +14,7 @@ public class CowController : MonoBehaviour
     private Rigidbody rb;
     public Vector3 hitDirection;
     Vector3 moveDirection;
-    public bool canHit;
+    public float hitRequiredDistance;
     public Transform cowVisual;
     Transform playerTransform;
 
@@ -45,11 +45,9 @@ public class CowController : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);            
         }
 
-        if (canHit && Input.GetButtonDown("Interact"))
+        if ((transform.position - playerTransform.position).magnitude < hitRequiredDistance && Input.GetButtonDown("Interact"))
         {
-            hitDirection = (transform.position - playerTransform.position).normalized;
-            movingTimer = maxMovingDuration;
-            isMoving = true;
+            MoveCowToDirection(playerTransform.position);
         }
 
         if (isMoving)
@@ -72,25 +70,24 @@ public class CowController : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("Cow"))
+        {
+            other.GetComponent<CowController>().MoveCowToDirection(transform.position);
+        }
+    }
+
     public void StopCow()
     {
         isMoving = false;
         hitDirection = Vector3.zero;
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void MoveCowToDirection(Vector3 chaser)
     {
-        if (other.CompareTag("Player"))
-        {
-            canHit = true;
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            canHit = false;
-        }
+        hitDirection = (transform.position - chaser).normalized;
+        movingTimer = maxMovingDuration;
+        isMoving = true;
     }
 }

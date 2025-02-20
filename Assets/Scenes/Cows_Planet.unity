@@ -4233,8 +4233,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1e06e8eaf16cce44a7a55a8ede16c73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: MainMenu
-  timeToChange: 1.5
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -6189,7 +6187,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1462650967688502487, guid: 467afdbbce18a5e4383fca9c36d0d7e0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 48.46
+      value: 49.19
       objectReference: {fileID: 0}
     - target: {fileID: 1462650967688502487, guid: 467afdbbce18a5e4383fca9c36d0d7e0, type: 3}
       propertyPath: m_LocalPosition.z
@@ -12668,7 +12666,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1462650967688502487, guid: 467afdbbce18a5e4383fca9c36d0d7e0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 52.280003
+      value: 52.92
       objectReference: {fileID: 0}
     - target: {fileID: 1462650967688502487, guid: 467afdbbce18a5e4383fca9c36d0d7e0, type: 3}
       propertyPath: m_LocalPosition.z
