@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Cow_Minigame : MonoBehaviour
 {
@@ -33,6 +34,11 @@ public class Cow_Minigame : MonoBehaviour
             }
 
             faseThree = true;
+        }
+
+        if(cowsNum >= cowsRequired)
+        {
+            SceneManager.LoadScene("Lobby");
         }
     }
 
