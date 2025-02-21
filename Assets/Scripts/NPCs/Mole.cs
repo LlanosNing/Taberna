@@ -4,15 +4,40 @@ using UnityEngine;
 
 public class Mole : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public float bounceForce = 200f;
+    Animator animRef;
+
+    public float maxTimeToHide;
+    float timeToHideCounter;
+
+    private void Start()
     {
-        
+        animRef = GetComponent<Animator>();
+        timeToHideCounter = maxTimeToHide;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        if (animRef.GetCurrentAnimatorStateInfo(0).IsName("Default"))
+        {
+            timeToHideCounter -= Time.deltaTime;
+
+            if(timeToHideCounter <= 0)
+            {
+                animRef.SetTrigger("HitByPlayer");
+                timeToHideCounter = maxTimeToHide;
+            }
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            animRef.SetTrigger("HitByPlayer");
+            timeToHideCounter = maxTimeToHide;
+
+            other.GetComponent<UltimatePlayerController>().Bounce(bounceForce);
+        }
     }
 }

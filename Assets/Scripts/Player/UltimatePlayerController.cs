@@ -10,7 +10,6 @@ public class UltimatePlayerController : MonoBehaviour
     public float rotSpeed;
     public float lookRotSpeed;
     public float jumpForce;
-    public float bounceForce;
     public bool antiGravity;
     public bool canMove = true;
 
@@ -131,7 +130,7 @@ public class UltimatePlayerController : MonoBehaviour
         }
     }
 
-    public void Bounce()
+    public void Bounce(float bounceForce)
     {
         rb.velocity = Vector3.zero;
 

@@ -6,10 +6,35 @@ using UnityEngine.UI;
 
 public class Cow_Minigame : MonoBehaviour
 {
-    public int cowsRequired = 3;
+    public int cowsRequired, faseTwoThreshold, faseThreeThreshold;
     int cowsNum;
+    bool faseTwo, faseThree;
 
     public TextMeshProUGUI counterText;
+    public GameObject[] molesFaseTwo, molesFaseThree;
+
+    private void Update()
+    {
+        if(cowsNum == faseTwoThreshold && !faseTwo)
+        {
+            foreach (GameObject mole in molesFaseTwo)
+            {
+                mole.SetActive(true);
+            }
+
+            faseTwo = true;
+        }
+        
+        if(cowsNum == faseThreeThreshold && !faseThree)
+        {
+            foreach (GameObject mole in molesFaseThree)
+            {
+                mole.SetActive(true);
+            }
+
+            faseThree = true;
+        }
+    }
 
     private void OnTriggerEnter(Collider other)
     {
