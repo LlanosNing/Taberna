@@ -96,25 +96,28 @@ public class DialogManager : MonoBehaviour
     //Método que muestra el diálogo pasado por parámetro
     public void ShowDialog(string[] newLines, Sprite theSNpc)
     {
-        //El contenido de las líneas de diálogo del Manager pasa a ser el de las líneas de diálogo tras haber activado un diálogo
-        dialogLines = newLines;
-        //Vamos a la primera línea de diálogo
-        currentLine = 0;
-        //Asignamos el Sprite del NPC
-        sNpc = theSNpc;
-        //Comprobamos si hay un cambio de personaje en el diálogo
-        CheckIfName(sNpc);
-        //Muestro la línea de diálogo actual
-        dialogText.text = dialogLines[currentLine];
+        if (!dialogBox.activeInHierarchy)
+        {
+            //El contenido de las líneas de diálogo del Manager pasa a ser el de las líneas de diálogo tras haber activado un diálogo
+            dialogLines = newLines;
+            //Vamos a la primera línea de diálogo
+            currentLine = 0;
+            //Asignamos el Sprite del NPC
+            sNpc = theSNpc;
+            //Comprobamos si hay un cambio de personaje en el diálogo
+            CheckIfName(sNpc);
+            //Muestro la línea de diálogo actual
+            dialogText.text = dialogLines[currentLine];
 
-        dialogCharName.text = charName;
-        //Activamos el cuadro de diálogo
-        dialogBox.SetActive(true);
-        //Hacemos que el jugador no se pueda mover
-        if (SceneManager.GetActiveScene().name == "InteriorTaberna")
-            playerTavernRef.canMove = false;
-        else
-            playerRef.canMove = false;
+            dialogCharName.text = charName;
+            //Activamos el cuadro de diálogo
+            dialogBox.SetActive(true);
+            //Hacemos que el jugador no se pueda mover
+            if (SceneManager.GetActiveScene().name == "InteriorTaberna")
+                playerTavernRef.canMove = false;
+            else
+                playerRef.canMove = false;
+        }
     }
 
     //Método para conocer si hay un cambio de personaje en el diálogo

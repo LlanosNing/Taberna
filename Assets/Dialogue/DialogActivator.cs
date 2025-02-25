@@ -5,7 +5,7 @@ using UnityEngine;
 public class DialogActivator : MonoBehaviour
 {
     //Líneas del diálogo
-    public string[] lines;
+    public string[] firstLines, repeatedLines;
     //Para saber si el diálogo se puede activar o no
     private bool canActivate;
     private bool hasBeenActivated;
@@ -14,10 +14,17 @@ public class DialogActivator : MonoBehaviour
 
     private void Update()
     {
-        if(canActivate && Input.GetButtonDown("Interact") && !hasBeenActivated)
+        if(canActivate && Input.GetButtonDown("Interact"))
         {
-            DialogManager.instance.ShowDialog(lines, theNpcSprite);
-            hasBeenActivated = true;
+            if(!hasBeenActivated)
+            {
+                DialogManager.instance.ShowDialog(firstLines, theNpcSprite);
+                hasBeenActivated = true;
+            }
+            else
+            {
+                DialogManager.instance.ShowDialog(repeatedLines, theNpcSprite);
+            }
         }
     }
 

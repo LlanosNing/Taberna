@@ -1404,12 +1404,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6352ac33f09c5ad40b2f3f772d6ceef4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lines:
+  firstLines:
+  - Cabecera
   - n-Joaquin
-  - "Esto es un Di\xE1logo de prueba"
+  - "Esta es la primera l\xEDnea de di\xE1logo"
   - n-Johnny
-  - "Vamos all\xE1!"
-  theNpcSprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  - Vale!
+  repeatedLines:
+  - Cabecera
+  - n-Joaquin
+  - "Este es un di\xE1logo repetido"
+  - n-Johnny
+  - Otra vez?
+  theNpcSprite: {fileID: 21300000, guid: 839a941cf35877f4fb0cb7fabd9c7949, type: 3}
 --- !u!1 &275067933
 GameObject:
   m_ObjectHideFlags: 0
