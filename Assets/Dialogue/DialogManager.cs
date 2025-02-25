@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI; //Para poder usar los elementos de la UI
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEditor.Rendering;
 
 public class DialogManager : MonoBehaviour
 {
@@ -17,6 +18,8 @@ public class DialogManager : MonoBehaviour
     public GameObject dialogBox;
     //Líneas del diálogo
     public string[] dialogLines;
+    public int lineIndex;
+    public float typingTime = 0.1f;
     //La línea actual de diálogo
     public int currentLine;
     //Nombre del personaje que habla en ese momento
@@ -27,9 +30,7 @@ public class DialogManager : MonoBehaviour
     UltimatePlayerController playerRef;
     TavernPlayerController playerTavernRef;
 
-    //public bool activatesBossBattle;
-    //public GameObject bossBattle;
-    //public GameObject bossLifeBar;
+    public bool canDialogueStart;
 
     //Hacemos una referencia (Singleton)
     public static DialogManager instance;
@@ -57,38 +58,43 @@ public class DialogManager : MonoBehaviour
         {
             if ((Input.GetButtonUp("Fire1") || Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Return) || Input.GetButtonDown("Jump")) && Time.timeScale == 1f)
             {
-                //Vamos a la siguiente línea de diálogo
-                currentLine++;
-
-                //Si se ha terminado el diálogo
-                if (currentLine >= dialogLines.Length)
+                if (!canDialogueStart)
                 {
-                    ////Activa el Boss
-                    //if (activatesBossBattle)
-                    //{
-                    //    bossBattle.SetActive(true);
-
-                    //    bossLifeBar.SetActive(true);
-
-                    //    //AudioManager.aMRef.PlayBossMusic();
-                    //}
-                    //Desactivamos el cuadro de diálogo
-                    dialogBox.SetActive(false);
-                    //Permitimos que el jugador se mueva de nuevo
-                    if (SceneManager.GetActiveScene().name == "InteriorTaberna")
-                        playerTavernRef.canMove = true;
-                    else
-                        playerRef.canMove = true;
+                    StartDialogue();
                 }
-                //Si el diálogo aún no ha terminado
+                else if (dialogText.text == dialogLines[lineIndex])
+                {
+                    NextDialogueLine();
+                }
                 else
                 {
-                    //Comprobamos si hay un cambio de personaje en el diálogo
-                    CheckIfName(sNpc);
-                    //Muestra la línea de diálogo actual
-                    dialogText.text = dialogLines[currentLine];
-                    dialogCharName.text = charName;
+                    StopAllCoroutines();
+                    dialogText.text = dialogLines[lineIndex];
                 }
+                ////Vamos a la siguiente línea de diálogo
+                //currentLine++;
+
+                ////Si se ha terminado el diálogo
+                //if (currentLine >= dialogLines.Length)
+                //{
+                //    //Desactivamos el cuadro de diálogo
+                //    dialogBox.SetActive(false);
+                //    //Permitimos que el jugador se mueva de nuevo
+                //    if (SceneManager.GetActiveScene().name == "InteriorTaberna")
+                //        playerTavernRef.canMove = true;
+                //    else
+                //        playerRef.canMove = true;
+                //}
+                ////Si el diálogo aún no ha terminado
+                //else
+                //{
+                //    //Comprobamos si hay un cambio de personaje en el diálogo
+                //    CheckIfName(sNpc);
+                //    //Muestra la línea de diálogo actual
+                //    //dialogText.text = dialogLines[currentLine];
+                //    StartCoroutine(ShowLine());
+                //    dialogCharName.text = charName;
+                //}
             }
         }
     }
@@ -144,6 +150,42 @@ public class DialogManager : MonoBehaviour
 
             //Salto a la siguiente línea de diálogo
             currentLine++;
+        }
+    }
+
+    private void StartDialogue()
+    {
+        canDialogueStart = true;
+        dialogBox.SetActive(true);
+        lineIndex = 0;
+        StartCoroutine(ShowLine());
+    }
+
+    private void NextDialogueLine()
+    {
+        lineIndex++;
+        if (lineIndex < dialogLines.Length)
+        {
+            StartCoroutine(ShowLine());
+        }
+        else
+        {
+            canDialogueStart = false;
+            dialogBox.SetActive(false);
+            if (SceneManager.GetActiveScene().name == "InteriorTaberna")
+                playerTavernRef.canMove = true;
+            else
+                playerRef.canMove = true;
+        }
+    }
+    private IEnumerator ShowLine()
+    {
+        dialogText.text = string.Empty;
+
+        foreach (char ch in dialogLines[lineIndex])
+        {
+            dialogText.text += ch;
+            yield return new WaitForSeconds(typingTime);
         }
     }
 }
