@@ -1405,13 +1405,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firstLines:
-  - Cabecera
   - n-Joaquin
   - "Esta es la primera l\xEDnea de di\xE1logo"
   - n-Johnny
   - Vale!
   repeatedLines:
-  - Cabecera
   - n-Joaquin
   - "Este es un di\xE1logo repetido"
   - n-Johnny
@@ -1798,7 +1796,10 @@ MonoBehaviour:
   portrait: {fileID: 1171976388}
   dialogBox: {fileID: 1171976390}
   dialogLines: []
+  lineIndex: 0
+  typingTime: 0.05
   currentLine: 0
+  canDialogueStart: 0
 --- !u!1 &354611336
 GameObject:
   m_ObjectHideFlags: 0

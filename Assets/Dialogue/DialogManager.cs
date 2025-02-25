@@ -19,7 +19,7 @@ public class DialogManager : MonoBehaviour
     //Líneas del diálogo
     public string[] dialogLines;
     public int lineIndex;
-    public float typingTime = 0.1f;
+    public float typingTime;
     //La línea actual de diálogo
     public int currentLine;
     //Nombre del personaje que habla en ese momento
@@ -130,10 +130,12 @@ public class DialogManager : MonoBehaviour
     public void CheckIfName(Sprite theSNpc)
     {
         //Si la línea empieza por n-
-        if(dialogLines[currentLine].StartsWith("n-"))
+        if(dialogLines[lineIndex].StartsWith("n-"))
         {
             //Obtenemos el nombre del personaje que habla en ese momento
-            charName = dialogLines[currentLine].Replace("n-", "");
+            charName = dialogLines[lineIndex].Replace("n-", "");
+
+            dialogCharName.text = charName;
             //Si es distinto de los nombres de los personajes principales
             if (charName != "Johnny")
                 //Ponemos el sprite del npc en concreto
@@ -149,15 +151,16 @@ public class DialogManager : MonoBehaviour
             }
 
             //Salto a la siguiente línea de diálogo
-            currentLine++;
+            lineIndex++;
         }
     }
 
     private void StartDialogue()
     {
+        lineIndex = 0;
         canDialogueStart = true;
         dialogBox.SetActive(true);
-        lineIndex = 0;
+        CheckIfName(sNpc);
         StartCoroutine(ShowLine());
     }
 
@@ -166,6 +169,7 @@ public class DialogManager : MonoBehaviour
         lineIndex++;
         if (lineIndex < dialogLines.Length)
         {
+            CheckIfName(sNpc);
             StartCoroutine(ShowLine());
         }
         else
@@ -176,6 +180,7 @@ public class DialogManager : MonoBehaviour
                 playerTavernRef.canMove = true;
             else
                 playerRef.canMove = true;
+            lineIndex = 0;
         }
     }
     private IEnumerator ShowLine()
