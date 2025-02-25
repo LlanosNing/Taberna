@@ -966,13 +966,12 @@ Transform:
   - {fileID: 364782276}
   - {fileID: 527008932}
   - {fileID: 94722665}
-  - {fileID: 732810580}
   - {fileID: 199865096}
   - {fileID: 313823033}
   - {fileID: 1614296909}
-  - {fileID: 458951220}
   - {fileID: 799216712}
   - {fileID: 2060597543}
+  - {fileID: 732810580}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &313823029
@@ -1651,12 +1650,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 458951219}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.12356041, z: -0, w: 0.99233705}
-  m_LocalPosition: {x: 4.969, y: 0.652, z: 0.136}
-  m_LocalScale: {x: 0.23018043, y: 0.44768322, z: 1.3769636}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.5481842, y: -0.2740551, z: 0.004749792}
+  m_LocalScale: {x: 0.42548004, y: 0.15513852, z: 0.45909294}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 273435919}
+  m_Father: {fileID: 1614296909}
   m_LocalEulerAnglesHint: {x: 0, y: -14.195, z: 0}
 --- !u!65 &458951221
 BoxCollider:
@@ -2274,7 +2273,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &552197924
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6081,7 +6080,8 @@ Transform:
   m_LocalPosition: {x: 5.26, y: 1.4428408, z: 0.19491398}
   m_LocalScale: {x: 0.54099, y: 2.8857, z: 2.9993136}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 458951220}
   m_Father: {fileID: 273435919}
   m_LocalEulerAnglesHint: {x: 0, y: -14.195, z: 0}
 --- !u!1 &1689379877
@@ -7373,7 +7373,7 @@ GameObject:
   - component: {fileID: 2060597541}
   - component: {fileID: 2060597540}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Barra
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
