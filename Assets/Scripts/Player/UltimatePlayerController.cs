@@ -37,6 +37,8 @@ public class UltimatePlayerController : MonoBehaviour
     public Animator animRef;
     public bool isDancing;
 
+    public Sprite thePlayerSprite;
+
     // Start is called before the first frame update
     void Start()
     {

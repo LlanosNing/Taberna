@@ -14,6 +14,8 @@ public class TavernPlayerController : MonoBehaviour
     public Transform playerVisual;
     Animator animRef;
 
+    public Sprite thePlayerSprite;
+
 
     void Start()
     {

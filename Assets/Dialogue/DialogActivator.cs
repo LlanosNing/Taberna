@@ -12,20 +12,24 @@ public class DialogActivator : MonoBehaviour
     //Sprite de diálogo del NPC
     public Sprite theNpcSprite;
 
-    public bool activatesPursuit;
-    public bool activatesBossBattle;
-
-    //Si el jugador entra en la zona de Trigger puede activar el diálogo
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void Update()
     {
-        //Llamamos al método que muestra el diálogo y le pasamos las líneas concretas que contiene este objeto
-        if (collision.CompareTag("Player") && !hasBeenActivated)
+        if(canActivate && Input.GetButtonDown("Interact") && !hasBeenActivated)
         {
             DialogManager.instance.ShowDialog(lines, theNpcSprite);
+            hasBeenActivated = true;
+        }
+    }
 
+    //Si el jugador entra en la zona de Trigger puede activar el diálogo
+    private void OnTriggerEnter(Collider collision)
+    {
+        //Llamamos al método que muestra el diálogo y le pasamos las líneas concretas que contiene este objeto
+        if (collision.CompareTag("Player"))
+        {
+            canActivate = true;
             //GameObject.FindWithTag("Player").GetComponent<Rigidbody>().velocity = Vector2.zero;
         }
-           
     }
 
     //Si el jugador sale de la zona de Trigger ya no puede activar le diálogo
@@ -33,7 +37,7 @@ public class DialogActivator : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            hasBeenActivated = true;
+            canActivate = false;
         }
     }
 }

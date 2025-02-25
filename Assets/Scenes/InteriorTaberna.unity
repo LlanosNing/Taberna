@@ -1273,9 +1273,11 @@ GameObject:
   - component: {fileID: 270208023}
   - component: {fileID: 270208022}
   - component: {fileID: 270208021}
+  - component: {fileID: 270208025}
   - component: {fileID: 270208020}
+  - component: {fileID: 270208024}
   m_Layer: 0
-  m_Name: Capsule
+  m_Name: Joaquin_NPC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1369,6 +1371,45 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &270208024
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 270208019}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 4, y: 2, z: 4}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &270208025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 270208019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6352ac33f09c5ad40b2f3f772d6ceef4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lines:
+  - n-Joaquin
+  - "Esto es un Di\xE1logo de prueba"
+  - n-Johnny
+  - "Vamos all\xE1!"
+  theNpcSprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
 --- !u!1 &275067933
 GameObject:
   m_ObjectHideFlags: 0
@@ -1749,14 +1790,7 @@ MonoBehaviour:
   dialogCharName: {fileID: 1171976387}
   portrait: {fileID: 1171976388}
   dialogBox: {fileID: 1171976390}
-  dialogLines:
-  - "Buenos d\xEDas chaval!"
-  - "Qu\xE9?!? Que quieres ser tabernero?"
-  - Este oficio necesita una gran experiencia joven
-  - "Para preparte, necesitas saber c\xF3mo gestionar un negocio"
-  - "Puedes empezar ayud\xE1ndome con unas cosillas..."
-  - "Primero, tr\xE1eme leche de vaca, mi amigo Paco podr\xE1 darte un poco si le
-    hechas una mano"
+  dialogLines: []
   currentLine: 0
 --- !u!1 &354611336
 GameObject:
@@ -3288,6 +3322,7 @@ MonoBehaviour:
   canMove: 1
   cameraTransform: {fileID: 1672681541}
   playerVisual: {fileID: 1652253070}
+  thePlayerSprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
 --- !u!136 &466299148
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -6608,6 +6643,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DialogueBox
       objectReference: {fileID: 0}
+    - target: {fileID: 699437151574471370, guid: 1c62f8749dec1fa4c88bf9f991226788, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 807651678593610010, guid: 1c62f8749dec1fa4c88bf9f991226788, type: 3}
       propertyPath: m_fontAsset
       value: 
@@ -9252,15 +9291,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: b9fbe59d35351df4681f83970d5cc414, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.077549964
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b9fbe59d35351df4681f83970d5cc414, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.67
+      value: -0.791
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b9fbe59d35351df4681f83970d5cc414, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.6349086
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b9fbe59d35351df4681f83970d5cc414, type: 3}
       propertyPath: m_LocalRotation.w
@@ -9375,6 +9414,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 06654b5c7aa7a594a9ac3525c739d07f, type: 3}
       propertyPath: m_Name
       value: bottles
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 06654b5c7aa7a594a9ac3525c739d07f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17548,7 +17591,7 @@ Transform:
   m_GameObject: {fileID: 1334559843749436556}
   serializedVersion: 2
   m_LocalRotation: {x: 6.123234e-17, y: 1, z: -6.123234e-17, w: -7.2736614e-16}
-  m_LocalPosition: {x: -0.969574, y: 4.0856205e-16, z: 0.91902596}
+  m_LocalPosition: {x: -0.971, y: 4.0856205e-16, z: 0.91902596}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

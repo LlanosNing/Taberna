@@ -76,9 +76,9 @@ public class DialogManager : MonoBehaviour
                     dialogBox.SetActive(false);
                     //Permitimos que el jugador se mueva de nuevo
                     if (SceneManager.GetActiveScene().name == "InteriorTaberna")
-                        playerTavernRef.canMove = false;
+                        playerTavernRef.canMove = true;
                     else
-                        playerRef.canMove = false;
+                        playerRef.canMove = true;
                 }
                 //Si el diálogo aún no ha terminado
                 else
@@ -112,9 +112,9 @@ public class DialogManager : MonoBehaviour
         dialogBox.SetActive(true);
         //Hacemos que el jugador no se pueda mover
         if (SceneManager.GetActiveScene().name == "InteriorTaberna")
-            playerTavernRef.canMove = true;
+            playerTavernRef.canMove = false;
         else
-            playerRef.canMove = true;
+            playerRef.canMove = false;
     }
 
     //Método para conocer si hay un cambio de personaje en el diálogo
@@ -126,13 +126,18 @@ public class DialogManager : MonoBehaviour
             //Obtenemos el nombre del personaje que habla en ese momento
             charName = dialogLines[currentLine].Replace("n-", "");
             //Si es distinto de los nombres de los personajes principales
-            if (charName != "Ikal")
+            if (charName != "Johnny")
                 //Ponemos el sprite del npc en concreto
                 portrait.sprite = theSNpc;
             //Si es el nombre de un personaje principal
             else
-                //Ponemos el sprite de ese personaje
-                //portrait.sprite = _iCRef.thePlayerSprite;
+            //Ponemos el sprite de ese personaje
+            {
+                if (SceneManager.GetActiveScene().name == "InteriorTaberna")
+                    portrait.sprite = playerTavernRef.thePlayerSprite;
+                else
+                    portrait.sprite = playerRef.thePlayerSprite;
+            }
 
             //Salto a la siguiente línea de diálogo
             currentLine++;
