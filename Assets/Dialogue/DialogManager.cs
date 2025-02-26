@@ -137,7 +137,7 @@ public class DialogManager : MonoBehaviour
 
             dialogCharName.text = charName;
             //Si es distinto de los nombres de los personajes principales
-            if (charName != "Johnny")
+            if (charName != "Fede")
                 //Ponemos el sprite del npc en concreto
                 portrait.sprite = theSNpc;
             //Si es el nombre de un personaje principal

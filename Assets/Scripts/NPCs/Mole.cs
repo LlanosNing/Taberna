@@ -7,6 +7,9 @@ public class Mole : MonoBehaviour
     public float bounceForce = 200f;
     Animator animRef;
 
+    public float minTimeToAppear, maxTimeToAppear;
+    float timeToAppearCounter;
+    public bool hasToAppear;
     public float maxTimeToHide;
     float timeToHideCounter;
 
@@ -18,6 +21,22 @@ public class Mole : MonoBehaviour
 
     private void Update()
     {
+        if (animRef.GetCurrentAnimatorStateInfo(0).IsName("UnderGround") && !hasToAppear && timeToAppearCounter <= 0)
+        {
+            timeToAppearCounter = Random.Range(minTimeToAppear, maxTimeToAppear);
+            Debug.Log("El topo " + gameObject.name + " tardará" +  timeToAppearCounter + " segundos en aparecer");
+            hasToAppear = true;
+        }
+
+        if(timeToAppearCounter > 0)
+        {
+            timeToAppearCounter -= Time.deltaTime;
+        }
+        if(timeToAppearCounter <= 0 && hasToAppear)
+        {
+            animRef.SetBool("HasToAppear", true);
+        }
+
         if (animRef.GetCurrentAnimatorStateInfo(0).IsName("Default"))
         {
             timeToHideCounter -= Time.deltaTime;
@@ -26,6 +45,8 @@ public class Mole : MonoBehaviour
             {
                 animRef.SetTrigger("HitByPlayer");
                 timeToHideCounter = maxTimeToHide;
+                hasToAppear = false;
+                animRef.SetBool("HasToAppear", false);
             }
         }
     }

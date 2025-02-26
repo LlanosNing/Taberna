@@ -1407,13 +1407,15 @@ MonoBehaviour:
   firstLines:
   - n-Joaquin
   - "Esta es la primera l\xEDnea de di\xE1logo"
-  - n-Johnny
+  - n-Fede
   - Vale!
   repeatedLines:
   - n-Joaquin
   - "Este es un di\xE1logo repetido"
-  - n-Johnny
+  - n-Fede
   - Otra vez?
+  - n-Joaquin
+  - <b> Este es un texto en negrita <b>
   theNpcSprite: {fileID: 21300000, guid: 839a941cf35877f4fb0cb7fabd9c7949, type: 3}
 --- !u!1 &275067933
 GameObject:
@@ -6659,6 +6661,10 @@ PrefabInstance:
       propertyPath: m_fontAsset
       value: 
       objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 807651678593610010, guid: 1c62f8749dec1fa4c88bf9f991226788, type: 3}
+      propertyPath: m_fontStyle
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 807651678593610010, guid: 1c62f8749dec1fa4c88bf9f991226788, type: 3}
       propertyPath: m_sharedMaterial
       value: 
