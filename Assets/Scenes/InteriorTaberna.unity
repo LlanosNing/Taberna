@@ -6279,7 +6279,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1081581689}
   m_Layer: 0
-  m_Name: 3DObjects
+  m_Name: Environment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6298,6 +6298,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 2115367244}
   - {fileID: 1809782953}
   - {fileID: 2108216799}
   - {fileID: 8181408244818504721}
@@ -11370,6 +11371,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneToLoad: Lobby
+  timeToLoad: 0
 --- !u!4 &2024751064 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2860448402281112564, guid: 0c37b2fe40687004c8a60ed4711a64b1, type: 3}
@@ -11682,7 +11684,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2115367244}
   m_Layer: 0
-  m_Name: wall_colliders
+  m_Name: Colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11715,7 +11717,7 @@ Transform:
   - {fileID: 1710841223}
   - {fileID: 1048333125}
   - {fileID: 892021731}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1081581689}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2117123473 stripped
 Transform:
@@ -22089,7 +22091,6 @@ SceneRoots:
   - {fileID: 1986980024}
   - {fileID: 18153282}
   - {fileID: 2018997389}
-  - {fileID: 2115367244}
   - {fileID: 1081581689}
   - {fileID: 2143027950}
   - {fileID: 148892239}

@@ -29,8 +29,12 @@ public class UIController : MonoBehaviour
 
     private void Start()
     {
+
         score = 0;
-        scoreText.text = score.ToString();
+        if(scoreText != null)
+        {
+            scoreText.text = score.ToString();
+        }
 
         maxLifeAmount = lifeAmount;
 
@@ -39,7 +43,10 @@ public class UIController : MonoBehaviour
 
     private void Update()
     {
-        UpdateLifeBar();
+        if(lifeBar != null)
+        {
+            UpdateLifeBar();
+        }
 
         if(lifeLossAmount > 0)
         {
