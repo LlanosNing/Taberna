@@ -1557,7 +1557,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneToLoad: MainMenu
-  transitionDuration: 0
+  transitionDuration: 3
   pABAnim: {fileID: 1279807778}
   titleAnim: {fileID: 61814541}
   fadeAnim: {fileID: 433804230}
