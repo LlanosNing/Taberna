@@ -1125,7 +1125,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5448707345771806406, guid: ebea692b1d4c6764cb53da54265e50d0, type: 3}
       propertyPath: levelToLoad
-      value: InteriorTaberna
+      value: TitleScreen
       objectReference: {fileID: 0}
     - target: {fileID: 9109566885273015471, guid: ebea692b1d4c6764cb53da54265e50d0, type: 3}
       propertyPath: m_Name

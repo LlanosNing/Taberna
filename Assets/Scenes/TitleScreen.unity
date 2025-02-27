@@ -1444,7 +1444,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1674639648
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1556,6 +1556,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3eb73f87c2f62b04895b75017710c68c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneToLoad: MainMenuMario
+  transitionDuration: 0
   pABAnim: {fileID: 1279807778}
   titleAnim: {fileID: 61814541}
   fadeAnim: {fileID: 433804230}

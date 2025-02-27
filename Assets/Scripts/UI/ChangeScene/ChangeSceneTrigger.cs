@@ -6,11 +6,12 @@ using UnityEngine.SceneManagement;
 public class ChangeSceneTrigger : MonoBehaviour
 {
     public string sceneToLoad;
+    public float timeToLoad;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            LoadScene(0.5f);
+            LoadScene(timeToLoad);
         }
     }
 
