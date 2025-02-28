@@ -22,6 +22,7 @@ public class ChangeSceneTrigger : MonoBehaviour
 
     IEnumerator LoadSceneCO(float timeToLoad)
     {
+        Time.timeScale = 1f;
         yield return new WaitForSeconds(timeToLoad);
 
         if(sceneToLoad != "")
