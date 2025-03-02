@@ -32,6 +32,9 @@ public class DialogManager : MonoBehaviour
 
     public bool canDialogueStart;
 
+    public bool activatesQuestBox;
+    public GameObject questBox;
+
     //Hacemos una referencia (Singleton)
     public static DialogManager instance;
     private void Awake()
@@ -181,6 +184,11 @@ public class DialogManager : MonoBehaviour
             else
                 playerRef.canMove = true;
             lineIndex = 0;
+
+            if(activatesQuestBox && !questBox.activeInHierarchy)
+            {
+                questBox.SetActive(true);
+            }
         }
     }
     private IEnumerator ShowLine()

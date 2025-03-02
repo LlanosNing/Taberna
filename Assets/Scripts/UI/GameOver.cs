@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameOver : MonoBehaviour
@@ -17,7 +18,8 @@ public class GameOver : MonoBehaviour
     void Start()
     {
         uIRef = GetComponent<UIController>();
-        respawnRef = GameObject.FindWithTag("GameManager").GetComponent<Respawn>();
+        if(SceneManager.GetActiveScene().name == "MarioPlaneta")
+            respawnRef = GameObject.FindWithTag("GameManager").GetComponent<Respawn>();
     }
 
     // Update is called once per frame

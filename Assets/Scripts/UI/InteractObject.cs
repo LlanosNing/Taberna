@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class InteractObject : MonoBehaviour
@@ -15,7 +16,8 @@ public class InteractObject : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        uIRef = GameObject.FindWithTag("Canvas").GetComponent<UIController>();
+        if(SceneManager.GetActiveScene().name != "InteriorTaberna")
+            uIRef = GameObject.FindWithTag("Canvas").GetComponent<UIController>();
     }
 
     // Update is called once per frame
