@@ -471,7 +471,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planet: {fileID: 0}
-  moveSpeed: 11
+  moveSpeed: 10
   isMoving: 0
   rotationSpeed: 5
   groundLayer:

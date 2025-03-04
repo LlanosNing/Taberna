@@ -7,14 +7,14 @@ public class CameraArmController : MonoBehaviour
     public float verticalClamp = 30f;
     public Vector2 sensitivity = Vector2.one;
 
-    private void FixedUpdate()
+    private void Update()
     {
         AdjustCamera();
     }
 
     void AdjustCamera()
     {
-        Vector2 input = new Vector2 (Input.GetAxis("Horizontal Dpad"), Input.GetAxis("Vertical Dpad")) + new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
+        Vector2 input = new Vector2 (Input.GetAxis("Horizontal Dpad"), -Input.GetAxis("Vertical Dpad")) + new Vector2(Input.GetAxis("Mouse X"), -Input.GetAxis("Mouse Y"));
         input *= sensitivity;
         transform.localRotation = Quaternion.Euler(new Vector3(input.y, input.x, 0) + transform.localRotation.eulerAngles);
 
