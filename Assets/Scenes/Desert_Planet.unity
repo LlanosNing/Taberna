@@ -5069,6 +5069,11 @@ MonoBehaviour:
   references:
     version: 2
     RefIds: []
+--- !u!1 &985376992 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1656942005542592394, guid: 3c9f2cafb1f1a6b41a4b304cdbf0e131, type: 3}
+  m_PrefabInstance: {fileID: 7018711226567792946}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &999989191 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7902285093118275894, guid: c3d4dbf5b681edf429fc81d3cef2b2a7, type: 3}
@@ -7040,6 +7045,22 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9165583387364290650, guid: 3c9f2cafb1f1a6b41a4b304cdbf0e131, type: 3}
   m_PrefabInstance: {fileID: 7018711226567792946}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1457971833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 985376992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e7eaa3ad26c831488a2075053375abc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  windForce: 20000
+  windInterval: 5
+  windDuration: 3
+  currentWindDirection: {x: 0, y: 0, z: 0}
 --- !u!1 &1467663491
 GameObject:
   m_ObjectHideFlags: 0
@@ -45119,7 +45140,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1656942005542592394, guid: 3c9f2cafb1f1a6b41a4b304cdbf0e131, type: 3}
+      insertIndex: 6
+      addedObject: {fileID: 1457971833}
   m_SourcePrefab: {fileID: 100100000, guid: 3c9f2cafb1f1a6b41a4b304cdbf0e131, type: 3}
 --- !u!114 &7026401761299915446
 MonoBehaviour:
