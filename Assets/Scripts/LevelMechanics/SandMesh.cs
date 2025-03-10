@@ -1,0 +1,101 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+//public class SandMesh : MonoBehaviour
+//{
+//    public float minDistance = 1f; // Distancia a la que el jugador afecta la arena
+//    public float lowerVertexSpeed = 0.1f; // Velocidad de hundimiento
+//    public float maxSinkDistance = 0.5f; // Máximo que se puede hundir cada vértice
+
+//    private Vector3[] vertices;
+//    private Vector3[] originalVertices; // Guarda la posición original de los vértices
+//    private Mesh mesh;
+//    private Transform playerTransform;
+
+//    void Start()
+//    {
+//        mesh = GetComponent<MeshFilter>().mesh;
+//        vertices = mesh.vertices;
+//        originalVertices = mesh.vertices; // Guardamos las posiciones originales
+//        playerTransform = GameObject.FindWithTag("Player").transform;
+//    }
+
+//    void Update()
+//    {
+//        Vector3[] modifiedVertices = new Vector3[vertices.Length];
+
+//        for (int i = 0; i < vertices.Length; i++)
+//        {
+//            Vector3 worldVertex = transform.TransformPoint(vertices[i]); // Convertir a coordenadas globales
+//            float vertexDistance = Vector3.Distance(worldVertex, playerTransform.position);
+
+//            if (vertexDistance < minDistance)
+//            {
+//                // Usamos transform.up para obtener la dirección "hacia arriba" del objeto
+//                Vector3 downDirection = -transform.up; // La dirección de hundimiento es opuesta a up
+
+//                // Solo hundimos el vértice si no ha alcanzado su límite de hundimiento
+//                if (Vector3.Distance(originalVertices[i], vertices[i]) < maxSinkDistance)
+//                {
+//                    vertices[i] += downDirection * (lowerVertexSpeed * Time.deltaTime);
+//                }
+//            }
+
+//            modifiedVertices[i] = vertices[i];
+//        }
+
+//        mesh.vertices = modifiedVertices;
+//        mesh.RecalculateNormals(); // Para que la iluminación se vea bien
+//        mesh.RecalculateBounds();
+//    }
+//}
+
+public class SandMesh : MonoBehaviour
+{
+    public float minDistance = 1f; // Distancia de detección del jugador
+    public float lowerVertexSpeed = 0.1f; // Velocidad de hundimiento
+    public float maxSinkDistance = 0.5f; // Máxima distancia de hundimiento
+
+    private Vector3[] vertices;
+    private Vector3[] originalVertices; // Para recordar la posición original de los vértices
+    private Mesh mesh;
+    private Transform playerTransform;
+
+    void Start()
+    {
+        mesh = GetComponent<MeshFilter>().mesh;
+        vertices = mesh.vertices;
+        originalVertices = mesh.vertices; // Guardamos las posiciones originales
+        playerTransform = GameObject.FindWithTag("Player").transform;
+    }
+
+    void Update()
+    {
+        Vector3[] modifiedVertices = new Vector3[vertices.Length];
+
+        // Obtener la dirección "abajo" en el espacio local
+        Vector3 localDown = transform.InverseTransformDirection(transform.forward);
+
+        for (int i = 0; i < vertices.Length; i++)
+        {
+            Vector3 worldVertex = transform.TransformPoint(vertices[i]); // Convertir a coordenadas globales
+            float vertexDistance = Vector3.Distance(worldVertex, playerTransform.position);
+
+            if (vertexDistance < minDistance)
+            {
+                // Solo hundimos el vértice si no ha alcanzado su límite de hundimiento
+                if (Vector3.Distance(originalVertices[i], vertices[i]) < maxSinkDistance)
+                {
+                    vertices[i] += localDown * (lowerVertexSpeed * Time.deltaTime);
+                }
+            }
+
+            modifiedVertices[i] = vertices[i];
+        }
+
+        mesh.vertices = modifiedVertices;
+        mesh.RecalculateNormals(); // Para que la iluminación se vea bien
+        mesh.RecalculateBounds();
+    }
+}
