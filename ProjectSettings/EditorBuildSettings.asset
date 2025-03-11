@@ -24,6 +24,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Cows_Planet.unity
     guid: 7d5c08e0b7afedc4e8e462bd829ae43f
   - enabled: 1
+    path: Assets/Scenes/Desert_Planet.unity
+    guid: a353f7ff48b12114fb711b9aa4036225
+  - enabled: 1
     path: Assets/Scenes/PolPlaneta.unity
     guid: 0d83d53c609301940998ca6d8abaa5e5
   - enabled: 1

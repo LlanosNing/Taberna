@@ -13,13 +13,15 @@ public class WindPush : MonoBehaviour
     public float windDurationCounter;
 
     public bool canGrip;
-    public bool windEnabled;
+    public bool windEnabled = true;
 
     private Rigidbody rb;
     private Transform planet;
-    public Vector3 currentWindDirection; // Dirección del viento actual
-    UltimatePlayerController pController;
-    GravityBody gravityController;
+    private Vector3 baseWindDirection; // Dirección base del viento (sin ajuste por rotación)
+    public Vector3 currentWindDirection; // Dirección ajustada según la posición del jugador
+
+    private UltimatePlayerController pController;
+    private GravityBody gravityController;
 
     void Start()
     {
@@ -29,11 +31,14 @@ public class WindPush : MonoBehaviour
         gravityController = GetComponent<GravityBody>();
 
         windIntervalCounter = windInterval;
+
+        // Definir una dirección inicial del viento
+        SetInitialWindDirection();
     }
 
     private void Update()
     {
-        if(canGrip && Input.GetButton("Interact"))
+        if (canGrip && Input.GetButton("Interact"))
         {
             windEnabled = false;
             pController.canMove = false;
@@ -49,6 +54,9 @@ public class WindPush : MonoBehaviour
 
     private void FixedUpdate()
     {
+        // Ajustar la dirección del viento en función de la rotación del jugador
+        AdjustWindDirection();
+
         if (windIntervalCounter > 0)
         {
             windIntervalCounter -= Time.deltaTime;
@@ -56,15 +64,14 @@ public class WindPush : MonoBehaviour
             if (windIntervalCounter <= 0)
             {
                 windDurationCounter = windDuration;
-                SetWindDirection(); // Solo calculamos la dirección aquí
                 pController.speed = pController.maxSpeed / 4;
-                pController.canJump = false;
+                //pController.canJump = false;
             }
         }
         else if (windDurationCounter > 0)
         {
-            if(gravityController.gravityForce < gravityController.defaultGravityForce * 2.5)
-                gravityController.gravityForce += Time.deltaTime * 1000;
+            //if (gravityController.gravityForce < gravityController.defaultGravityForce * 2.5f)
+            //    gravityController.gravityForce += Time.deltaTime * 1000f;
 
             if (windEnabled)
             {
@@ -77,30 +84,37 @@ public class WindPush : MonoBehaviour
             {
                 windIntervalCounter = windInterval;
                 pController.speed = pController.maxSpeed;
-                pController.canJump = true;
-                gravityController.gravityForce = gravityController.defaultGravityForce;
+                //pController.canJump = true;
+                //gravityController.gravityForce = gravityController.defaultGravityForce;
             }
         }
     }
 
-    void SetWindDirection()
+    void SetInitialWindDirection()
     {
         // Obtener vector de dirección desde el planeta al jugador (radial)
         Vector3 radialDirection = (rb.position - planet.position).normalized;
 
         // Calcular una dirección tangencial aleatoria
-        currentWindDirection = Vector3.Cross(radialDirection, Random.onUnitSphere).normalized;
+        baseWindDirection = Vector3.Cross(radialDirection, Random.onUnitSphere).normalized;
 
         // Aleatorizar la inversión de la dirección del viento
-        if (Random.value > 0.5f) // 50% de probabilidad para invertir la dirección
+        if (Random.value > 0.5f)
         {
-            currentWindDirection = -currentWindDirection;
+            baseWindDirection = -baseWindDirection;
         }
+    }
+
+    void AdjustWindDirection()
+    {
+        // Mantener la dirección del viento adaptada a la rotación del jugador
+        Vector3 radialDirection = (rb.position - planet.position).normalized;
+        currentWindDirection = Vector3.Cross(radialDirection, baseWindDirection).normalized;
     }
 
     void ApplyWindForce()
     {
-        // Aplicar la fuerza en la dirección previamente calculada
+        // Aplicar la fuerza en la dirección ajustada
         rb.AddForce(currentWindDirection * windForce * Time.deltaTime, ForceMode.Acceleration);
     }
 
@@ -109,6 +123,11 @@ public class WindPush : MonoBehaviour
         if (other.CompareTag("GripZone"))
         {
             canGrip = true;
+        }
+        else if (other.CompareTag("WindZone"))
+        {
+            // Cambiar la dirección del viento a la del forward del trigger
+            baseWindDirection = other.transform.forward.normalized;
         }
     }
 
