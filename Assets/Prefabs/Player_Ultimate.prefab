@@ -79,16 +79,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7931b9c673a6cc2418cf5990d099ca3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxSpeed: 10
   speed: 10
   rotSpeed: 100
   lookRotSpeed: 100
   jumpForce: 400
-  bounceForce: 800
   antiGravity: 0
   canMove: 1
   currentPlanet: {fileID: 0}
   playerVisual: {fileID: 1369820661215468974}
   normalVector: {x: 0, y: 0, z: 0}
+  canJump: 1
   isGrounded: 0
   detectedColliders: []
   groundCheckCenter: {fileID: 6121837305713044086}
@@ -101,6 +102,7 @@ MonoBehaviour:
   CameraArmTransform: {fileID: 0}
   animRef: {fileID: 8886469277429818415}
   isDancing: 0
+  thePlayerSprite: {fileID: 0}
 --- !u!114 &13226713053438399
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113,6 +115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d5d4a6ca0c623f47b9a178df3da2946, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultGravityForce: 1500
   gravityForce: 1500
 --- !u!65 &5410102119180680601
 BoxCollider:

@@ -8836,8 +8836,12 @@ PrefabInstance:
       value: World_2_Portal
       objectReference: {fileID: 0}
     - target: {fileID: 6339592137007384747, guid: 7902a1efa59cb7b4db1b2d1cf73124cf, type: 3}
+      propertyPath: timeToLoad
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6339592137007384747, guid: 7902a1efa59cb7b4db1b2d1cf73124cf, type: 3}
       propertyPath: sceneToLoad
-      value: 
+      value: Desert_Planet
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9101,6 +9105,10 @@ PrefabInstance:
     - target: {fileID: 2325347168619302129, guid: b98020456775e62478bf105a875c344d, type: 3}
       propertyPath: m_Name
       value: World_1_Portal
+      objectReference: {fileID: 0}
+    - target: {fileID: 2539302171707472589, guid: b98020456775e62478bf105a875c344d, type: 3}
+      propertyPath: timeToLoad
+      value: 0.25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
