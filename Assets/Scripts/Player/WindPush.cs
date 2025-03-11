@@ -19,12 +19,14 @@ public class WindPush : MonoBehaviour
     private Transform planet;
     public Vector3 currentWindDirection; // Dirección del viento actual
     UltimatePlayerController pController;
+    GravityBody gravityController;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         planet = GameObject.FindWithTag("MainPlanet").transform;
         pController = GetComponent<UltimatePlayerController>();
+        gravityController = GetComponent<GravityBody>();
 
         windIntervalCounter = windInterval;
     }
@@ -55,10 +57,15 @@ public class WindPush : MonoBehaviour
             {
                 windDurationCounter = windDuration;
                 SetWindDirection(); // Solo calculamos la dirección aquí
+                pController.speed = pController.maxSpeed / 4;
+                pController.canJump = false;
             }
         }
         else if (windDurationCounter > 0)
         {
+            if(gravityController.gravityForce < gravityController.defaultGravityForce * 2.5)
+                gravityController.gravityForce += Time.deltaTime * 1000;
+
             if (windEnabled)
             {
                 ApplyWindForce();
@@ -69,6 +76,9 @@ public class WindPush : MonoBehaviour
             if (windDurationCounter <= 0)
             {
                 windIntervalCounter = windInterval;
+                pController.speed = pController.maxSpeed;
+                pController.canJump = true;
+                gravityController.gravityForce = gravityController.defaultGravityForce;
             }
         }
     }

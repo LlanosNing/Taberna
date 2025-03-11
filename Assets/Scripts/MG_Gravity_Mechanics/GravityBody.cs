@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class GravityBody : MonoBehaviour
 {
+    public float defaultGravityForce = 1500f;
     public float gravityForce = 1500;
 
     public Vector3 GravityDirection
@@ -22,6 +23,7 @@ public class GravityBody : MonoBehaviour
 
     void Start()
     {
+        gravityForce = defaultGravityForce;
         _rigidbody = transform.GetComponent<Rigidbody>();
         _gravityAreas = new List<GravityArea>();
     }

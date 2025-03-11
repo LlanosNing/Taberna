@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 
 public class UltimatePlayerController : MonoBehaviour
 {
+    public float maxSpeed;
     public float speed;
     public float rotSpeed;
     public float lookRotSpeed;
@@ -22,6 +23,7 @@ public class UltimatePlayerController : MonoBehaviour
     GravityBody gravityScript;
 
     [Header("GROUND CHECK")]
+    public bool canJump;
     public bool isGrounded;
     public Collider[] detectedColliders;
     public Transform groundCheckCenter;
@@ -44,6 +46,7 @@ public class UltimatePlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         MainCameraTransform = Camera.main.transform;
+        speed = maxSpeed;
 
         spawnPosition = transform.position;
         spawnRotation = transform.rotation;
@@ -68,7 +71,7 @@ public class UltimatePlayerController : MonoBehaviour
 
         GroundCheck();
 
-        if (Input.GetButtonDown("Jump") && canMove && animRef.GetCurrentAnimatorStateInfo(0).IsTag("Locomotion"))
+        if (Input.GetButtonDown("Jump") && canMove  && canJump && animRef.GetCurrentAnimatorStateInfo(0).IsTag("Locomotion"))
         {
             Debug.Log("Salto");
             Jump();

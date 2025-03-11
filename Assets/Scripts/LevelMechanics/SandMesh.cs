@@ -34,14 +34,15 @@ public class SandMesh : MonoBehaviour
 
         for (int i = 0; i < vertices.Length; i++)
         {
-            Vector3 worldVertex = transform.TransformPoint(vertices[i]); // Convertir a coordenadas globales
-            float vertexDistance = Vector3.Distance(worldVertex, playerTransform.position);
-
             if (windController.windDurationCounter > 0)
             {
                 vertices[i] = Vector3.Lerp(vertices[i], originalVertices[i], -lowerVertexSpeed/4 * Time.deltaTime);
             }
-            else if (vertexDistance < minDistance)
+
+            Vector3 worldVertex = transform.TransformPoint(vertices[i]); // Convertir a coordenadas globales
+            float vertexDistance = Vector3.Distance(worldVertex, playerTransform.position);
+
+            if (vertexDistance < minDistance)
             {
                 // Solo hundimos el vértice si no ha alcanzado su límite de hundimiento
                 if (Vector3.Distance(originalVertices[i], vertices[i]) < maxSinkDistance)

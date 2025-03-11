@@ -3735,7 +3735,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32e8e195cb33c5d4cb69e01eafe1a99d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minDistance: 2.1
+  minDistance: 2
   lowerVertexSpeed: -10
   maxSinkDistance: 1000
 --- !u!1 &712764103
@@ -7188,9 +7188,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e7eaa3ad26c831488a2075053375abc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  windForce: 20000
+  windForce: 30000
   windInterval: 5
   windDuration: 3
+  windDurationCounter: 0
   canGrip: 0
   windEnabled: 1
   currentWindDirection: {x: 0, y: 0, z: 0}
@@ -45010,8 +45011,16 @@ PrefabInstance:
       value: -0.003338545
       objectReference: {fileID: 0}
     - target: {fileID: 8576045397700744771, guid: 3c9f2cafb1f1a6b41a4b304cdbf0e131, type: 3}
+      propertyPath: canJump
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8576045397700744771, guid: 3c9f2cafb1f1a6b41a4b304cdbf0e131, type: 3}
       propertyPath: canMove
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8576045397700744771, guid: 3c9f2cafb1f1a6b41a4b304cdbf0e131, type: 3}
+      propertyPath: maxSpeed
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8576045397700744771, guid: 3c9f2cafb1f1a6b41a4b304cdbf0e131, type: 3}
       propertyPath: currentPlanet
