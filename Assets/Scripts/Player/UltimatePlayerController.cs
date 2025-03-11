@@ -56,12 +56,15 @@ public class UltimatePlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        input = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
+        if(canMove)
+        {
+            input = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
 
-        float HVMagnitud = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).magnitude;
+            float HVMagnitud = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).magnitude;
 
-        animRef.SetFloat("HV_Magnitud", HVMagnitud);
-        animRef.SetBool("isGrounded", isGrounded);
+            animRef.SetFloat("HV_Magnitud", HVMagnitud);
+            animRef.SetBool("isGrounded", isGrounded);
+        }
 
         GroundCheck();
 

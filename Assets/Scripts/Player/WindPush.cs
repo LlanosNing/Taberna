@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class WindPush : MonoBehaviour
@@ -9,18 +10,39 @@ public class WindPush : MonoBehaviour
     public float windInterval = 5f;
     private float windIntervalCounter;
     public float windDuration = 1.5f;
-    private float windDurationCounter;
+    public float windDurationCounter;
+
+    public bool canGrip;
+    public bool windEnabled;
 
     private Rigidbody rb;
     private Transform planet;
     public Vector3 currentWindDirection; // Dirección del viento actual
+    UltimatePlayerController pController;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         planet = GameObject.FindWithTag("MainPlanet").transform;
+        pController = GetComponent<UltimatePlayerController>();
 
         windIntervalCounter = windInterval;
+    }
+
+    private void Update()
+    {
+        if(canGrip && Input.GetButton("Interact"))
+        {
+            windEnabled = false;
+            pController.canMove = false;
+            rb.velocity = Vector3.zero;
+        }
+
+        if (Input.GetButtonUp("Interact"))
+        {
+            windEnabled = true;
+            pController.canMove = true;
+        }
     }
 
     private void FixedUpdate()
@@ -37,7 +59,10 @@ public class WindPush : MonoBehaviour
         }
         else if (windDurationCounter > 0)
         {
-            ApplyWindForce(); // Mantener la misma dirección de viento
+            if (windEnabled)
+            {
+                ApplyWindForce();
+            }
 
             windDurationCounter -= Time.deltaTime;
 
@@ -67,5 +92,21 @@ public class WindPush : MonoBehaviour
     {
         // Aplicar la fuerza en la dirección previamente calculada
         rb.AddForce(currentWindDirection * windForce * Time.deltaTime, ForceMode.Acceleration);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("GripZone"))
+        {
+            canGrip = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("GripZone"))
+        {
+            canGrip = false;
+        }
     }
 }

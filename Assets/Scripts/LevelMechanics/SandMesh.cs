@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Serialization;
 using UnityEngine;
 
 public class SandMesh : MonoBehaviour
@@ -12,13 +13,16 @@ public class SandMesh : MonoBehaviour
     private Vector3[] originalVertices; // Para recordar la posición original de los vértices
     private Mesh mesh;
     private Transform playerTransform;
+    WindPush windController;
 
     void Start()
     {
         mesh = GetComponent<MeshFilter>().mesh;
         vertices = mesh.vertices;
         originalVertices = mesh.vertices; // Guardamos las posiciones originales
+
         playerTransform = GameObject.FindWithTag("Player").transform;
+        windController = GameObject.FindWithTag("Player").GetComponent<WindPush>();
     }
 
     void Update()
@@ -33,7 +37,11 @@ public class SandMesh : MonoBehaviour
             Vector3 worldVertex = transform.TransformPoint(vertices[i]); // Convertir a coordenadas globales
             float vertexDistance = Vector3.Distance(worldVertex, playerTransform.position);
 
-            if (vertexDistance < minDistance)
+            if (windController.windDurationCounter > 0)
+            {
+                vertices[i] = Vector3.Lerp(vertices[i], originalVertices[i], -lowerVertexSpeed/4 * Time.deltaTime);
+            }
+            else if (vertexDistance < minDistance)
             {
                 // Solo hundimos el vértice si no ha alcanzado su límite de hundimiento
                 if (Vector3.Distance(originalVertices[i], vertices[i]) < maxSinkDistance)

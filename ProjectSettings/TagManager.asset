@@ -11,6 +11,7 @@ TagManager:
   - PanelSettings
   - Cow
   - Mole
+  - GripZone
   layers:
   - Default
   - TransparentFX
