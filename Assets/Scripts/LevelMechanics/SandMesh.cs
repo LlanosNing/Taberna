@@ -58,4 +58,20 @@ public class SandMesh : MonoBehaviour
         mesh.RecalculateNormals(); // Para que la iluminación se vea bien
         mesh.RecalculateBounds();
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            other.GetComponent<UltimatePlayerController>().speed = other.GetComponent<UltimatePlayerController>().maxSpeed / 2;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            other.GetComponent<UltimatePlayerController>().speed = other.GetComponent<UltimatePlayerController>().maxSpeed;
+        }
+    }
 }
