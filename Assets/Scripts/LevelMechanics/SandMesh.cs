@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Xml.Serialization;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SandMesh : MonoBehaviour
 {
@@ -13,7 +15,10 @@ public class SandMesh : MonoBehaviour
     private Vector3[] originalVertices; // Para recordar la posición original de los vértices
     private Mesh mesh;
     private Transform playerTransform;
+    UltimatePlayerController playerController;
     WindPush windController;
+
+    public bool isPlayerOnSand;
 
     void Start()
     {
@@ -22,21 +27,30 @@ public class SandMesh : MonoBehaviour
         originalVertices = mesh.vertices; // Guardamos las posiciones originales
 
         playerTransform = GameObject.FindWithTag("Player").transform;
-        windController = GameObject.FindWithTag("Player").GetComponent<WindPush>();
+        playerController = GameObject.FindWithTag("Player").GetComponent<UltimatePlayerController>();
+        if(SceneManager.GetActiveScene().name == "Desert_Planet")
+        {
+            windController = GameObject.FindWithTag("Player").GetComponent<WindPush>();
+        }
     }
 
     void Update()
     {
         Vector3[] modifiedVertices = new Vector3[vertices.Length];
 
+        isPlayerOnSand = false;
+
         // Obtener la dirección "abajo" en el espacio local
         Vector3 localDown = transform.InverseTransformDirection(transform.forward);
 
         for (int i = 0; i < vertices.Length; i++)
         {
-            if (windController.windDurationCounter > 0)
+            if(windController != null)
             {
-                vertices[i] = Vector3.Lerp(vertices[i], originalVertices[i], -lowerVertexSpeed/4 * Time.deltaTime);
+                if (windController.windDurationCounter > 0)
+                {
+                    vertices[i] = Vector3.Lerp(vertices[i], originalVertices[i], -lowerVertexSpeed / 4 * Time.deltaTime);
+                }
             }
 
             Vector3 worldVertex = transform.TransformPoint(vertices[i]); // Convertir a coordenadas globales
@@ -49,6 +63,11 @@ public class SandMesh : MonoBehaviour
                 {
                     vertices[i] += localDown * (lowerVertexSpeed * Time.deltaTime);
                 }
+
+                if (vertices[i].y > originalVertices[i].y - maxSinkDistance / 2)
+                {
+                    isPlayerOnSand = true;
+                }
             }
 
             modifiedVertices[i] = vertices[i];
@@ -57,21 +76,14 @@ public class SandMesh : MonoBehaviour
         mesh.vertices = modifiedVertices;
         mesh.RecalculateNormals(); // Para que la iluminación se vea bien
         mesh.RecalculateBounds();
-    }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
+        if (isPlayerOnSand)
         {
-            other.GetComponent<UltimatePlayerController>().speed = other.GetComponent<UltimatePlayerController>().maxSpeed / 2;
+            playerController.speed = playerController.maxSpeed / 2;
         }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
+        else
         {
-            other.GetComponent<UltimatePlayerController>().speed = other.GetComponent<UltimatePlayerController>().maxSpeed;
+            playerController.speed = playerController.maxSpeed;
         }
     }
 }
