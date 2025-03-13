@@ -3744,7 +3744,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minDistance: 1.5
   lowerVertexSpeed: -10
-  maxSinkDistance: 1000
+  maxSinkDistance: 5
+  isPlayerOnSand: 0
 --- !u!65 &707969736
 BoxCollider:
   m_ObjectHideFlags: 0
