@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    private FadeScreen _fd;
 
     public string levelToLoad;
 
@@ -17,28 +16,16 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-
+        if (hasPortalTwoKey)
+        {
+            Debug.Log("Tienes la llave 2");
+        }
+        else
+        {
+            Debug.Log("No tienes la llave 2");
+        }
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
-
-    public void ExitLevel()
-    {
-        StartCoroutine(ExitLevelCo());
-    }
-
-    public IEnumerator ExitLevelCo()
-    {
-        yield return new WaitForSeconds(0f);
-        SceneManager.LoadScene(levelToLoad);
-    }
-
-    public void Quit()
-    {
-        Application.Quit();
-        Debug.Log("Saliendo de la aplicacion");
     }
 }

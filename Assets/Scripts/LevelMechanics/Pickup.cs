@@ -4,12 +4,8 @@ using UnityEngine;
 
 public class Pickup : MonoBehaviour
 {
-    private Inventory _playerInventory;
-
-    [Header ("PICKUP CLASS")]
-    public bool isCoin;
-    public bool isBomb;
-    public bool isCollectible;
+    public bool isPortalTwoKey;
+    public bool isPortalThreeKey;
     public bool showsOnMinimap;
 
     public int coinValue;
@@ -17,30 +13,30 @@ public class Pickup : MonoBehaviour
     private UIController _uIRef;
     public GameObject minimapRepresentation;
 
+    //private Inventory _playerInventory;
+    //public bool isCoin;
+    //public bool isBomb;
+    //public bool isCollectible;
+
     private void Start()
     {
-        _playerInventory = GameObject.FindWithTag("Player").GetComponent<Inventory>();
-
         _uIRef = GameObject.FindWithTag("Canvas").GetComponent<UIController>();
+
+        //_playerInventory = GameObject.FindWithTag("Player").GetComponent<Inventory>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            if(isCoin)
+            if (isPortalTwoKey)
             {
-                _uIRef.UpdateScore(coinValue);
+                GameManager.hasPortalTwoKey = true;
             }
 
-            if(isBomb)
+            if (isPortalThreeKey)
             {
-                _playerInventory.hasBomb = true;
-            }
-
-            if(isCollectible)
-            {
-                _uIRef.UpdateCollectibles();
+                GameManager.hasPortalThreeKey = true;
             }
 
             Destroy(gameObject);
@@ -49,6 +45,22 @@ public class Pickup : MonoBehaviour
             {
                 minimapRepresentation.SetActive(false);
             }
+
+            //if(isCoin)
+            //{
+            //    _uIRef.UpdateScore(coinValue);
+            //}
+
+            //if(isBomb)
+            //{
+            //    _playerInventory.hasBomb = true;
+            //}
+
+            //if(isCollectible)
+            //{
+            //    _uIRef.UpdateCollectibles();
+            //}
+
         }
     }
 }
