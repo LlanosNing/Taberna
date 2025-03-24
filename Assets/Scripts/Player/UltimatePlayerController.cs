@@ -29,6 +29,7 @@ public class UltimatePlayerController : MonoBehaviour
     public Transform groundCheckCenter;
     public Vector3 groundCheckSize = Vector3.one;
     public LayerMask groundLayer;
+    public bool canGroundPoundCarrot;
 
     public Vector3 spawnPosition;
     public Quaternion spawnRotation;
@@ -37,6 +38,7 @@ public class UltimatePlayerController : MonoBehaviour
     public Transform CameraArmTransform;
 
     public Animator animRef;
+    GravityBody gravityBodyRef;
     public bool isDancing;
 
     public Sprite thePlayerSprite;
@@ -54,6 +56,8 @@ public class UltimatePlayerController : MonoBehaviour
         gravityScript = GetComponent<GravityBody>();
 
         GetComponent<Animator>();
+
+        gravityBodyRef = GetComponent<GravityBody>();
     }
 
     // Update is called once per frame
@@ -73,11 +77,16 @@ public class UltimatePlayerController : MonoBehaviour
 
         GroundCheck();
 
-        if (Input.GetButtonDown("Jump") && canMove  && canJump && animRef.GetCurrentAnimatorStateInfo(0).IsTag("Locomotion"))
+        if (Input.GetButtonDown("Jump") && canMove && canJump && animRef.GetCurrentAnimatorStateInfo(0).IsTag("Locomotion"))
         {
-            Debug.Log("Salto");
             Jump();
         }
+
+        if (Input.GetButtonDown("GroundPound") && canMove && !isGrounded)
+        {
+            GroundPound();
+        }
+
         if (currentPlanet != null)
         {
             //normalVector = (transform.position - currentPlanet.position).normalized;
@@ -138,6 +147,27 @@ public class UltimatePlayerController : MonoBehaviour
             rb.velocity *= 0;
             rb.AddForce(normalVector * jumpForce, ForceMode.Impulse);
         }
+    }
+
+    void GroundPound()
+    {
+        StartCoroutine(GroundPoundCO());
+    }
+
+    IEnumerator GroundPoundCO()
+    {
+        canJump = false;
+        canMove = false;
+        gravityBodyRef.gravityForce = 0f;
+        rb.velocity = Vector3.zero;
+        yield return new WaitForSeconds(0.5f);
+        gravityBodyRef.gravityForce = gravityBodyRef.defaultGravityForce;
+        rb.AddForce(normalVector * -jumpForce * 2.5f, ForceMode.Impulse);
+        canGroundPoundCarrot = true;
+        yield return new WaitForSeconds(0.25f);
+        canJump = true;
+        canMove = true;
+        canGroundPoundCarrot = false;
     }
 
     public void Bounce(float bounceForce)
