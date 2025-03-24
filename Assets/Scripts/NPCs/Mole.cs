@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class Mole : MonoBehaviour
 {
-    public float bounceForce = 200f;
-    Animator animRef;
+    public Animator animRef;
 
     public float minTimeToAppear, maxTimeToAppear;
     float timeToAppearCounter;
@@ -15,16 +14,16 @@ public class Mole : MonoBehaviour
 
     private void Start()
     {
-        animRef = GetComponent<Animator>();
+        animRef = GetComponentInChildren<Animator>();
         timeToHideCounter = maxTimeToHide;
     }
 
     private void Update()
     {
-        if (animRef.GetCurrentAnimatorStateInfo(0).IsName("UnderGround") && !hasToAppear && timeToAppearCounter <= 0)
+        if (animRef.GetCurrentAnimatorStateInfo(0).IsName("Underground") && !hasToAppear && timeToAppearCounter <= 0)
         {
             timeToAppearCounter = Random.Range(minTimeToAppear, maxTimeToAppear);
-            Debug.Log("El topo " + gameObject.name + " tardará" +  timeToAppearCounter + " segundos en aparecer");
+            Debug.Log("El topo " + gameObject.name + " tardará " +  timeToAppearCounter + " segundos en aparecer");
             hasToAppear = true;
         }
 
@@ -34,31 +33,18 @@ public class Mole : MonoBehaviour
         }
         if(timeToAppearCounter <= 0 && hasToAppear)
         {
-            animRef.SetBool("HasToAppear", true);
+            animRef.SetTrigger("Jump");
         }
 
-        if (animRef.GetCurrentAnimatorStateInfo(0).IsName("Default"))
+        if (animRef.GetCurrentAnimatorStateInfo(0).IsName("Underground"))
         {
             timeToHideCounter -= Time.deltaTime;
 
             if(timeToHideCounter <= 0)
             {
-                animRef.SetTrigger("HitByPlayer");
                 timeToHideCounter = maxTimeToHide;
                 hasToAppear = false;
-                animRef.SetBool("HasToAppear", false);
             }
-        }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            animRef.SetTrigger("HitByPlayer");
-            timeToHideCounter = maxTimeToHide;
-
-            other.GetComponent<UltimatePlayerController>().Bounce(bounceForce);
         }
     }
 }
