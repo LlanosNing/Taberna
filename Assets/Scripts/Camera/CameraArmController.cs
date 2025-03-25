@@ -7,9 +7,14 @@ public class CameraArmController : MonoBehaviour
     public float verticalClamp = 30f;
     public Vector2 sensitivity = Vector2.one;
 
+    public bool staticCamera;
+
     private void Update()
     {
-        AdjustCamera();
+        if (!staticCamera)
+        {
+            AdjustCamera();
+        }
     }
 
     void AdjustCamera()

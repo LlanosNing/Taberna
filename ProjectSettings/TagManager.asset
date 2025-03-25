@@ -12,6 +12,7 @@ TagManager:
   - Cow
   - Mole
   - GripZone
+  - FadeScreen
   layers:
   - Default
   - TransparentFX

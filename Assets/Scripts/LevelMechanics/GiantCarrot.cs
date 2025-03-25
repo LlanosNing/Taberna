@@ -8,10 +8,17 @@ public class GiantCarrot : MonoBehaviour
     int sinkLevels;
     public float sinkDistance;
 
+    public GameObject minigameManager;
+    bool alreadyActivated;
+
+
     // Update is called once per frame
     void Update()
     {
-        
+        if(sinkLevels >= maxSink && !alreadyActivated)
+        {
+            ActivateMinigame();
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -25,5 +32,11 @@ public class GiantCarrot : MonoBehaviour
                 transform.position -= new Vector3(0, sinkDistance, 0);
             }
         }
+    }
+
+    void ActivateMinigame()
+    {
+        minigameManager.SetActive(true);
+        alreadyActivated = true;
     }
 }
