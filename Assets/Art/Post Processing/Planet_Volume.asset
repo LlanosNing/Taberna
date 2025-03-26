@@ -381,7 +381,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c01700fd266d6914ababb731e09af2eb, type: 3}
   m_Name: DepthOfField
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   mode:
     m_OverrideState: 1
     m_Value: 2
@@ -425,7 +425,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d7fd9488000d3734a9e00ee676215985, type: 3}
-  m_Name: MarioPlanet_Volume
+  m_Name: Planet_Volume
   m_EditorClassIdentifier: 
   components:
   - {fileID: -5779536436647468713}
@@ -453,13 +453,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5485954d14dfb9a4c8ead8edb0ded5b1, type: 3}
   m_Name: LiftGammaGain
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   lift:
     m_OverrideState: 1
     m_Value: {x: 1, y: 0.91266644, z: 0.8283322, w: 0}
   gamma:
     m_OverrideState: 1
-    m_Value: {x: 0.59961176, y: 0.7216583, z: 1, w: 0}
+    m_Value: {x: 0.9971654, y: 1, z: 0.99715275, w: 0}
   gain:
     m_OverrideState: 1
     m_Value: {x: 1, y: 1, z: 1, w: 0}
@@ -506,19 +506,19 @@ MonoBehaviour:
   active: 1
   postExposure:
     m_OverrideState: 1
-    m_Value: 0.8
+    m_Value: -0.02
   contrast:
     m_OverrideState: 1
-    m_Value: 20
+    m_Value: 5
   colorFilter:
     m_OverrideState: 1
-    m_Value: {r: 1, g: 1, b: 1, a: 1}
+    m_Value: {r: 1, g: 0.9785443, b: 0.9575472, a: 1}
   hueShift:
     m_OverrideState: 1
     m_Value: 0
   saturation:
     m_OverrideState: 1
-    m_Value: 14
+    m_Value: 3
 --- !u!114 &4947592165819123426
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -559,10 +559,10 @@ MonoBehaviour:
   active: 1
   temperature:
     m_OverrideState: 1
-    m_Value: -30
+    m_Value: 10
   tint:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 17
 --- !u!114 &6212535527023963228
 MonoBehaviour:
   m_ObjectHideFlags: 3

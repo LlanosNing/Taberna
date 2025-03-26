@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class WindPush : MonoBehaviour
 {
@@ -23,12 +24,18 @@ public class WindPush : MonoBehaviour
     private UltimatePlayerController pController;
     private GravityBody gravityController;
 
+    Volume cameraVolume;
+    public VolumeProfile defaultVolume, sandstormVolume;
+    public float fogIntensity;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         planet = GameObject.FindWithTag("MainPlanet").transform;
         pController = GetComponent<UltimatePlayerController>();
         gravityController = GetComponent<GravityBody>();
+
+        cameraVolume = GameObject.FindWithTag("MainCamera").GetComponent<Volume>();
 
         windIntervalCounter = windInterval;
 
@@ -65,6 +72,9 @@ public class WindPush : MonoBehaviour
             {
                 windDurationCounter = windDuration;
                 pController.speed = pController.maxSpeed / 4;
+
+                cameraVolume.profile = sandstormVolume;
+                RenderSettings.fogDensity = fogIntensity;
                 //pController.canJump = false;
             }
         }
@@ -84,6 +94,7 @@ public class WindPush : MonoBehaviour
             {
                 windIntervalCounter = windInterval;
                 pController.speed = pController.maxSpeed;
+                cameraVolume.profile = defaultVolume;
                 //pController.canJump = true;
                 //gravityController.gravityForce = gravityController.defaultGravityForce;
             }
