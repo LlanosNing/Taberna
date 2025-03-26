@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ClickFastMinigame : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class ClickFastMinigame : MonoBehaviour
 
     GameObject cameraObject;
     Animator fadeScreen;
+    public GameObject uiIndicator;
+    public Image indicatorImage;
 
     public FollowPlayer followPlayerScript;
     public CameraArmController armControllerScript;
@@ -25,6 +28,8 @@ public class ClickFastMinigame : MonoBehaviour
     public Transform cameraWaypoint;
     UltimatePlayerController playerController;
 
+    public World3Manager world3Manager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,8 +39,6 @@ public class ClickFastMinigame : MonoBehaviour
         fadeScreen = GameObject.FindWithTag("FadeScreen").GetComponent<Animator>();
 
         playerController = GameObject.FindWithTag("Player").GetComponent<UltimatePlayerController>();
-
-        StartMinigame();
     }
 
     // Update is called once per frame
@@ -53,7 +56,11 @@ public class ClickFastMinigame : MonoBehaviour
     void CalculateCPS()
     {
         if (Input.GetButtonDown("Fire1"))
+        {
             clicks++;
+            indicatorImage.color = new Color(1f, 1f, 0.4f, 1f);
+        }
+
         timePassed += Time.deltaTime;
         cps = clicks / timePassed;
 
@@ -64,6 +71,7 @@ public class ClickFastMinigame : MonoBehaviour
         {
             clicks = 0;
             timePassed = 0;
+            indicatorImage.color = new Color(1f, 1f, 1f, 1f);
         } 
     }
 
@@ -97,6 +105,8 @@ public class ClickFastMinigame : MonoBehaviour
 
         minigameActivated = true;
 
+        uiIndicator.SetActive(true);
+
     }
 
     void EndMinigame()
@@ -122,9 +132,26 @@ public class ClickFastMinigame : MonoBehaviour
 
         fadeScreen.SetTrigger("FadeOut");
 
+        world3Manager.AddRoot();
         minigameActivated = false;
+        uiIndicator.SetActive(false);
         gameObject.SetActive(false);
     }
 
+    public void ResetData(Transform camWaypoint)
+    {
+        timeCounter = minigameDuration;
+        clicks = 0;
+        timePassed = 0;
+        cps = 0;
 
+        timeCounter = minigameDuration;
+        cameraObject = GameObject.FindWithTag("MainCamera");
+        fadeScreen = GameObject.FindWithTag("FadeScreen").GetComponent<Animator>();
+        playerController = GameObject.FindWithTag("Player").GetComponent<UltimatePlayerController>();
+
+        cameraWaypoint = camWaypoint;
+
+        StartMinigame();
+    }
 }

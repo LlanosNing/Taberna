@@ -11,6 +11,7 @@ public class GiantCarrot : MonoBehaviour
     public GameObject minigameManager;
     bool alreadyActivated;
 
+    public Transform cameraWaypoint;
 
     // Update is called once per frame
     void Update()
@@ -37,6 +38,7 @@ public class GiantCarrot : MonoBehaviour
     void ActivateMinigame()
     {
         minigameManager.SetActive(true);
+        minigameManager.GetComponent<ClickFastMinigame>().ResetData(cameraWaypoint);
         alreadyActivated = true;
     }
 }
