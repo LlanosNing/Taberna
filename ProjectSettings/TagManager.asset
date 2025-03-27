@@ -13,6 +13,7 @@ TagManager:
   - Mole
   - GripZone
   - FadeScreen
+  - WindZone
   layers:
   - Default
   - TransparentFX

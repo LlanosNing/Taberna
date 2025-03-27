@@ -14,7 +14,7 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 1
+  m_Fog: 0
   m_FogColor: {r: 0.48235294, g: 0.40830877, b: 0.22352943, a: 1}
   m_FogMode: 3
   m_FogDensity: 0
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.62254506, g: 0.2766159, b: 0.25850186, a: 1}
+  m_IndirectSpecularColor: {r: 0.6225458, g: 0.27661562, b: 0.25850216, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -187,6 +187,7 @@ Transform:
   m_Children:
   - {fileID: 707969733}
   - {fileID: 520495214}
+  - {fileID: 718691009}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &90038602
@@ -504,7 +505,7 @@ GameObject:
   - component: {fileID: 188357927}
   - component: {fileID: 188357926}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Sandstorm_Volume
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -525,7 +526,7 @@ MonoBehaviour:
   m_IsGlobal: 1
   priority: 1
   blendDistance: 0
-  weight: 1
+  weight: 0
   sharedProfile: {fileID: 11400000, guid: c77a0b408129e004499d19c9c6673ca5, type: 2}
 --- !u!4 &188357927
 Transform:
@@ -4041,6 +4042,59 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d0b652f32a2cc243917e4028fa0f046, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &718691008
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 718691009}
+  - component: {fileID: 718691010}
+  m_Layer: 0
+  m_Name: WindZone
+  m_TagString: WindZone
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &718691009
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 718691008}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.7071065, z: -0, w: 0.7071072}
+  m_LocalPosition: {x: 0, y: 55, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 89583939}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!65 &718691010
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 718691008}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 30, y: 30, z: 30}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &745098921
 GameObject:
   m_ObjectHideFlags: 0
@@ -7298,9 +7352,9 @@ MonoBehaviour:
   canGrip: 0
   windEnabled: 1
   currentWindDirection: {x: 0, y: 0, z: 0}
-  defaultVolume: {fileID: 11400000, guid: 12ad1e70e6d896942bef6d6ddc804ccc, type: 2}
-  sandstormVolume: {fileID: 11400000, guid: c77a0b408129e004499d19c9c6673ca5, type: 2}
-  fogIntensity: 0.05
+  sandstormVolume: {fileID: 188357926}
+  warningWeight: 0.5
+  sandstormWeight: 1
 --- !u!1 &1467663491
 GameObject:
   m_ObjectHideFlags: 0
