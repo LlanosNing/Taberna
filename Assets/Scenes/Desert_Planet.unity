@@ -23,10 +23,10 @@ RenderSettings:
   m_AmbientSkyColor: {r: 0.13081096, g: 0.12126203, b: 0.23584908, a: 1}
   m_AmbientEquatorColor: {r: 0.17866677, g: 0.25277075, b: 0.5188679, a: 1}
   m_AmbientGroundColor: {r: 0.123398006, g: 0.15061507, b: 0.5566038, a: 1}
-  m_AmbientIntensity: 2
+  m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: f52d2b66a0f98ae4d910993fb96d2f5c, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 738329bf2f1a18c4b9f0d9f79cd5945e, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -34,11 +34,11 @@ RenderSettings:
   m_SpotCookie: {fileID: 10001, guid: 0000000000000000e000000000000000, type: 0}
   m_DefaultReflectionMode: 0
   m_DefaultReflectionResolution: 128
-  m_ReflectionBounces: 3
+  m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.026148178, g: 0.02190838, b: 0.03995519, a: 1}
+  m_IndirectSpecularColor: {r: 0.62254506, g: 0.2766159, b: 0.25850186, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -491,6 +491,55 @@ Transform:
   m_Children:
   - {fileID: 1467663493}
   - {fileID: 2061118006}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &188357925
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 188357927}
+  - component: {fileID: 188357926}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &188357926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 188357925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 1
+  priority: 1
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: c77a0b408129e004499d19c9c6673ca5, type: 2}
+--- !u!4 &188357927
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 188357925}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.7035382, y: 48.338623, z: 11.471497}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &244982127
@@ -7244,7 +7293,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   windForce: 40000
   windInterval: 15
-  windDuration: 1
+  windDuration: 3
   windDurationCounter: 0
   canGrip: 0
   windEnabled: 1
@@ -45552,3 +45601,4 @@ SceneRoots:
   - {fileID: 1815329768}
   - {fileID: 89583939}
   - {fileID: 90038603}
+  - {fileID: 188357927}
