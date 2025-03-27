@@ -4660,7 +4660,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6339592137007384747, guid: 7902a1efa59cb7b4db1b2d1cf73124cf, type: 3}
       propertyPath: sceneToLoad
-      value: MarioPlaneta
+      value: Carrot_Planet
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
