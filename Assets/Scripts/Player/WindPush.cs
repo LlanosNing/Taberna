@@ -27,6 +27,8 @@ public class WindPush : MonoBehaviour
     public Volume sandstormVolume;
     public float warningWeight, sandstormWeight;
 
+    public Transform sandstormParent;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -125,6 +127,8 @@ public class WindPush : MonoBehaviour
         // Mantener la dirección del viento adaptada a la rotación del jugador
         Vector3 radialDirection = (rb.position - planet.position).normalized;
         currentWindDirection = Vector3.Cross(radialDirection, baseWindDirection).normalized;
+
+        sandstormParent.rotation = Quaternion.LookRotation(currentWindDirection);
     }
 
     void ApplyWindForce()
