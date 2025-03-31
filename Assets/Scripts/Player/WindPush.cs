@@ -29,12 +29,15 @@ public class WindPush : MonoBehaviour
 
     public Transform sandstormParent;
 
+    Sandstorm_Animation animController;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         planet = GameObject.FindWithTag("MainPlanet").transform;
         pController = GetComponent<UltimatePlayerController>();
         gravityController = GetComponent<GravityBody>();
+        animController = GetComponent<Sandstorm_Animation>();
 
         windIntervalCounter = windInterval;
 
@@ -77,11 +80,16 @@ public class WindPush : MonoBehaviour
 
             if(windIntervalCounter < 3f)
             {
-                sandstormVolume.weight = Mathf.MoveTowards(sandstormVolume.weight, warningWeight, Time.deltaTime);
+                sandstormVolume.weight = Mathf.MoveTowards(sandstormVolume.weight, warningWeight, Time.deltaTime * 5);
+
+                if (!animController.animationOn) 
+                { 
+                    animController.StartPartycleSystem();
+                }
             }
             else
             {
-                sandstormVolume.weight = Mathf.MoveTowards(sandstormVolume.weight, 0f, Time.deltaTime);
+                sandstormVolume.weight = Mathf.MoveTowards(sandstormVolume.weight, 0f, Time.deltaTime * 5);
             }
         }
         else if (windDurationCounter > 0)
