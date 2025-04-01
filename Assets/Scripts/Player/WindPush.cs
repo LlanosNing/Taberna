@@ -82,6 +82,9 @@ public class WindPush : MonoBehaviour
             {
                 sandstormVolume.weight = Mathf.MoveTowards(sandstormVolume.weight, warningWeight, Time.deltaTime * 5);
 
+                RenderSettings.fogDensity = Mathf.MoveTowards(RenderSettings.fogDensity, 0.02f, Time.deltaTime * 5);
+
+
                 if (!animController.animationOn) 
                 { 
                     animController.StartPartycleSystem();
@@ -90,6 +93,8 @@ public class WindPush : MonoBehaviour
             else
             {
                 sandstormVolume.weight = Mathf.MoveTowards(sandstormVolume.weight, 0f, Time.deltaTime * 5);
+
+                RenderSettings.fogDensity = Mathf.MoveTowards(RenderSettings.fogDensity, 0, Time.deltaTime * 5);
             }
         }
         else if (windDurationCounter > 0)

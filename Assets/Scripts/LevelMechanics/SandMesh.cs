@@ -45,7 +45,7 @@ public class SandMesh : MonoBehaviour
 
         for (int i = 0; i < vertices.Length; i++)
         {
-            if(windController != null)
+            if (windController != null)
             {
                 if (windController.windDurationCounter > 0)
                 {
@@ -77,11 +77,11 @@ public class SandMesh : MonoBehaviour
         mesh.RecalculateNormals(); // Para que la iluminación se vea bien
         mesh.RecalculateBounds();
 
-        if (isPlayerOnSand)
+        if (isPlayerOnSand && Vector3.Distance(transform.position, playerTransform.position) <= 10)
         {
             playerController.speed = playerController.maxSpeed / 2;
         }
-        else
+        else if(Vector3.Distance(transform.position, playerTransform.position) < 10)
         {
             playerController.speed = playerController.maxSpeed;
         }

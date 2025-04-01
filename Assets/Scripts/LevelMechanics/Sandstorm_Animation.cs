@@ -5,12 +5,12 @@ using UnityEngine;
 
 public class Sandstorm_Animation : MonoBehaviour
 {
-    float windEmission2 = 50, windEmission3 = 150;
+    float windEmission2 = 100, windEmission3 = 150;
     float dustEmission2 = 300, dustEmission3 = 400;
-    float startSize2 = 3f, startSize3 = 5f;
+    float startSize2 = 10f, startSize3 = 15f;
     float positionZ2 = 3, positionZ3 = 5;
     float scaleZ2 = 10, scaleZ3 = 20;
-    float windSpeed2 = 1f, windSpeed3 = 10f;
+    float windSpeed2 = 5f, windSpeed3 = 10f;
     float dustSpeed2 = 1f, dustSpeed3 = 4f;
 
     public float maxTimeDuration;
