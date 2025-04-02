@@ -22,7 +22,8 @@ public class Sandstorm_Animation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timeCounter -= Time.deltaTime;
+        if(timeCounter >= 0)
+            timeCounter -= Time.deltaTime;
 
         float elapsedTime = maxTimeDuration - timeCounter;
         float t = elapsedTime / maxTimeDuration;

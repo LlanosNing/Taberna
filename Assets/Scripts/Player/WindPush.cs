@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
@@ -14,6 +15,7 @@ public class WindPush : MonoBehaviour
     public float windDurationCounter;
 
     public bool canGrip;
+    public bool isGripped;
     public bool windEnabled;
 
     private Rigidbody rb;
@@ -32,6 +34,7 @@ public class WindPush : MonoBehaviour
     Sandstorm_Animation animController;
 
     public GameObject gripSignUI;
+    public TextMeshProUGUI gripSignUIText;
 
     void Start()
     {
@@ -51,15 +54,19 @@ public class WindPush : MonoBehaviour
     {
         if (canGrip && Input.GetButton("Interact"))
         {
-            windEnabled = false;
+            isGripped = true;
             pController.canMove = false;
             rb.velocity = Vector3.zero;
+
+            gripSignUIText.color = new Color(1f, 1f, 0.5f);
         }
 
         if (Input.GetButtonUp("Interact"))
         {
-            windEnabled = true;
+            isGripped = false;
             pController.canMove = true;
+
+            gripSignUIText.color = new Color(0.5f, 1f, 0.75f);
         }
     }
 
@@ -79,8 +86,6 @@ public class WindPush : MonoBehaviour
             {
                 windDurationCounter = windDuration;
                 pController.speed = pController.maxSpeed / 4;
-
-                //pController.canJump = false;
             }
 
             if(windIntervalCounter < 3f)
@@ -104,14 +109,11 @@ public class WindPush : MonoBehaviour
         }
         else if (windDurationCounter > 0)
         {
-            //if (gravityController.gravityForce < gravityController.defaultGravityForce * 2.5f)
-            //    gravityController.gravityForce += Time.deltaTime * 1000f;
-
-            if (windEnabled)
+            if (windEnabled && !isGripped)
             {
                 ApplyWindForce();
-                sandstormVolume.weight = Mathf.MoveTowards(sandstormVolume.weight, sandstormWeight, 0.2f * Time.deltaTime);
             }
+            sandstormVolume.weight = Mathf.MoveTowards(sandstormVolume.weight, sandstormWeight, 0.2f * Time.deltaTime);
 
             windDurationCounter -= Time.deltaTime;
 
@@ -119,8 +121,6 @@ public class WindPush : MonoBehaviour
             {
                 windIntervalCounter = windInterval;
                 pController.speed = pController.maxSpeed;
-                //pController.canJump = true;
-                //gravityController.gravityForce = gravityController.defaultGravityForce;
             }
         }
     }
@@ -152,10 +152,7 @@ public class WindPush : MonoBehaviour
     void ApplyWindForce()
     {
         // Aplicar la fuerza en la dirección ajustada
-        if(windEnabled)
-        {
-            rb.AddForce(currentWindDirection * windForce * Time.deltaTime, ForceMode.Acceleration);
-        }
+        rb.AddForce(currentWindDirection * windForce * Time.deltaTime, ForceMode.Acceleration);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -163,6 +160,8 @@ public class WindPush : MonoBehaviour
         if (other.CompareTag("GripZone"))
         {
             canGrip = true;
+
+            gripSignUI.SetActive(true);
         }
         else if (other.CompareTag("WindZone"))
         {
@@ -177,6 +176,8 @@ public class WindPush : MonoBehaviour
         if (other.CompareTag("GripZone"))
         {
             canGrip = false;
+
+            gripSignUI.SetActive(false);
         }
     }
 }
