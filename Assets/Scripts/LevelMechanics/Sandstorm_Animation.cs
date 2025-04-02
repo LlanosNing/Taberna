@@ -10,7 +10,7 @@ public class Sandstorm_Animation : MonoBehaviour
     float startSize2 = 10f, startSize3 = 15f;
     float positionZ2 = 3, positionZ3 = 5;
     float scaleZ2 = 10, scaleZ3 = 20;
-    float windSpeed2 = 5f, windSpeed3 = 10f;
+    float windSpeed2 = 10f, windSpeed3 = 20f;
     float dustSpeed2 = 1f, dustSpeed3 = 4f;
 
     public float maxTimeDuration;
@@ -143,8 +143,8 @@ public class Sandstorm_Animation : MonoBehaviour
 
         var velocityWind = windPS.velocityOverLifetime;
         var velocityDust = dustPS.velocityOverLifetime;
-        velocityWind.speedModifier = 1;
-        velocityDust.speedModifier = 1;
+        velocityWind.speedModifier = 3;
+        velocityDust.speedModifier = 3;
 
         timeCounter = maxTimeDuration;
 

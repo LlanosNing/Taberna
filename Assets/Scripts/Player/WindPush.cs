@@ -14,7 +14,7 @@ public class WindPush : MonoBehaviour
     public float windDurationCounter;
 
     public bool canGrip;
-    public bool windEnabled = true;
+    public bool windEnabled;
 
     private Rigidbody rb;
     private Transform planet;
@@ -30,6 +30,8 @@ public class WindPush : MonoBehaviour
     public Transform sandstormParent;
 
     Sandstorm_Animation animController;
+
+    public GameObject gripSignUI;
 
     void Start()
     {
@@ -68,7 +70,10 @@ public class WindPush : MonoBehaviour
 
         if (windIntervalCounter > 0)
         {
-            windIntervalCounter -= Time.deltaTime;
+            if(windEnabled)
+            {
+                windIntervalCounter -= Time.deltaTime;
+            }
 
             if (windIntervalCounter <= 0)
             {
@@ -147,7 +152,10 @@ public class WindPush : MonoBehaviour
     void ApplyWindForce()
     {
         // Aplicar la fuerza en la dirección ajustada
-        rb.AddForce(currentWindDirection * windForce * Time.deltaTime, ForceMode.Acceleration);
+        if(windEnabled)
+        {
+            rb.AddForce(currentWindDirection * windForce * Time.deltaTime, ForceMode.Acceleration);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -160,6 +168,7 @@ public class WindPush : MonoBehaviour
         {
             // Cambiar la dirección del viento a la del forward del trigger
             baseWindDirection = other.transform.forward.normalized;
+            windEnabled = true;
         }
     }
 

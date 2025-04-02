@@ -77,11 +77,11 @@ public class SandMesh : MonoBehaviour
         mesh.RecalculateNormals(); // Para que la iluminación se vea bien
         mesh.RecalculateBounds();
 
-        if (isPlayerOnSand && Vector3.Distance(transform.position, playerTransform.position) <= 10)
+        if (isPlayerOnSand && Vector3.Distance(transform.position, playerTransform.position) <= 40)
         {
             playerController.speed = playerController.maxSpeed / 2;
         }
-        else if(Vector3.Distance(transform.position, playerTransform.position) < 10)
+        else if(Vector3.Distance(transform.position, playerTransform.position) < 40)
         {
             playerController.speed = playerController.maxSpeed;
         }
