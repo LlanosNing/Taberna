@@ -15,6 +15,7 @@ TagManager:
   - FadeScreen
   - WindZone
   - Wall
+  - DesertMinigame
   layers:
   - Default
   - TransparentFX

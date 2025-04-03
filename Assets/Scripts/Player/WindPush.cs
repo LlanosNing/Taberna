@@ -10,7 +10,7 @@ public class WindPush : MonoBehaviour
     public float windForce = 20f;
 
     public float windInterval = 5f;
-    private float windIntervalCounter;
+    public float windIntervalCounter;
     public float windDuration = 1.5f;
     public float windDurationCounter;
 
@@ -24,6 +24,7 @@ public class WindPush : MonoBehaviour
     public Vector3 currentWindDirection; // Dirección ajustada según la posición del jugador
 
     private UltimatePlayerController pController;
+    GravityBody gravityScript;
     private GravityBody gravityController;
 
     public Volume sandstormVolume;
@@ -40,6 +41,7 @@ public class WindPush : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         planet = GameObject.FindWithTag("MainPlanet").transform;
+        gravityScript = GameObject.FindWithTag("Player").GetComponent<GravityBody>();
         pController = GetComponent<UltimatePlayerController>();
         gravityController = GetComponent<GravityBody>();
         animController = GetComponent<Sandstorm_Animation>();
@@ -57,6 +59,7 @@ public class WindPush : MonoBehaviour
             isGripped = true;
             pController.canMove = false;
             rb.velocity = Vector3.zero;
+            gravityScript.gravityForce = 0;
 
             gripSignUIText.color = new Color(1f, 1f, 0.5f);
         }
@@ -65,6 +68,7 @@ public class WindPush : MonoBehaviour
         {
             isGripped = false;
             pController.canMove = true;
+            gravityScript.gravityForce = gravityScript.defaultGravityForce;
 
             gripSignUIText.color = new Color(0.5f, 1f, 0.75f);
         }
