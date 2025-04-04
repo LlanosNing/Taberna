@@ -11,9 +11,12 @@ public class Pickup : MonoBehaviour
 
     public GameObject minimapRepresentation;
 
-    private void OnTriggerEnter(Collider other)
+    public GameObject uiInteractMessage;
+    public bool canPick;
+
+    private void Update()
     {
-        if (other.CompareTag("Player"))
+        if(canPick && Input.GetButtonDown("Interact"))
         {
             if (isPortalTwoKey)
             {
@@ -35,7 +38,20 @@ public class Pickup : MonoBehaviour
                 minimapRepresentation.SetActive(false);
             }
 
-            Destroy(gameObject);
-        }
+            uiInteractMessage.SetActive(false);
+            gameObject.SetActive(false);
+        }    
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        uiInteractMessage.SetActive(true);
+        canPick = true;           
+    }
+
+    public void OnTriggerExit(Collider other)
+    {
+        uiInteractMessage.SetActive(false);
+        canPick = false;
     }
 }
