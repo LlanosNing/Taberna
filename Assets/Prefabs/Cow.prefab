@@ -314,6 +314,7 @@ MonoBehaviour:
   hitRequiredDistance: 4
   cowVisual: {fileID: 4823152557617263683}
   maxMovingDuration: 3
+  cowAnim: {fileID: 8421378351809309707}
 --- !u!114 &710314051201272671
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -21,6 +21,8 @@ public class CowController : MonoBehaviour
     public float maxMovingDuration = 2.5f;
     float movingTimer;
 
+    public Animator cowAnim;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -84,6 +86,10 @@ public class CowController : MonoBehaviour
 
     public void StopCow()
     {
+        if(isMoving)
+        {
+            cowAnim.SetTrigger("RunEnd");
+        }
         isMoving = false;
         hitDirection = Vector3.zero;
     }
@@ -93,5 +99,6 @@ public class CowController : MonoBehaviour
         hitDirection = (transform.position - chaser).normalized;
         movingTimer = maxMovingDuration;
         isMoving = true;
+        cowAnim.SetTrigger("RunStart");
     }
 }
