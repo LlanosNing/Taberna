@@ -35,6 +35,8 @@ public class DialogManager : MonoBehaviour
     public bool activatesQuestBox;
     public GameObject questBox;
 
+    public GameObject managerToActivate;
+
     //Hacemos una referencia (Singleton)
     public static DialogManager instance;
     private void Awake()
@@ -188,6 +190,11 @@ public class DialogManager : MonoBehaviour
             if(activatesQuestBox && !questBox.activeInHierarchy)
             {
                 questBox.SetActive(true);
+            }
+
+            if(managerToActivate != null)
+            {
+                managerToActivate.SetActive(true);
             }
         }
     }

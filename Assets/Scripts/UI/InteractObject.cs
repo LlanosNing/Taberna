@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class InteractObject : MonoBehaviour
 {
-    public bool isTutorial;
-    public GameObject worldCanvas;
+    public bool isTutorial, isNPC;
+    public GameObject worldCanvas, exclamationMark;
 
     public bool inTrigger;
     public bool tutorialActive;
@@ -23,7 +23,13 @@ public class InteractObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && isTutorial && inTrigger && !tutorialActive && uIRef.canAccessTutorials)
+        if(Input.GetKeyDown(KeyCode.E) && isNPC && inTrigger)
+        {
+            worldCanvas.SetActive(false);
+            exclamationMark.SetActive(false);
+        }
+
+        else if (Input.GetKeyDown(KeyCode.E) && isTutorial && inTrigger && !tutorialActive && uIRef.canAccessTutorials)
         {
             tutorialCanvas.SetActive(true);
 

@@ -69,7 +69,7 @@ public class GameOver : MonoBehaviour
 
         yield return new WaitForSeconds(1f);
 
-        uIRef.LifeBarLossAnimation(20f);
+        //uIRef.LifeBarLossAnimation(20f);
 
         yield return new WaitForSeconds(1f);
 

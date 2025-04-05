@@ -15,6 +15,16 @@ public class Cow_Minigame : MonoBehaviour
     public TextMeshProUGUI counterText;
     public GameObject[] molesFaseTwo, molesFaseThree;
     public GameObject lastCow;
+    public GameObject cowsParent;
+
+    public Animator fadeScreenAnim;
+    public Transform minigameStartPosition;
+    public Vector3 minigameEndPosition;
+
+    private void Start()
+    {
+        StartCoroutine(StartTransitionCO());
+    }
 
     private void Update()
     {
@@ -61,11 +71,6 @@ public class Cow_Minigame : MonoBehaviour
             lastCow.SetActive(true);
             faseFour = true;
         }
-
-        if(cowsNum >= cowsRequired)
-        {
-            SceneManager.LoadScene("Lobby");
-        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -84,7 +89,32 @@ public class Cow_Minigame : MonoBehaviour
         counterText.text = cowsNum.ToString();
         if (cowsNum >= cowsRequired)
         {
-            //Cambiar de escena
+            StartCoroutine(EndTransitionCO());
         }
+    }
+
+    IEnumerator StartTransitionCO()
+    {
+        fadeScreenAnim.SetTrigger("FadeOut");
+
+        yield return new WaitForSeconds(1);
+
+        minigameEndPosition = GameObject.FindWithTag("Player").transform.position;
+        GameObject.FindWithTag("Player").transform.position = minigameStartPosition.position;
+
+        fadeScreenAnim.SetTrigger("FadeIn");
+
+        cowsParent.SetActive(true);
+    }
+
+    IEnumerator EndTransitionCO()
+    {
+        fadeScreenAnim.SetTrigger("FadeOut");
+
+        yield return new WaitForSeconds(1);
+
+        GameObject.FindWithTag("Player").transform.position = minigameEndPosition;
+
+        fadeScreenAnim.SetTrigger("FadeIn");
     }
 }
