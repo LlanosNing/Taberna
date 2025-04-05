@@ -18,6 +18,7 @@ public class ClickFastMinigame : MonoBehaviour
     Animator fadeScreen;
     public GameObject uiIndicator;
     public Image indicatorImage;
+    public Image progressBar;
 
     public FollowPlayer followPlayerScript;
     public CameraArmController armControllerScript;
@@ -64,8 +65,11 @@ public class ClickFastMinigame : MonoBehaviour
         timePassed += Time.deltaTime;
         cps = clicks / timePassed;
 
-        if(cps > cpsThreshold )
+        if(cps > cpsThreshold)
+        {
             timeCounter -= Time.deltaTime;
+            progressBar.fillAmount = (minigameDuration - timeCounter) / minigameDuration;
+        }
 
         if(timePassed > 2f)
         {

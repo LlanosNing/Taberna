@@ -2605,12 +2605,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68dd2f595894a4c488f6834ce062a414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCoin: 1
-  isBomb: 0
-  isCollectible: 0
+  isPortalTwoKey: 0
+  isPortalThreeKey: 0
+  isLizard: 0
   showsOnMinimap: 0
-  coinValue: 10
   minimapRepresentation: {fileID: 0}
+  uiInteractMessage: {fileID: 0}
+  canPick: 0
 --- !u!135 &49997408
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2678,12 +2679,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68dd2f595894a4c488f6834ce062a414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCoin: 1
-  isBomb: 0
-  isCollectible: 0
+  isPortalTwoKey: 0
+  isPortalThreeKey: 0
+  isLizard: 0
   showsOnMinimap: 0
-  coinValue: 10
   minimapRepresentation: {fileID: 0}
+  uiInteractMessage: {fileID: 0}
+  canPick: 0
 --- !u!135 &50005445
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3604,12 +3606,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68dd2f595894a4c488f6834ce062a414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCoin: 1
-  isBomb: 0
-  isCollectible: 0
+  isPortalTwoKey: 0
+  isPortalThreeKey: 0
+  isLizard: 0
   showsOnMinimap: 0
-  coinValue: 10
   minimapRepresentation: {fileID: 0}
+  uiInteractMessage: {fileID: 0}
+  canPick: 0
 --- !u!135 &85327596
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3909,12 +3912,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68dd2f595894a4c488f6834ce062a414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCoin: 1
-  isBomb: 0
-  isCollectible: 0
+  isPortalTwoKey: 0
+  isPortalThreeKey: 0
+  isLizard: 0
   showsOnMinimap: 0
-  coinValue: 10
   minimapRepresentation: {fileID: 0}
+  uiInteractMessage: {fileID: 0}
+  canPick: 0
 --- !u!135 &115070536
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4065,12 +4069,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68dd2f595894a4c488f6834ce062a414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCoin: 1
-  isBomb: 0
-  isCollectible: 0
+  isPortalTwoKey: 0
+  isPortalThreeKey: 0
+  isLizard: 0
   showsOnMinimap: 0
-  coinValue: 10
   minimapRepresentation: {fileID: 0}
+  uiInteractMessage: {fileID: 0}
+  canPick: 0
 --- !u!135 &127366064
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -5820,12 +5825,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68dd2f595894a4c488f6834ce062a414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCoin: 1
-  isBomb: 0
-  isCollectible: 0
+  isPortalTwoKey: 0
+  isPortalThreeKey: 0
+  isLizard: 0
   showsOnMinimap: 0
-  coinValue: 10
   minimapRepresentation: {fileID: 0}
+  uiInteractMessage: {fileID: 0}
+  canPick: 0
 --- !u!135 &215635779
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -5893,12 +5899,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68dd2f595894a4c488f6834ce062a414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCoin: 1
-  isBomb: 0
-  isCollectible: 0
+  isPortalTwoKey: 0
+  isPortalThreeKey: 0
+  isLizard: 0
   showsOnMinimap: 0
-  coinValue: 10
   minimapRepresentation: {fileID: 0}
+  uiInteractMessage: {fileID: 0}
+  canPick: 0
 --- !u!135 &219912252
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -5966,12 +5973,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68dd2f595894a4c488f6834ce062a414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCoin: 1
-  isBomb: 0
-  isCollectible: 0
+  isPortalTwoKey: 0
+  isPortalThreeKey: 0
+  isLizard: 0
   showsOnMinimap: 0
-  coinValue: 10
   minimapRepresentation: {fileID: 0}
+  uiInteractMessage: {fileID: 0}
+  canPick: 0
 --- !u!135 &222666226
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6238,12 +6246,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68dd2f595894a4c488f6834ce062a414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCoin: 1
-  isBomb: 0
-  isCollectible: 0
+  isPortalTwoKey: 0
+  isPortalThreeKey: 0
+  isLizard: 0
   showsOnMinimap: 0
-  coinValue: 10
   minimapRepresentation: {fileID: 0}
+  uiInteractMessage: {fileID: 0}
+  canPick: 0
 --- !u!135 &246604681
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -9314,12 +9323,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68dd2f595894a4c488f6834ce062a414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCoin: 1
-  isBomb: 0
-  isCollectible: 0
+  isPortalTwoKey: 0
+  isPortalThreeKey: 0
+  isLizard: 0
   showsOnMinimap: 0
-  coinValue: 10
   minimapRepresentation: {fileID: 0}
+  uiInteractMessage: {fileID: 0}
+  canPick: 0
 --- !u!135 &356958219
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -9639,12 +9649,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68dd2f595894a4c488f6834ce062a414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCoin: 1
-  isBomb: 0
-  isCollectible: 0
+  isPortalTwoKey: 0
+  isPortalThreeKey: 0
+  isLizard: 0
   showsOnMinimap: 0
-  coinValue: 10
   minimapRepresentation: {fileID: 0}
+  uiInteractMessage: {fileID: 0}
+  canPick: 0
 --- !u!135 &365646697
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -9984,12 +9995,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68dd2f595894a4c488f6834ce062a414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCoin: 1
-  isBomb: 0
-  isCollectible: 0
+  isPortalTwoKey: 0
+  isPortalThreeKey: 0
+  isLizard: 0
   showsOnMinimap: 0
-  coinValue: 10
   minimapRepresentation: {fileID: 0}
+  uiInteractMessage: {fileID: 0}
+  canPick: 0
 --- !u!135 &378992886
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -10057,12 +10069,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68dd2f595894a4c488f6834ce062a414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCoin: 1
-  isBomb: 0
-  isCollectible: 0
+  isPortalTwoKey: 0
+  isPortalThreeKey: 0
+  isLizard: 0
   showsOnMinimap: 0
-  coinValue: 10
   minimapRepresentation: {fileID: 0}
+  uiInteractMessage: {fileID: 0}
+  canPick: 0
 --- !u!135 &382715538
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -13237,12 +13250,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68dd2f595894a4c488f6834ce062a414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCoin: 1
-  isBomb: 0
-  isCollectible: 0
+  isPortalTwoKey: 0
+  isPortalThreeKey: 0
+  isLizard: 0
   showsOnMinimap: 0
-  coinValue: 10
   minimapRepresentation: {fileID: 0}
+  uiInteractMessage: {fileID: 0}
+  canPick: 0
 --- !u!135 &477160961
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -13315,12 +13329,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68dd2f595894a4c488f6834ce062a414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCoin: 1
-  isBomb: 0
-  isCollectible: 0
+  isPortalTwoKey: 0
+  isPortalThreeKey: 0
+  isLizard: 0
   showsOnMinimap: 0
-  coinValue: 10
   minimapRepresentation: {fileID: 0}
+  uiInteractMessage: {fileID: 0}
+  canPick: 0
 --- !u!135 &489060189
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -13640,12 +13655,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68dd2f595894a4c488f6834ce062a414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCoin: 1
-  isBomb: 0
-  isCollectible: 0
+  isPortalTwoKey: 0
+  isPortalThreeKey: 0
+  isLizard: 0
   showsOnMinimap: 0
-  coinValue: 10
   minimapRepresentation: {fileID: 0}
+  uiInteractMessage: {fileID: 0}
+  canPick: 0
 --- !u!135 &515137544
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -15069,12 +15085,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68dd2f595894a4c488f6834ce062a414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCoin: 1
-  isBomb: 0
-  isCollectible: 0
+  isPortalTwoKey: 0
+  isPortalThreeKey: 0
+  isLizard: 0
   showsOnMinimap: 0
-  coinValue: 10
   minimapRepresentation: {fileID: 0}
+  uiInteractMessage: {fileID: 0}
+  canPick: 0
 --- !u!135 &565624141
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -17418,12 +17435,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68dd2f595894a4c488f6834ce062a414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCoin: 1
-  isBomb: 0
-  isCollectible: 0
+  isPortalTwoKey: 0
+  isPortalThreeKey: 0
+  isLizard: 0
   showsOnMinimap: 0
-  coinValue: 10
   minimapRepresentation: {fileID: 0}
+  uiInteractMessage: {fileID: 0}
+  canPick: 0
 --- !u!135 &583484772
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -17607,12 +17625,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68dd2f595894a4c488f6834ce062a414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCoin: 1
-  isBomb: 0
-  isCollectible: 0
+  isPortalTwoKey: 0
+  isPortalThreeKey: 0
+  isLizard: 0
   showsOnMinimap: 0
-  coinValue: 10
   minimapRepresentation: {fileID: 0}
+  uiInteractMessage: {fileID: 0}
+  canPick: 0
 --- !u!135 &589806276
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -18118,12 +18137,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68dd2f595894a4c488f6834ce062a414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCoin: 1
-  isBomb: 0
-  isCollectible: 0
+  isPortalTwoKey: 0
+  isPortalThreeKey: 0
+  isLizard: 0
   showsOnMinimap: 0
-  coinValue: 10
   minimapRepresentation: {fileID: 0}
+  uiInteractMessage: {fileID: 0}
+  canPick: 0
 --- !u!135 &607352902
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -18523,12 +18543,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68dd2f595894a4c488f6834ce062a414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCoin: 1
-  isBomb: 0
-  isCollectible: 0
+  isPortalTwoKey: 0
+  isPortalThreeKey: 0
+  isLizard: 0
   showsOnMinimap: 0
-  coinValue: 10
   minimapRepresentation: {fileID: 0}
+  uiInteractMessage: {fileID: 0}
+  canPick: 0
 --- !u!135 &613313970
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -18596,12 +18617,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68dd2f595894a4c488f6834ce062a414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCoin: 1
-  isBomb: 0
-  isCollectible: 0
+  isPortalTwoKey: 0
+  isPortalThreeKey: 0
+  isLizard: 0
   showsOnMinimap: 0
-  coinValue: 10
   minimapRepresentation: {fileID: 0}
+  uiInteractMessage: {fileID: 0}
+  canPick: 0
 --- !u!135 &613364530
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -19788,12 +19810,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68dd2f595894a4c488f6834ce062a414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCoin: 1
-  isBomb: 0
-  isCollectible: 0
+  isPortalTwoKey: 0
+  isPortalThreeKey: 0
+  isLizard: 0
   showsOnMinimap: 0
-  coinValue: 10
   minimapRepresentation: {fileID: 0}
+  uiInteractMessage: {fileID: 0}
+  canPick: 0
 --- !u!135 &687315615
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -20228,12 +20251,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68dd2f595894a4c488f6834ce062a414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCoin: 1
-  isBomb: 0
-  isCollectible: 0
+  isPortalTwoKey: 0
+  isPortalThreeKey: 0
+  isLizard: 0
   showsOnMinimap: 0
-  coinValue: 10
   minimapRepresentation: {fileID: 0}
+  uiInteractMessage: {fileID: 0}
+  canPick: 0
 --- !u!135 &719421973
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -20498,12 +20522,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68dd2f595894a4c488f6834ce062a414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCoin: 1
-  isBomb: 0
-  isCollectible: 0
+  isPortalTwoKey: 0
+  isPortalThreeKey: 0
+  isLizard: 0
   showsOnMinimap: 0
-  coinValue: 10
   minimapRepresentation: {fileID: 0}
+  uiInteractMessage: {fileID: 0}
+  canPick: 0
 --- !u!135 &740428201
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -20936,12 +20961,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68dd2f595894a4c488f6834ce062a414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCoin: 1
-  isBomb: 0
-  isCollectible: 0
+  isPortalTwoKey: 0
+  isPortalThreeKey: 0
+  isLizard: 0
   showsOnMinimap: 0
-  coinValue: 10
   minimapRepresentation: {fileID: 0}
+  uiInteractMessage: {fileID: 0}
+  canPick: 0
 --- !u!135 &753516770
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -21477,12 +21503,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68dd2f595894a4c488f6834ce062a414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCoin: 1
-  isBomb: 0
-  isCollectible: 0
+  isPortalTwoKey: 0
+  isPortalThreeKey: 0
+  isLizard: 0
   showsOnMinimap: 0
-  coinValue: 10
   minimapRepresentation: {fileID: 0}
+  uiInteractMessage: {fileID: 0}
+  canPick: 0
 --- !u!135 &772212060
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -22277,12 +22304,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68dd2f595894a4c488f6834ce062a414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCoin: 1
-  isBomb: 0
-  isCollectible: 0
+  isPortalTwoKey: 0
+  isPortalThreeKey: 0
+  isLizard: 0
   showsOnMinimap: 0
-  coinValue: 10
   minimapRepresentation: {fileID: 0}
+  uiInteractMessage: {fileID: 0}
+  canPick: 0
 --- !u!135 &779322434
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -22850,12 +22878,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68dd2f595894a4c488f6834ce062a414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCoin: 1
-  isBomb: 0
-  isCollectible: 0
+  isPortalTwoKey: 0
+  isPortalThreeKey: 0
+  isLizard: 0
   showsOnMinimap: 0
-  coinValue: 10
   minimapRepresentation: {fileID: 0}
+  uiInteractMessage: {fileID: 0}
+  canPick: 0
 --- !u!135 &791569745
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -23994,12 +24023,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68dd2f595894a4c488f6834ce062a414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCoin: 1
-  isBomb: 0
-  isCollectible: 0
+  isPortalTwoKey: 0
+  isPortalThreeKey: 0
+  isLizard: 0
   showsOnMinimap: 0
-  coinValue: 10
   minimapRepresentation: {fileID: 0}
+  uiInteractMessage: {fileID: 0}
+  canPick: 0
 --- !u!135 &815598953
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -24067,12 +24097,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68dd2f595894a4c488f6834ce062a414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCoin: 1
-  isBomb: 0
-  isCollectible: 0
+  isPortalTwoKey: 0
+  isPortalThreeKey: 0
+  isLizard: 0
   showsOnMinimap: 0
-  coinValue: 10
   minimapRepresentation: {fileID: 0}
+  uiInteractMessage: {fileID: 0}
+  canPick: 0
 --- !u!135 &830478286
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -25089,12 +25120,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68dd2f595894a4c488f6834ce062a414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCoin: 1
-  isBomb: 0
-  isCollectible: 0
+  isPortalTwoKey: 0
+  isPortalThreeKey: 0
+  isLizard: 0
   showsOnMinimap: 0
-  coinValue: 10
   minimapRepresentation: {fileID: 0}
+  uiInteractMessage: {fileID: 0}
+  canPick: 0
 --- !u!135 &867174899
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -25162,12 +25194,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68dd2f595894a4c488f6834ce062a414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCoin: 1
-  isBomb: 0
-  isCollectible: 0
+  isPortalTwoKey: 0
+  isPortalThreeKey: 0
+  isLizard: 0
   showsOnMinimap: 0
-  coinValue: 10
   minimapRepresentation: {fileID: 0}
+  uiInteractMessage: {fileID: 0}
+  canPick: 0
 --- !u!135 &869861773
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -25656,12 +25689,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68dd2f595894a4c488f6834ce062a414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCoin: 1
-  isBomb: 0
-  isCollectible: 0
+  isPortalTwoKey: 0
+  isPortalThreeKey: 0
+  isLizard: 0
   showsOnMinimap: 0
-  coinValue: 10
   minimapRepresentation: {fileID: 0}
+  uiInteractMessage: {fileID: 0}
+  canPick: 0
 --- !u!135 &903108488
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -25729,12 +25763,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68dd2f595894a4c488f6834ce062a414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCoin: 1
-  isBomb: 0
-  isCollectible: 0
+  isPortalTwoKey: 0
+  isPortalThreeKey: 0
+  isLizard: 0
   showsOnMinimap: 0
-  coinValue: 10
   minimapRepresentation: {fileID: 0}
+  uiInteractMessage: {fileID: 0}
+  canPick: 0
 --- !u!135 &909425661
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -30138,12 +30173,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68dd2f595894a4c488f6834ce062a414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCoin: 1
-  isBomb: 0
-  isCollectible: 0
+  isPortalTwoKey: 0
+  isPortalThreeKey: 0
+  isLizard: 0
   showsOnMinimap: 0
-  coinValue: 10
   minimapRepresentation: {fileID: 0}
+  uiInteractMessage: {fileID: 0}
+  canPick: 0
 --- !u!135 &1021552205
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -30736,12 +30772,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68dd2f595894a4c488f6834ce062a414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCoin: 1
-  isBomb: 0
-  isCollectible: 0
+  isPortalTwoKey: 0
+  isPortalThreeKey: 0
+  isLizard: 0
   showsOnMinimap: 0
-  coinValue: 10
   minimapRepresentation: {fileID: 0}
+  uiInteractMessage: {fileID: 0}
+  canPick: 0
 --- !u!135 &1066654444
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -30936,12 +30973,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68dd2f595894a4c488f6834ce062a414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCoin: 1
-  isBomb: 0
-  isCollectible: 0
+  isPortalTwoKey: 0
+  isPortalThreeKey: 0
+  isLizard: 0
   showsOnMinimap: 0
-  coinValue: 10
   minimapRepresentation: {fileID: 0}
+  uiInteractMessage: {fileID: 0}
+  canPick: 0
 --- !u!135 &1077419617
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -36932,12 +36970,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68dd2f595894a4c488f6834ce062a414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCoin: 1
-  isBomb: 0
-  isCollectible: 0
+  isPortalTwoKey: 0
+  isPortalThreeKey: 0
+  isLizard: 0
   showsOnMinimap: 0
-  coinValue: 10
   minimapRepresentation: {fileID: 0}
+  uiInteractMessage: {fileID: 0}
+  canPick: 0
 --- !u!135 &1184183601
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -40075,12 +40114,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68dd2f595894a4c488f6834ce062a414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCoin: 1
-  isBomb: 0
-  isCollectible: 0
+  isPortalTwoKey: 0
+  isPortalThreeKey: 0
+  isLizard: 0
   showsOnMinimap: 0
-  coinValue: 10
   minimapRepresentation: {fileID: 0}
+  uiInteractMessage: {fileID: 0}
+  canPick: 0
 --- !u!135 &1276472682
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -41644,12 +41684,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68dd2f595894a4c488f6834ce062a414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCoin: 1
-  isBomb: 0
-  isCollectible: 0
+  isPortalTwoKey: 0
+  isPortalThreeKey: 0
+  isLizard: 0
   showsOnMinimap: 0
-  coinValue: 10
   minimapRepresentation: {fileID: 0}
+  uiInteractMessage: {fileID: 0}
+  canPick: 0
 --- !u!135 &1344587605
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -45199,12 +45240,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68dd2f595894a4c488f6834ce062a414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCoin: 1
-  isBomb: 0
-  isCollectible: 0
+  isPortalTwoKey: 0
+  isPortalThreeKey: 0
+  isLizard: 0
   showsOnMinimap: 0
-  coinValue: 10
   minimapRepresentation: {fileID: 0}
+  uiInteractMessage: {fileID: 0}
+  canPick: 0
 --- !u!135 &1449131380
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -45383,12 +45425,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68dd2f595894a4c488f6834ce062a414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCoin: 1
-  isBomb: 0
-  isCollectible: 0
+  isPortalTwoKey: 0
+  isPortalThreeKey: 0
+  isLizard: 0
   showsOnMinimap: 0
-  coinValue: 10
   minimapRepresentation: {fileID: 0}
+  uiInteractMessage: {fileID: 0}
+  canPick: 0
 --- !u!135 &1461720933
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -47877,12 +47920,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68dd2f595894a4c488f6834ce062a414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCoin: 1
-  isBomb: 0
-  isCollectible: 0
+  isPortalTwoKey: 0
+  isPortalThreeKey: 0
+  isLizard: 0
   showsOnMinimap: 0
-  coinValue: 10
   minimapRepresentation: {fileID: 0}
+  uiInteractMessage: {fileID: 0}
+  canPick: 0
 --- !u!135 &1490438103
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -49545,12 +49589,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68dd2f595894a4c488f6834ce062a414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCoin: 1
-  isBomb: 0
-  isCollectible: 0
+  isPortalTwoKey: 0
+  isPortalThreeKey: 0
+  isLizard: 0
   showsOnMinimap: 0
-  coinValue: 10
   minimapRepresentation: {fileID: 0}
+  uiInteractMessage: {fileID: 0}
+  canPick: 0
 --- !u!135 &1564744853
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -50681,12 +50726,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68dd2f595894a4c488f6834ce062a414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCoin: 1
-  isBomb: 0
-  isCollectible: 0
+  isPortalTwoKey: 0
+  isPortalThreeKey: 0
+  isLizard: 0
   showsOnMinimap: 0
-  coinValue: 10
   minimapRepresentation: {fileID: 0}
+  uiInteractMessage: {fileID: 0}
+  canPick: 0
 --- !u!135 &1611073909
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -50754,12 +50800,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68dd2f595894a4c488f6834ce062a414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCoin: 1
-  isBomb: 0
-  isCollectible: 0
+  isPortalTwoKey: 0
+  isPortalThreeKey: 0
+  isLizard: 0
   showsOnMinimap: 0
-  coinValue: 10
   minimapRepresentation: {fileID: 0}
+  uiInteractMessage: {fileID: 0}
+  canPick: 0
 --- !u!135 &1614126288
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -50827,12 +50874,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68dd2f595894a4c488f6834ce062a414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCoin: 1
-  isBomb: 0
-  isCollectible: 0
+  isPortalTwoKey: 0
+  isPortalThreeKey: 0
+  isLizard: 0
   showsOnMinimap: 0
-  coinValue: 10
   minimapRepresentation: {fileID: 0}
+  uiInteractMessage: {fileID: 0}
+  canPick: 0
 --- !u!135 &1617743164
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -50886,7 +50934,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTutorial: 0
+  isNPC: 0
   worldCanvas: {fileID: 27681634}
+  exclamationMark: {fileID: 0}
   inTrigger: 0
   tutorialActive: 0
   tutorialCanvas: {fileID: 1229896431}
@@ -51565,12 +51615,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68dd2f595894a4c488f6834ce062a414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCoin: 1
-  isBomb: 0
-  isCollectible: 0
+  isPortalTwoKey: 0
+  isPortalThreeKey: 0
+  isLizard: 0
   showsOnMinimap: 0
-  coinValue: 10
   minimapRepresentation: {fileID: 0}
+  uiInteractMessage: {fileID: 0}
+  canPick: 0
 --- !u!135 &1637108656
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -52103,12 +52154,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68dd2f595894a4c488f6834ce062a414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCoin: 1
-  isBomb: 0
-  isCollectible: 0
+  isPortalTwoKey: 0
+  isPortalThreeKey: 0
+  isLizard: 0
   showsOnMinimap: 0
-  coinValue: 10
   minimapRepresentation: {fileID: 0}
+  uiInteractMessage: {fileID: 0}
+  canPick: 0
 --- !u!135 &1664802197
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -54237,7 +54289,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTutorial: 0
+  isNPC: 0
   worldCanvas: {fileID: 892326097}
+  exclamationMark: {fileID: 0}
   inTrigger: 0
   tutorialActive: 0
   tutorialCanvas: {fileID: 0}
@@ -54579,12 +54633,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68dd2f595894a4c488f6834ce062a414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCoin: 1
-  isBomb: 0
-  isCollectible: 0
+  isPortalTwoKey: 0
+  isPortalThreeKey: 0
+  isLizard: 0
   showsOnMinimap: 0
-  coinValue: 10
   minimapRepresentation: {fileID: 0}
+  uiInteractMessage: {fileID: 0}
+  canPick: 0
 --- !u!135 &1755467647
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -54652,12 +54707,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68dd2f595894a4c488f6834ce062a414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCoin: 1
-  isBomb: 0
-  isCollectible: 0
+  isPortalTwoKey: 0
+  isPortalThreeKey: 0
+  isLizard: 0
   showsOnMinimap: 0
-  coinValue: 10
   minimapRepresentation: {fileID: 0}
+  uiInteractMessage: {fileID: 0}
+  canPick: 0
 --- !u!135 &1760299784
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -54904,12 +54960,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68dd2f595894a4c488f6834ce062a414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCoin: 1
-  isBomb: 0
-  isCollectible: 0
+  isPortalTwoKey: 0
+  isPortalThreeKey: 0
+  isLizard: 0
   showsOnMinimap: 0
-  coinValue: 10
   minimapRepresentation: {fileID: 0}
+  uiInteractMessage: {fileID: 0}
+  canPick: 0
 --- !u!135 &1783215222
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -58201,12 +58258,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68dd2f595894a4c488f6834ce062a414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCoin: 1
-  isBomb: 0
-  isCollectible: 0
+  isPortalTwoKey: 0
+  isPortalThreeKey: 0
+  isLizard: 0
   showsOnMinimap: 0
-  coinValue: 10
   minimapRepresentation: {fileID: 0}
+  uiInteractMessage: {fileID: 0}
+  canPick: 0
 --- !u!135 &1851711947
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -58793,12 +58851,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68dd2f595894a4c488f6834ce062a414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCoin: 0
-  isBomb: 1
-  isCollectible: 0
+  isPortalTwoKey: 0
+  isPortalThreeKey: 0
+  isLizard: 0
   showsOnMinimap: 0
-  coinValue: 0
   minimapRepresentation: {fileID: 0}
+  uiInteractMessage: {fileID: 0}
+  canPick: 0
 --- !u!23 &1869464673
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -59054,7 +59113,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTutorial: 1
+  isNPC: 0
   worldCanvas: {fileID: 447444821}
+  exclamationMark: {fileID: 0}
   inTrigger: 0
   tutorialActive: 0
   tutorialCanvas: {fileID: 1229896431}
@@ -59270,12 +59331,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68dd2f595894a4c488f6834ce062a414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCoin: 1
-  isBomb: 0
-  isCollectible: 0
+  isPortalTwoKey: 0
+  isPortalThreeKey: 0
+  isLizard: 0
   showsOnMinimap: 0
-  coinValue: 10
   minimapRepresentation: {fileID: 0}
+  uiInteractMessage: {fileID: 0}
+  canPick: 0
 --- !u!135 &1879186762
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -59426,12 +59488,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68dd2f595894a4c488f6834ce062a414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCoin: 1
-  isBomb: 0
-  isCollectible: 0
+  isPortalTwoKey: 0
+  isPortalThreeKey: 0
+  isLizard: 0
   showsOnMinimap: 0
-  coinValue: 10
   minimapRepresentation: {fileID: 0}
+  uiInteractMessage: {fileID: 0}
+  canPick: 0
 --- !u!135 &1887913299
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -59582,12 +59645,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68dd2f595894a4c488f6834ce062a414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCoin: 1
-  isBomb: 0
-  isCollectible: 0
+  isPortalTwoKey: 0
+  isPortalThreeKey: 0
+  isLizard: 0
   showsOnMinimap: 0
-  coinValue: 10
   minimapRepresentation: {fileID: 0}
+  uiInteractMessage: {fileID: 0}
+  canPick: 0
 --- !u!135 &1900391453
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -59986,12 +60050,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68dd2f595894a4c488f6834ce062a414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCoin: 1
-  isBomb: 0
-  isCollectible: 0
+  isPortalTwoKey: 0
+  isPortalThreeKey: 0
+  isLizard: 0
   showsOnMinimap: 0
-  coinValue: 10
   minimapRepresentation: {fileID: 0}
+  uiInteractMessage: {fileID: 0}
+  canPick: 0
 --- !u!135 &1918130242
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -61664,12 +61729,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68dd2f595894a4c488f6834ce062a414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCoin: 1
-  isBomb: 0
-  isCollectible: 0
+  isPortalTwoKey: 0
+  isPortalThreeKey: 0
+  isLizard: 0
   showsOnMinimap: 0
-  coinValue: 10
   minimapRepresentation: {fileID: 0}
+  uiInteractMessage: {fileID: 0}
+  canPick: 0
 --- !u!135 &1957462813
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -62507,12 +62573,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68dd2f595894a4c488f6834ce062a414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCoin: 1
-  isBomb: 0
-  isCollectible: 0
+  isPortalTwoKey: 0
+  isPortalThreeKey: 0
+  isLizard: 0
   showsOnMinimap: 0
-  coinValue: 10
   minimapRepresentation: {fileID: 0}
+  uiInteractMessage: {fileID: 0}
+  canPick: 0
 --- !u!135 &2014136353
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -64336,12 +64403,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68dd2f595894a4c488f6834ce062a414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCoin: 1
-  isBomb: 0
-  isCollectible: 0
+  isPortalTwoKey: 0
+  isPortalThreeKey: 0
+  isLizard: 0
   showsOnMinimap: 0
-  coinValue: 10
   minimapRepresentation: {fileID: 0}
+  uiInteractMessage: {fileID: 0}
+  canPick: 0
 --- !u!135 &2102055535
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -64463,12 +64531,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68dd2f595894a4c488f6834ce062a414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCoin: 1
-  isBomb: 0
-  isCollectible: 0
+  isPortalTwoKey: 0
+  isPortalThreeKey: 0
+  isLizard: 0
   showsOnMinimap: 0
-  coinValue: 10
   minimapRepresentation: {fileID: 0}
+  uiInteractMessage: {fileID: 0}
+  canPick: 0
 --- !u!135 &2104201969
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -66014,12 +66083,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68dd2f595894a4c488f6834ce062a414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCoin: 0
-  isBomb: 1
-  isCollectible: 0
+  isPortalTwoKey: 0
+  isPortalThreeKey: 0
+  isLizard: 0
   showsOnMinimap: 0
-  coinValue: 0
   minimapRepresentation: {fileID: 0}
+  uiInteractMessage: {fileID: 0}
+  canPick: 0
 --- !u!1001 &6645021102416905013
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -66032,18 +66102,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sign
       objectReference: {fileID: 0}
-    - target: {fileID: 3051510752770540527, guid: 040773cc771bcb240b61225ebc454b8e, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.924597
-      objectReference: {fileID: 0}
-    - target: {fileID: 3051510752770540527, guid: 040773cc771bcb240b61225ebc454b8e, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.1830833
-      objectReference: {fileID: 0}
-    - target: {fileID: 3051510752770540527, guid: 040773cc771bcb240b61225ebc454b8e, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.4502035
-      objectReference: {fileID: 0}
+    - target: {fileID: 2206002582091938538, guid: 040773cc771bcb240b61225ebc454b8e, type: 3}
+      propertyPath: whatTutorial
+      value: 
+      objectReference: {fileID: 485621423}
+    - target: {fileID: 2206002582091938538, guid: 040773cc771bcb240b61225ebc454b8e, type: 3}
+      propertyPath: tutorialCanvas
+      value: 
+      objectReference: {fileID: 1229896431}
     - target: {fileID: 3095495875829208601, guid: 040773cc771bcb240b61225ebc454b8e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.37
@@ -66084,85 +66150,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3095495875829208601, guid: 040773cc771bcb240b61225ebc454b8e, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8219643068056896983, guid: 040773cc771bcb240b61225ebc454b8e, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.31976953
-      objectReference: {fileID: 0}
-    - target: {fileID: 8219643068056896983, guid: 040773cc771bcb240b61225ebc454b8e, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.1830833
-      objectReference: {fileID: 0}
-    - target: {fileID: 8219643068056896983, guid: 040773cc771bcb240b61225ebc454b8e, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.31976953
-      objectReference: {fileID: 0}
+    - target: {fileID: 6450952332132755883, guid: 040773cc771bcb240b61225ebc454b8e, type: 3}
+      propertyPath: m_Sources.Array.data[0].sourceTransform
+      value: 
+      objectReference: {fileID: 1231170241}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 3095495875829208601, guid: 040773cc771bcb240b61225ebc454b8e, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 7188317065498291623}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1281453603361109841, guid: 040773cc771bcb240b61225ebc454b8e, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 6645021102416905017}
-    - targetCorrespondingSourceObject: {fileID: 1281453603361109841, guid: 040773cc771bcb240b61225ebc454b8e, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 6645021102416905016}
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 040773cc771bcb240b61225ebc454b8e, type: 3}
---- !u!1 &6645021102416905014 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1281453603361109841, guid: 040773cc771bcb240b61225ebc454b8e, type: 3}
-  m_PrefabInstance: {fileID: 6645021102416905013}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &6645021102416905015 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3095495875829208601, guid: 040773cc771bcb240b61225ebc454b8e, type: 3}
-  m_PrefabInstance: {fileID: 6645021102416905013}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &6645021102416905016
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6645021102416905014}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 4, y: 3, z: 4}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6645021102416905017
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6645021102416905014}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a98a4fb05830784e8c36da3ab57b74e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isTutorial: 1
-  worldCanvas: {fileID: 7188317065498291624}
-  inTrigger: 0
-  tutorialActive: 0
-  tutorialCanvas: {fileID: 1229896431}
-  whatTutorial: {fileID: 485621423}
 --- !u!33 &6777057301539655191
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -66290,125 +66286,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c9f2cafb1f1a6b41a4b304cdbf0e131, type: 3}
---- !u!1001 &7188317065498291622
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 6645021102416905015}
-    m_Modifications:
-    - target: {fileID: 117664769526100569, guid: b02d6432f119efc409f7d1d5107dfb00, type: 3}
-      propertyPath: m_Active
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 117664769526100569, guid: b02d6432f119efc409f7d1d5107dfb00, type: 3}
-      propertyPath: m_Sources.Array.data[0].sourceTransform
-      value: 
-      objectReference: {fileID: 1231170241}
-    - target: {fileID: 491413200907074062, guid: b02d6432f119efc409f7d1d5107dfb00, type: 3}
-      propertyPath: m_Name
-      value: InteractCanvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 491413200907074062, guid: b02d6432f119efc409f7d1d5107dfb00, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9172016930133070074, guid: b02d6432f119efc409f7d1d5107dfb00, type: 3}
-      propertyPath: m_Pivot.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 9172016930133070074, guid: b02d6432f119efc409f7d1d5107dfb00, type: 3}
-      propertyPath: m_Pivot.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 9172016930133070074, guid: b02d6432f119efc409f7d1d5107dfb00, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9172016930133070074, guid: b02d6432f119efc409f7d1d5107dfb00, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9172016930133070074, guid: b02d6432f119efc409f7d1d5107dfb00, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9172016930133070074, guid: b02d6432f119efc409f7d1d5107dfb00, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9172016930133070074, guid: b02d6432f119efc409f7d1d5107dfb00, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 1920
-      objectReference: {fileID: 0}
-    - target: {fileID: 9172016930133070074, guid: b02d6432f119efc409f7d1d5107dfb00, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 1080
-      objectReference: {fileID: 0}
-    - target: {fileID: 9172016930133070074, guid: b02d6432f119efc409f7d1d5107dfb00, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9172016930133070074, guid: b02d6432f119efc409f7d1d5107dfb00, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9172016930133070074, guid: b02d6432f119efc409f7d1d5107dfb00, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9172016930133070074, guid: b02d6432f119efc409f7d1d5107dfb00, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9172016930133070074, guid: b02d6432f119efc409f7d1d5107dfb00, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9172016930133070074, guid: b02d6432f119efc409f7d1d5107dfb00, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9172016930133070074, guid: b02d6432f119efc409f7d1d5107dfb00, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9172016930133070074, guid: b02d6432f119efc409f7d1d5107dfb00, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9172016930133070074, guid: b02d6432f119efc409f7d1d5107dfb00, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 9172016930133070074, guid: b02d6432f119efc409f7d1d5107dfb00, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9172016930133070074, guid: b02d6432f119efc409f7d1d5107dfb00, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9172016930133070074, guid: b02d6432f119efc409f7d1d5107dfb00, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: b02d6432f119efc409f7d1d5107dfb00, type: 3}
---- !u!224 &7188317065498291623 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 9172016930133070074, guid: b02d6432f119efc409f7d1d5107dfb00, type: 3}
-  m_PrefabInstance: {fileID: 7188317065498291622}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &7188317065498291624 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 491413200907074062, guid: b02d6432f119efc409f7d1d5107dfb00, type: 3}
-  m_PrefabInstance: {fileID: 7188317065498291622}
-  m_PrefabAsset: {fileID: 0}
 --- !u!33 &7516808284511475780
 MeshFilter:
   m_ObjectHideFlags: 0

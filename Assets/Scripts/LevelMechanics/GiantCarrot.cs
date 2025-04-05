@@ -30,7 +30,7 @@ public class GiantCarrot : MonoBehaviour
             {
                 sinkLevels++;
 
-                transform.position -= new Vector3(0, sinkDistance, 0);
+                transform.localPosition -= new Vector3(0, sinkDistance, 0);
             }
         }
     }

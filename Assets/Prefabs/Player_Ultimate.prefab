@@ -97,6 +97,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
+  canGroundPoundCarrot: 0
   spawnPosition: {x: 0, y: 0, z: 0}
   spawnRotation: {x: 0, y: 0, z: 0, w: 0}
   CameraArmTransform: {fileID: 0}
@@ -218,7 +219,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2064417619098916798}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 0477bc92001af494da71f56ed7ce986b, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
