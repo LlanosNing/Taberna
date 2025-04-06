@@ -4,20 +4,20 @@ using UnityEngine;
 
 public class DeathZone : MonoBehaviour
 {
-    GameOver gameOverRef;
+    public Transform spawnpoint;
+
+    Respawn respawnRef;
 
     private void Start()
     {
-        gameOverRef = GameObject.FindWithTag("Canvas").GetComponent<GameOver>();    
+        respawnRef = GameObject.FindWithTag("Player").GetComponent<Respawn>();    
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            other.gameObject.SetActive(false);
-
-            gameOverRef.GameOverAnimation();
+            respawnRef.RespawnPlayer(spawnpoint.position, spawnpoint.rotation);
         }
     }
 }

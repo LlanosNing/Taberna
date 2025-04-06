@@ -5,16 +5,28 @@ using UnityEngine;
 public class Respawn : MonoBehaviour
 {
     UltimatePlayerController playerRef;
+    Rigidbody rb;
+
+    public Animator fadeScreenAnim;
     // Start is called before the first frame update
     void Start()
     {
-        playerRef = GameObject.FindWithTag("Player").GetComponent<UltimatePlayerController>();
+        playerRef = GetComponent<UltimatePlayerController>();
+        rb = GetComponent<Rigidbody>();
     }
 
-    public void RespawnPlayer()
+    public void RespawnPlayer(Vector3 checkPointPos, Quaternion checkPointRot)
     {
-        playerRef.gameObject.SetActive(true);
+        StartCoroutine(RespawnPlayerCO(checkPointPos, checkPointRot));
+    }
 
-        playerRef.Respawn();
+    IEnumerator RespawnPlayerCO(Vector3 spawnPos, Quaternion spawnRot)
+    {
+        fadeScreenAnim.SetTrigger("FadeOut");
+        yield return new WaitForSeconds(1f);
+        transform.position = spawnPos;
+        transform.rotation = spawnRot;
+        rb.velocity = Vector3.zero;
+        fadeScreenAnim.SetTrigger("FadeIn");
     }
 }

@@ -14,7 +14,8 @@ public class ClickFastMinigame : MonoBehaviour
     public float cpsThreshold;
     bool minigameActivated;
 
-    GameObject cameraObject;
+    GameObject mainCamera;
+    public GameObject undergroundCamera;
     Animator fadeScreen;
     public GameObject uiIndicator;
     public Image indicatorImage;
@@ -24,9 +25,6 @@ public class ClickFastMinigame : MonoBehaviour
     public CameraArmController armControllerScript;
     public ZoomCamera zoomScript;
 
-    Vector3 initialCameraPosition;
-    Quaternion initialCameraRotation;
-    public Transform cameraWaypoint;
     UltimatePlayerController playerController;
 
     public World3Manager world3Manager;
@@ -36,7 +34,7 @@ public class ClickFastMinigame : MonoBehaviour
     {
         timeCounter = minigameDuration;
 
-        cameraObject = GameObject.FindWithTag("MainCamera");
+        mainCamera = GameObject.FindWithTag("MainCamera");
         fadeScreen = GameObject.FindWithTag("FadeScreen").GetComponent<Animator>();
 
         playerController = GameObject.FindWithTag("Player").GetComponent<UltimatePlayerController>();
@@ -90,8 +88,8 @@ public class ClickFastMinigame : MonoBehaviour
 
         yield return new WaitForSeconds(1f);
 
-        initialCameraPosition = cameraObject.transform.position;
-        initialCameraRotation = cameraObject.transform.rotation;
+        mainCamera.SetActive(false);
+        undergroundCamera.SetActive(true);
 
         followPlayerScript.staticCamera = true;
         armControllerScript.staticCamera = true;
@@ -99,9 +97,6 @@ public class ClickFastMinigame : MonoBehaviour
 
         playerController.canMove = false;
         playerController.canJump = false;
-
-        cameraObject.transform.position = cameraWaypoint.position;
-        cameraObject.transform.rotation = cameraWaypoint.rotation;
 
         fadeScreen.SetTrigger("FadeIn");
 
@@ -131,8 +126,8 @@ public class ClickFastMinigame : MonoBehaviour
         playerController.canMove = true;
         playerController.canJump = true;
 
-        cameraObject.transform.position = initialCameraPosition;
-        cameraObject.transform.rotation = initialCameraRotation;
+        mainCamera.SetActive(true);
+        undergroundCamera.SetActive(false);
 
         fadeScreen.SetTrigger("FadeOut");
 
@@ -142,7 +137,7 @@ public class ClickFastMinigame : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    public void ResetData(Transform camWaypoint)
+    public void ResetData()
     {
         timeCounter = minigameDuration;
         clicks = 0;
@@ -150,11 +145,9 @@ public class ClickFastMinigame : MonoBehaviour
         cps = 0;
 
         timeCounter = minigameDuration;
-        cameraObject = GameObject.FindWithTag("MainCamera");
+        mainCamera = GameObject.FindWithTag("MainCamera");
         fadeScreen = GameObject.FindWithTag("FadeScreen").GetComponent<Animator>();
         playerController = GameObject.FindWithTag("Player").GetComponent<UltimatePlayerController>();
-
-        cameraWaypoint = camWaypoint;
 
         StartMinigame();
     }

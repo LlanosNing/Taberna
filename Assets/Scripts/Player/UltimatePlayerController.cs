@@ -164,9 +164,9 @@ public class UltimatePlayerController : MonoBehaviour
         gravityBodyRef.gravityForce = gravityBodyRef.defaultGravityForce;
         rb.AddForce(normalVector * -jumpForce * 2.5f, ForceMode.Impulse);
         canGroundPoundCarrot = true;
-        yield return new WaitForSeconds(0.25f);
-        canJump = true;
+        yield return new WaitForSeconds(0.10f);
         canMove = true;
+        canJump = true;        
         canGroundPoundCarrot = false;
     }
 
@@ -177,11 +177,11 @@ public class UltimatePlayerController : MonoBehaviour
         rb.AddForce(normalVector * bounceForce, ForceMode.Impulse);
     }
 
-    public void Respawn()
+    public void Impulse(Vector3 impulseDirection, float impulseForce)
     {
-        transform.position = spawnPosition;
-        transform.rotation = spawnRotation;
         rb.velocity = Vector3.zero;
+
+        rb.AddForce((impulseDirection * 2 + normalVector.normalized) * impulseForce, ForceMode.Impulse);
     }
 
     public void Dance()

@@ -13,9 +13,6 @@ GameObject:
   - component: {fileID: 8576045397700744771}
   - component: {fileID: 13226713053438399}
   - component: {fileID: 5410102119180680601}
-  - component: {fileID: 6047796977861870036}
-  - component: {fileID: 7206101064444180817}
-  - component: {fileID: 3617868560674167354}
   m_Layer: 6
   m_Name: Player_Ultimate
   m_TagString: Player
@@ -139,47 +136,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 2, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6047796977861870036
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1656942005542592394}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90ed52ebf489ba14992d0f941f49e57b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  teleportPoint: {fileID: 0}
---- !u!114 &7206101064444180817
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1656942005542592394}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed9f384455892d24e8d09ac7944c6cbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hasBomb: 0
---- !u!114 &3617868560674167354
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1656942005542592394}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a65a351c778a154393de3887c69e884, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainCamera: {fileID: 0}
-  perspectiveCamera: {fileID: 0}
-  isPerspective: 0
 --- !u!1 &2064417619098916798
 GameObject:
   m_ObjectHideFlags: 0

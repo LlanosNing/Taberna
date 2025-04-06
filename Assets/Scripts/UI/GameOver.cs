@@ -7,8 +7,8 @@ using UnityEngine.UI;
 public class GameOver : MonoBehaviour
 {
     public float fadeSpeed = 1.0f;
-    public Animator lifeBarAnim;
-    public Image gameOverPanel;
+    //public Animator lifeBarAnim;
+    //public Image gameOverPanel;
 
     public bool shouldFade, shouldUnfade;
 
@@ -25,35 +25,35 @@ public class GameOver : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (shouldFade)
-        {
-            GameOverPanelFadeIn();
+        //if (shouldFade)
+        //{
+        //    GameOverPanelFadeIn();
 
-            if(gameOverPanel.color.a >= 0.85f)
-            {
-                shouldFade = false;
-            }
-        }
+        //    //if(gameOverPanel.color.a >= 0.85f)
+        //    //{
+        //    //    shouldFade = false;
+        //    //}
+        //}
 
-        if (shouldUnfade)
-        {
-            GameOverPanelFadeOut();
+        //if (shouldUnfade)
+        //{
+        //    GameOverPanelFadeOut();
 
-            if (gameOverPanel.color.a <= 0f)
-            {
-                shouldUnfade = false;
-            }
-        }
+        //    //if (gameOverPanel.color.a <= 0f)
+        //    //{
+        //    //    shouldUnfade = false;
+        //    //}
+        //}
     }
 
     void GameOverPanelFadeIn()
     {
-        gameOverPanel.color = new Color(gameOverPanel.color.r, gameOverPanel.color.g, gameOverPanel.color.b, Mathf.MoveTowards(gameOverPanel.color.a, 0.85f, fadeSpeed * Time.deltaTime));
+        //gameOverPanel.color = new Color(gameOverPanel.color.r, gameOverPanel.color.g, gameOverPanel.color.b, Mathf.MoveTowards(gameOverPanel.color.a, 0.85f, fadeSpeed * Time.deltaTime));
     }
 
     void GameOverPanelFadeOut()
     {
-        gameOverPanel.color = new Color(gameOverPanel.color.r, gameOverPanel.color.g, gameOverPanel.color.b, Mathf.MoveTowards(gameOverPanel.color.a, 0f, fadeSpeed * Time.deltaTime));
+        //gameOverPanel.color = new Color(gameOverPanel.color.r, gameOverPanel.color.g, gameOverPanel.color.b, Mathf.MoveTowards(gameOverPanel.color.a, 0f, fadeSpeed * Time.deltaTime));
     }
 
     public void GameOverAnimation()
@@ -65,7 +65,7 @@ public class GameOver : MonoBehaviour
     {
         shouldFade = true;
 
-        lifeBarAnim.SetTrigger("ScaleUp");
+        //lifeBarAnim.SetTrigger("ScaleUp");
 
         yield return new WaitForSeconds(1f);
 
@@ -73,7 +73,7 @@ public class GameOver : MonoBehaviour
 
         yield return new WaitForSeconds(1f);
 
-        lifeBarAnim.SetTrigger("ScaleDown");
+        //lifeBarAnim.SetTrigger("ScaleDown");
 
         yield return new WaitForSeconds(0.5f);
 
@@ -81,6 +81,6 @@ public class GameOver : MonoBehaviour
 
         yield return new WaitForSeconds(0.5f);
 
-        respawnRef.RespawnPlayer();
+        //respawnRef.RespawnPlayer();
     }
 }

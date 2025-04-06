@@ -13,6 +13,15 @@ public class GiantCarrot : MonoBehaviour
 
     public Transform cameraWaypoint;
 
+    public float impulseForce;
+    UltimatePlayerController playerController;
+    Rigidbody rb;
+
+    private void Start()
+    {
+        playerController = GameObject.FindWithTag("Player").GetComponent<UltimatePlayerController>();
+        rb = GameObject.FindWithTag("Player").GetComponent<Rigidbody>();
+    }
     // Update is called once per frame
     void Update()
     {
@@ -26,7 +35,7 @@ public class GiantCarrot : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player") && sinkLevels < maxSink)
         {
-            if(collision.gameObject.GetComponent<UltimatePlayerController>().canGroundPoundCarrot)
+            if(playerController.canGroundPoundCarrot)
             {
                 sinkLevels++;
 
@@ -34,11 +43,20 @@ public class GiantCarrot : MonoBehaviour
             }
         }
     }
-
     void ActivateMinigame()
     {
-        minigameManager.SetActive(true);
-        minigameManager.GetComponent<ClickFastMinigame>().ResetData(cameraWaypoint);
+        StartCoroutine(ActivateMinigameCO());
+    }
+    IEnumerator ActivateMinigameCO()
+    {
+        yield return new WaitForSeconds(0.15f);
         alreadyActivated = true;
+        playerController.canMove = false;
+        playerController.Impulse(transform.forward.normalized, impulseForce);
+        yield return new WaitForSeconds(1.5f);
+        minigameManager.SetActive(true);
+        minigameManager.GetComponent<ClickFastMinigame>().ResetData();
+        yield return new WaitForSeconds(1f);
+        rb.velocity = Vector3.zero;
     }
 }
