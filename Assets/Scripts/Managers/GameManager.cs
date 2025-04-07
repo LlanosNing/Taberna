@@ -5,9 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-
-    public string levelToLoad;
-
     public static bool hasPortalTwoKey;
     public static bool hasPortalThreeKey;
     public static int lastPortal;

@@ -14233,7 +14233,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneToLoad: Lobby
-  timeToLoad: 0
+  fadeScreenAnimator: {fileID: 1684404394}
+  isPortalTwo: 0
+  isPortalThree: 0
+  cantAccessMessage: {fileID: 0}
 --- !u!4 &2024751064 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2860448402281112564, guid: 0c37b2fe40687004c8a60ed4711a64b1, type: 3}
