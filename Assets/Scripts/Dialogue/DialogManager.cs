@@ -29,6 +29,7 @@ public class DialogManager : MonoBehaviour
 
     UltimatePlayerController playerRef;
     TavernPlayerController playerTavernRef;
+    Rigidbody playerRB;
 
     public bool canDialogueStart;
 
@@ -36,6 +37,9 @@ public class DialogManager : MonoBehaviour
     public GameObject questBox;
 
     public GameObject managerToActivate;
+
+    public float dialogueCooldown;
+    float dialogueCDCounter;
 
     //Hacemos una referencia (Singleton)
     public static DialogManager instance;
@@ -52,7 +56,10 @@ public class DialogManager : MonoBehaviour
         if (SceneManager.GetActiveScene().name == "InteriorTaberna")
             playerTavernRef = GameObject.FindWithTag("Player").GetComponent<TavernPlayerController>();
         else
+        {
             playerRef = GameObject.FindWithTag("Player").GetComponent<UltimatePlayerController>();
+            playerRB = GameObject.FindWithTag("Player").GetComponent<Rigidbody>();
+        }
     }
 
     // Update is called once per frame
@@ -76,6 +83,9 @@ public class DialogManager : MonoBehaviour
                     StopAllCoroutines();
                     dialogText.text = dialogLines[lineIndex];
                 }
+
+                if (SceneManager.GetActiveScene().name != "InteriorTaberna")
+                    playerRB.velocity = Vector3.zero;
                 ////Vamos a la siguiente línea de diálogo
                 //currentLine++;
 
@@ -102,12 +112,17 @@ public class DialogManager : MonoBehaviour
                 //}
             }
         }
+
+        if (dialogueCDCounter >= 0)
+        {
+            dialogueCDCounter -= Time.deltaTime;
+        }
     }
 
     //Método que muestra el diálogo pasado por parámetro
     public void ShowDialog(string[] newLines, Sprite theSNpc)
     {
-        if (!dialogBox.activeInHierarchy)
+        if (!dialogBox.activeInHierarchy && dialogueCDCounter <= 0)
         {
             //El contenido de las líneas de diálogo del Manager pasa a ser el de las líneas de diálogo tras haber activado un diálogo
             dialogLines = newLines;
@@ -162,11 +177,14 @@ public class DialogManager : MonoBehaviour
 
     private void StartDialogue()
     {
-        lineIndex = 0;
-        canDialogueStart = true;
-        dialogBox.SetActive(true);
-        CheckIfName(sNpc);
-        StartCoroutine(ShowLine());
+        if(dialogueCDCounter <= 0)
+        {
+            lineIndex = 0;
+            canDialogueStart = true;
+            dialogBox.SetActive(true);
+            CheckIfName(sNpc);
+            StartCoroutine(ShowLine());
+        }
     }
 
     private void NextDialogueLine()
@@ -196,6 +214,8 @@ public class DialogManager : MonoBehaviour
             {
                 managerToActivate.SetActive(true);
             }
+
+            dialogueCDCounter = dialogueCooldown;
         }
     }
     private IEnumerator ShowLine()

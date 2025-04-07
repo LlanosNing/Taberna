@@ -8611,7 +8611,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 150
+  m_Radius: 300
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &658273244
 PrefabInstance:
@@ -19365,7 +19365,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7078655811131166978, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
       propertyPath: m_RotationOffset.y
-      value: -76.46941
+      value: -76.469406
       objectReference: {fileID: 0}
     - target: {fileID: 7078655811131166978, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
       propertyPath: m_RotationOffset.z
@@ -21735,7 +21735,7 @@ MonoBehaviour:
   sinkDistance: 2
   minigameManager: {fileID: 451495879}
   cameraWaypoint: {fileID: 1325826457}
-  impulseForce: 400
+  impulseForce: 350
 --- !u!136 &1694614854
 CapsuleCollider:
   m_ObjectHideFlags: 0
