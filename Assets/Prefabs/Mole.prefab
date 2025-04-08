@@ -125,7 +125,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8490223172588592835}
   - component: {fileID: 1656574447473432150}
-  - component: {fileID: 1087745297674107355}
   m_Layer: 0
   m_Name: Mole
   m_TagString: Mole
@@ -166,27 +165,6 @@ MonoBehaviour:
   minTimeToAppear: 4
   maxTimeToAppear: 6
   maxTimeToHide: 3
---- !u!65 &1087745297674107355
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5672906975592706932}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.8, y: 0.2, z: 0.8}
-  m_Center: {x: 0, y: 1.1, z: 0}
 --- !u!1 &7755475746783136366
 GameObject:
   m_ObjectHideFlags: 0
@@ -290,8 +268,8 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.85
-  m_Center: {x: 0, y: -3.85, z: 0}
+  m_Radius: 0.5
+  m_Center: {x: 0, y: -2, z: 0}
 --- !u!1001 &7288231744903052476
 PrefabInstance:
   m_ObjectHideFlags: 0

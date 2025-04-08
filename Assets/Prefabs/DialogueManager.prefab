@@ -55,3 +55,5 @@ MonoBehaviour:
   canDialogueStart: 0
   activatesQuestBox: 1
   questBox: {fileID: 0}
+  managerToActivate: {fileID: 0}
+  dialogueCooldown: 1

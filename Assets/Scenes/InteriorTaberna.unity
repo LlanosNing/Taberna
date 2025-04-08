@@ -23497,6 +23497,10 @@ PrefabInstance:
       propertyPath: dialogCharName
       value: 
       objectReference: {fileID: 1171976387}
+    - target: {fileID: 8381358473947076355, guid: 240de863bf2230f48ac17025132596c4, type: 3}
+      propertyPath: dialogueCooldown
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
