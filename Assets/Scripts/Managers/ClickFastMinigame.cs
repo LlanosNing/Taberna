@@ -143,6 +143,7 @@ public class ClickFastMinigame : MonoBehaviour
         clicks = 0;
         timePassed = 0;
         cps = 0;
+        progressBar.fillAmount = 0;
 
         timeCounter = minigameDuration;
         mainCamera = GameObject.FindWithTag("MainCamera");

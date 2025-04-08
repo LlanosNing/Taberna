@@ -27650,6 +27650,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1457971825}
     - target: {fileID: 3165837986011223218, guid: 4016089cbcfe85841816119e52fa517f, type: 3}
+      propertyPath: m_Antialiasing
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3165837986011223218, guid: 4016089cbcfe85841816119e52fa517f, type: 3}
       propertyPath: m_Cameras.Array.size
       value: 0
       objectReference: {fileID: 0}

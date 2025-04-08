@@ -81,6 +81,7 @@ MonoBehaviour:
   rotSpeed: 100
   lookRotSpeed: 100
   jumpForce: 400
+  coyoteTime: 0.25
   antiGravity: 0
   canMove: 1
   currentPlanet: {fileID: 0}
