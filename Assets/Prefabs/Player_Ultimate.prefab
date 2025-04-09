@@ -91,7 +91,7 @@ MonoBehaviour:
   isGrounded: 0
   detectedColliders: []
   groundCheckCenter: {fileID: 6121837305713044086}
-  groundCheckSize: {x: 0.8, y: 0.2, z: 0.8}
+  groundCheckSize: {x: 0.4, y: 0.1, z: 0.4}
   groundLayer:
     serializedVersion: 2
     m_Bits: 8

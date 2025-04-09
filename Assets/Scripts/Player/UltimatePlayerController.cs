@@ -122,7 +122,16 @@ public class UltimatePlayerController : MonoBehaviour
             Vector3 currentNormalVelocity = Vector3.Project(rb.velocity, normalVector.normalized);
 
 
-            rb.velocity = currentNormalVelocity + (movement_dir * speed);
+            if (Physics.Raycast(transform.position, playerVisual.forward, 1, groundLayer))
+            {
+
+            }
+            else
+            {
+                rb.velocity = currentNormalVelocity + (movement_dir * speed);
+            }
+
+
 
             if (movement_dir != Vector3.zero)
             {

@@ -28634,6 +28634,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.053785976
       objectReference: {fileID: 0}
+    - target: {fileID: 5410102119180680601, guid: 3c9f2cafb1f1a6b41a4b304cdbf0e131, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5487246194684888965, guid: 3c9f2cafb1f1a6b41a4b304cdbf0e131, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.00010598067
@@ -29241,18 +29245,6 @@ PrefabInstance:
     - target: {fileID: 8531274658383455753, guid: 3c9f2cafb1f1a6b41a4b304cdbf0e131, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.0033385449
-      objectReference: {fileID: 0}
-    - target: {fileID: 8576045397700744771, guid: 3c9f2cafb1f1a6b41a4b304cdbf0e131, type: 3}
-      propertyPath: canJump
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8576045397700744771, guid: 3c9f2cafb1f1a6b41a4b304cdbf0e131, type: 3}
-      propertyPath: canMove
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8576045397700744771, guid: 3c9f2cafb1f1a6b41a4b304cdbf0e131, type: 3}
-      propertyPath: maxSpeed
-      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8576045397700744771, guid: 3c9f2cafb1f1a6b41a4b304cdbf0e131, type: 3}
       propertyPath: currentPlanet
