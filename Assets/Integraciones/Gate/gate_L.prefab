@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3117531472594581790}
   - component: {fileID: 2084157061688899259}
   - component: {fileID: 4253824154132169329}
+  - component: {fileID: 1887702183714429227}
   m_Layer: 0
   m_Name: gate_L
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2308203626229261220}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.30186075, y: 0.033672962, z: -0.14171392, w: 0.94215894}
+  m_LocalRotation: {x: -0.30186522, y: 0.033673506, z: -0.14171292, w: 0.9421576}
   m_LocalPosition: {x: 11.930992, y: 43.64, z: -32.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -83,3 +84,24 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1887702183714429227
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2308203626229261220}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.71083146, y: 7.9929795, z: 8.311837}
+  m_Center: {x: -0.00013884902, y: -1.5490942e-12, z: 0.00000083446554}
