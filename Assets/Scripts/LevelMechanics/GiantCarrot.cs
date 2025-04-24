@@ -52,7 +52,7 @@ public class GiantCarrot : MonoBehaviour
         yield return new WaitForSeconds(0.15f);
         alreadyActivated = true;
         playerController.canMove = false;
-        playerController.Impulse(transform.forward.normalized, impulseForce);
+        playerController.Impulse(transform.right.normalized, impulseForce);
         yield return new WaitForSeconds(1.5f);
         minigameManager.SetActive(true);
         minigameManager.GetComponent<ClickFastMinigame>().ResetData();
