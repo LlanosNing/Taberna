@@ -11,8 +11,6 @@ public class UltimatePlayerController : MonoBehaviour
     public float rotSpeed;
     public float lookRotSpeed;
     public float jumpForce;
-    public float coyoteTime;
-    float coyoteTimeCounter;
     public bool antiGravity;
     public bool canMove = true;
 
@@ -99,11 +97,6 @@ public class UltimatePlayerController : MonoBehaviour
         {
             Dance();
         }
-
-        if(coyoteTimeCounter >= 0)
-        {
-            coyoteTimeCounter -= Time.deltaTime;
-        }
     }
 
     private void FixedUpdate()
@@ -122,16 +115,7 @@ public class UltimatePlayerController : MonoBehaviour
             Vector3 currentNormalVelocity = Vector3.Project(rb.velocity, normalVector.normalized);
 
 
-            if (Physics.Raycast(transform.position, playerVisual.forward, 1, groundLayer))
-            {
-
-            }
-            else
-            {
-                rb.velocity = currentNormalVelocity + (movement_dir * speed);
-            }
-
-
+            rb.velocity = currentNormalVelocity + (movement_dir * speed);
 
             if (movement_dir != Vector3.zero)
             {
@@ -158,11 +142,10 @@ public class UltimatePlayerController : MonoBehaviour
 
     void Jump()
     {
-        if (isGrounded || coyoteTimeCounter > 0)
+        if (isGrounded)
         {
             rb.velocity *= 0;
             rb.AddForce(normalVector * jumpForce, ForceMode.Impulse);
-            coyoteTimeCounter = 0;
         }
     }
 
@@ -215,7 +198,6 @@ public class UltimatePlayerController : MonoBehaviour
         if (detectedColliders.Length > 0)
         {
             isGrounded = true;
-            coyoteTimeCounter = coyoteTime;
         }
         else
         {

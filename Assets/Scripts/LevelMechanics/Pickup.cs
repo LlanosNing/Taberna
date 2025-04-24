@@ -13,12 +13,6 @@ public class Pickup : MonoBehaviour
 
     public GameObject uiInteractMessage;
     public bool canPick;
-    Animator animRef;
-
-    private void Start()
-    {
-        animRef = GetComponentInParent<Animator>();
-    }
 
     private void Update()
     {
@@ -27,13 +21,11 @@ public class Pickup : MonoBehaviour
             if (isPortalTwoKey)
             {
                 GameManager.hasPortalTwoKey = true;
-                animRef.SetTrigger("Pickup");
             }
 
             if (isPortalThreeKey)
             {
                 GameManager.hasPortalThreeKey = true;
-                animRef.SetTrigger("Pickup");
             }
 
             if (isLizard)
@@ -47,7 +39,7 @@ public class Pickup : MonoBehaviour
             }
 
             uiInteractMessage.SetActive(false);
-            //gameObject.SetActive(false);
+            gameObject.SetActive(false);
         }    
     }
 

@@ -10,4 +10,19 @@ public class GameManager : MonoBehaviour
     public static int lastPortal;
     public static int questNumber;
     public static int joaquinDialog;
+
+    void Start()
+    {
+        if (hasPortalTwoKey)
+        {
+            Debug.Log("Tienes la llave 2");
+        }
+        else
+        {
+            Debug.Log("No tienes la llave 2");
+        }
+    }
+    private void Update()
+    {
+    }
 }
