@@ -88,7 +88,7 @@ public class CowController : MonoBehaviour
     {
         if(isMoving)
         {
-            cowAnim.SetTrigger("RunEnd");
+            cowAnim.SetBool("IsMoving", false);
         }
         isMoving = false;
         hitDirection = Vector3.zero;
@@ -99,6 +99,6 @@ public class CowController : MonoBehaviour
         hitDirection = (transform.position - chaser).normalized;
         movingTimer = maxMovingDuration;
         isMoving = true;
-        cowAnim.SetTrigger("RunStart");
+        cowAnim.SetBool("IsMoving", true);
     }
 }
