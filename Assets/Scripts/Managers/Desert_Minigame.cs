@@ -16,7 +16,12 @@ public class Desert_Minigame : MonoBehaviour
 
         if (lizardTails >= 3)
         {
-            //Quitar misión de lagartos y comprobar si se ha recogido la piedra del portal
+            GameObject.FindWithTag("GameManager").GetComponent<GameManager>().NextQuest();
+            
+            if(GameManager.hasPortalThreeKey)
+            {
+                GameObject.FindWithTag("GameManager").GetComponent<GameManager>().NextQuest();
+            }
         }
     }
 }

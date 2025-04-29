@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5448707345771806406}
   m_Layer: 0
   m_Name: GameManager
-  m_TagString: Untagged
+  m_TagString: GameManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44,4 +44,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e43ab43f5089c9488b241834daea4fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelToLoad: MainMenu
+  questText: {fileID: 0}
