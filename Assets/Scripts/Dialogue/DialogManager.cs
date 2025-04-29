@@ -33,8 +33,8 @@ public class DialogManager : MonoBehaviour
 
     public bool canDialogueStart;
 
-    public bool activatesQuestBox;
-    public GameObject questBox;
+    public bool activatesScore;
+    public GameObject score;
 
     public GameObject managerToActivate;
 
@@ -205,9 +205,9 @@ public class DialogManager : MonoBehaviour
                 playerRef.canMove = true;
             lineIndex = 0;
 
-            if(activatesQuestBox && !questBox.activeInHierarchy)
+            if(activatesScore && !score.activeInHierarchy)
             {
-                questBox.SetActive(true);
+                score.SetActive(true);
             }
 
             if(managerToActivate != null)

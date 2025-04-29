@@ -213,6 +213,17 @@ Transform:
   - {fileID: 934797044}
   m_Father: {fileID: 1239897493}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &117543939 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4125388231123680074, guid: 7282dc34f5d5faa49a48b0c539dce7a5, type: 3}
+  m_PrefabInstance: {fileID: 638286964}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &131916079
 GameObject:
   m_ObjectHideFlags: 0
@@ -1403,7 +1414,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 31.5
+  m_fontSize: 36
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2181,7 +2192,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 34.2
+  m_fontSize: 36
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3329,6 +3340,30 @@ PrefabInstance:
     - target: {fileID: 3751118646353679376, guid: 7282dc34f5d5faa49a48b0c539dce7a5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4125388231123680074, guid: 7282dc34f5d5faa49a48b0c539dce7a5, type: 3}
+      propertyPath: m_text
+      value: Consigue Leche
+      objectReference: {fileID: 0}
+    - target: {fileID: 4125388231123680074, guid: 7282dc34f5d5faa49a48b0c539dce7a5, type: 3}
+      propertyPath: m_fontSize
+      value: 52
+      objectReference: {fileID: 0}
+    - target: {fileID: 4125388231123680074, guid: 7282dc34f5d5faa49a48b0c539dce7a5, type: 3}
+      propertyPath: m_margin.w
+      value: -8.750366
+      objectReference: {fileID: 0}
+    - target: {fileID: 4125388231123680074, guid: 7282dc34f5d5faa49a48b0c539dce7a5, type: 3}
+      propertyPath: m_margin.y
+      value: -32.881653
+      objectReference: {fileID: 0}
+    - target: {fileID: 4125388231123680074, guid: 7282dc34f5d5faa49a48b0c539dce7a5, type: 3}
+      propertyPath: m_fontSizeMax
+      value: 52
+      objectReference: {fileID: 0}
+    - target: {fileID: 4125388231123680074, guid: 7282dc34f5d5faa49a48b0c539dce7a5, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4656,6 +4691,10 @@ PrefabInstance:
       propertyPath: fadeScreenAnimator
       value: 
       objectReference: {fileID: 1265144059}
+    - target: {fileID: 8630513976118779632, guid: 7902a1efa59cb7b4db1b2d1cf73124cf, type: 3}
+      propertyPath: m_TagString
+      value: Portal3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4753,7 +4792,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
+  m_fontSize: 36
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -6727,6 +6766,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e43ab43f5089c9488b241834daea4fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  questText: {fileID: 117543939}
 --- !u!1 &1620669259
 GameObject:
   m_ObjectHideFlags: 0
@@ -9026,6 +9066,10 @@ PrefabInstance:
       propertyPath: fadeScreenAnimator
       value: 
       objectReference: {fileID: 1265144059}
+    - target: {fileID: 8630513976118779632, guid: 7902a1efa59cb7b4db1b2d1cf73124cf, type: 3}
+      propertyPath: m_TagString
+      value: Portal2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

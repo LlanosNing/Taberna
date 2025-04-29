@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -11,18 +13,37 @@ public class GameManager : MonoBehaviour
     public static int questNumber;
     public static int joaquinDialog;
 
+    public static string[] quests = 
+        { 
+        "Consigue Leche", 
+        "Reúne las vacas en el granero",
+        "Encuentra la Piedra del segundo Portal",
+        "Consigue Colas de Lagarto",
+        "Encuentra la Piedra del tercer Portal",
+        "Consigue Raíces de Zanahoria Fosilizada",
+        "Habla con Joaquín"
+        };
+    public static int questIndex;
+
+    public TextMeshProUGUI questText;
+
     void Start()
     {
-        if (hasPortalTwoKey)
+        if (SceneManager.GetActiveScene().name == "Lobby" && !hasPortalTwoKey)
         {
-            Debug.Log("Tienes la llave 2");
+            GameObject.FindWithTag("Portal2").SetActive(false);
         }
-        else
+        else if (SceneManager.GetActiveScene().name == "Lobby" && !hasPortalThreeKey)
         {
-            Debug.Log("No tienes la llave 2");
+            GameObject.FindWithTag("Portal3").SetActive(false);
         }
+
+        questText.text = quests[questIndex];
     }
-    private void Update()
+    public void NextQuest()
     {
+        questIndex++;
+
+        questText.text = quests[questIndex];
     }
 }
