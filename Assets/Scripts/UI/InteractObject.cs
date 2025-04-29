@@ -10,6 +10,7 @@ public class InteractObject : MonoBehaviour
 
     public bool inTrigger;
     public bool tutorialActive;
+    public GameObject objectToDeactivate;
 
     public GameObject tutorialCanvas, whatTutorial;
     UIController uIRef;
@@ -27,6 +28,11 @@ public class InteractObject : MonoBehaviour
         {
             worldCanvas.SetActive(false);
             exclamationMark.SetActive(false);
+
+            if(SceneManager.GetActiveScene().name == "InteriorTaberna")
+            {
+                objectToDeactivate.SetActive(false);
+            }
         }
 
         else if (Input.GetKeyDown(KeyCode.E) && isTutorial && inTrigger && !tutorialActive && uIRef.canAccessTutorials)

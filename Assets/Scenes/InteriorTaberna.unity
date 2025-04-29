@@ -996,6 +996,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2018997389}
+  - {fileID: 945440994}
   - {fileID: 270208023}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5362,6 +5363,68 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2860448402281112564, guid: 0c37b2fe40687004c8a60ed4711a64b1, type: 3}
   m_PrefabInstance: {fileID: 936281884}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &945440993
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 945440994}
+  - component: {fileID: 945440996}
+  - component: {fileID: 945440995}
+  m_Layer: 0
+  m_Name: exitTavernBlock
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &945440994
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 945440993}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -10.004038, y: 0.4304123, z: 5.66971}
+  m_LocalScale: {x: 4.9524, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 218550524}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &945440995
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 945440993}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.0949856, y: 5.128188, z: 1.6851983}
+  m_Center: {x: 0.013013175, y: 2.064094, z: -0.34259915}
+--- !u!33 &945440996
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 945440993}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &946669001
 GameObject:
   m_ObjectHideFlags: 0
@@ -18095,6 +18158,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: QuestBox
       objectReference: {fileID: 0}
+    - target: {fileID: 2548497159333473234, guid: 7282dc34f5d5faa49a48b0c539dce7a5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3751118646353679376, guid: 7282dc34f5d5faa49a48b0c539dce7a5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -22070,6 +22137,10 @@ PrefabInstance:
       propertyPath: exclamationMark
       value: 
       objectReference: {fileID: 1192178865}
+    - target: {fileID: 28585955980886593, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
+      propertyPath: objectToDeactivate
+      value: 
+      objectReference: {fileID: 945440993}
     - target: {fileID: 2021981421248634021, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.5931263
@@ -23501,6 +23572,10 @@ PrefabInstance:
       propertyPath: dialogueCooldown
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8381358473947076355, guid: 240de863bf2230f48ac17025132596c4, type: 3}
+      propertyPath: objectToActivatePostDialogue
+      value: 
+      objectReference: {fileID: 1023776425}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

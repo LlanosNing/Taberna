@@ -29,13 +29,13 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        if (SceneManager.GetActiveScene().name == "Lobby" && !hasPortalTwoKey)
+        if (SceneManager.GetActiveScene().name == "Lobby")
         {
-            GameObject.FindWithTag("Portal2").SetActive(false);
-        }
-        else if (SceneManager.GetActiveScene().name == "Lobby" && !hasPortalThreeKey)
-        {
-            GameObject.FindWithTag("Portal3").SetActive(false);
+            if(!hasPortalTwoKey)
+                GameObject.FindWithTag("Portal2").SetActive(false);
+
+            if (!hasPortalThreeKey)
+                GameObject.FindWithTag("Portal3").SetActive(false);
         }
 
         questText.text = quests[questIndex];

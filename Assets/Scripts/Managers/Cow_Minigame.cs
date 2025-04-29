@@ -105,6 +105,8 @@ public class Cow_Minigame : MonoBehaviour
         fadeScreenAnim.SetTrigger("FadeIn");
 
         cowsParent.SetActive(true);
+
+        GameObject.FindWithTag("GameManager").GetComponent<GameManager>().NextQuest();
     }
 
     IEnumerator EndTransitionCO()
@@ -116,5 +118,12 @@ public class Cow_Minigame : MonoBehaviour
         GameObject.FindWithTag("Player").transform.position = minigameEndPosition;
 
         fadeScreenAnim.SetTrigger("FadeIn");
+
+        GameObject.FindWithTag("GameManager").GetComponent<GameManager>().NextQuest();
+
+        if (GameManager.hasPortalTwoKey)
+        {
+            GameObject.FindWithTag("GameManager").GetComponent<GameManager>().NextQuest();
+        }
     }
 }

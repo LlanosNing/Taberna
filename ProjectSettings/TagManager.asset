@@ -18,6 +18,8 @@ TagManager:
   - DesertMinigame
   - Portal2
   - Portal3
+  - DropPoint
+  - Pickupable
   layers:
   - Default
   - TransparentFX

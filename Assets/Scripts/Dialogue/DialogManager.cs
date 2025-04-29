@@ -41,6 +41,8 @@ public class DialogManager : MonoBehaviour
     public float dialogueCooldown;
     float dialogueCDCounter;
 
+    public GameObject objectToActivatePostDialogue;
+
     //Hacemos una referencia (Singleton)
     public static DialogManager instance;
     private void Awake()
@@ -203,6 +205,11 @@ public class DialogManager : MonoBehaviour
                 playerTavernRef.canMove = true;
             else
                 playerRef.canMove = true;
+
+            if(objectToActivatePostDialogue != null)
+            {
+                objectToActivatePostDialogue.SetActive(true);
+            }
             lineIndex = 0;
 
             if(activatesScore && !score.activeInHierarchy)
