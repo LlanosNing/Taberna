@@ -32,7 +32,7 @@ public class World3Manager : MonoBehaviour
 
     void Level3Completed()
     {
-        Debug.Log("Has ganado, enhorabuena!");
+        GameObject.FindWithTag("GameManager").GetComponent<GameManager>().NextQuest();
 
         world3Cleared = true;
     }

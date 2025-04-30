@@ -22185,6 +22185,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Joaquin_NPC
       objectReference: {fileID: 0}
+    - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
+      propertyPath: repeatedLines.Array.data[0]
+      value: n-Joaquin
+      objectReference: {fileID: 0}
     - target: {fileID: 7078655811131166978, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
       propertyPath: m_Sources.Array.data[0].sourceTransform
       value: 

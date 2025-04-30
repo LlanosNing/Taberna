@@ -21,11 +21,12 @@ public class GameManager : MonoBehaviour
         "Consigue Colas de Lagarto",
         "Encuentra la Piedra del tercer Portal",
         "Consigue Raíces de Zanahoria Fosilizada",
-        "Habla con Joaquín"
+        "Vuelve a la taberna"
         };
     public static int questIndex;
 
     public TextMeshProUGUI questText;
+    public Animator questBoxAnim;
 
     void Start()
     {
@@ -45,5 +46,7 @@ public class GameManager : MonoBehaviour
         questIndex++;
 
         questText.text = quests[questIndex];
+
+        questBoxAnim.SetTrigger("Reveal");
     }
 }

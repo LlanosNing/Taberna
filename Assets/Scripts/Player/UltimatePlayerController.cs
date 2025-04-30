@@ -25,6 +25,8 @@ public class UltimatePlayerController : MonoBehaviour
     [Header("GROUND CHECK")]
     public bool canJump;
     public bool isGrounded;
+    public float coyoteTime;
+    float coyoteTimeCounter;
     public Collider[] detectedColliders;
     public Transform groundCheckCenter;
     public Vector3 groundCheckSize = Vector3.one;
@@ -97,6 +99,20 @@ public class UltimatePlayerController : MonoBehaviour
         {
             Dance();
         }
+
+        if(coyoteTimeCounter > 0 && !isGrounded)
+        {
+            coyoteTimeCounter -= Time.deltaTime;
+        }
+
+        if (Input.GetButtonDown("Run") && isGrounded)
+        {
+            speed = maxSpeed * 1.5f;
+        }
+        if (Input.GetButtonUp("Run"))
+        {
+            speed = maxSpeed;
+        }
     }
 
     private void FixedUpdate()
@@ -148,7 +164,7 @@ public class UltimatePlayerController : MonoBehaviour
 
     void Jump()
     {
-        if (isGrounded)
+        if (isGrounded || coyoteTimeCounter > 0)
         {
             rb.velocity *= 0;
             rb.AddForce(normalVector * jumpForce, ForceMode.Impulse);
@@ -204,6 +220,7 @@ public class UltimatePlayerController : MonoBehaviour
         if (detectedColliders.Length > 0)
         {
             isGrounded = true;
+            coyoteTimeCounter = coyoteTime;
         }
         else
         {

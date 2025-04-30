@@ -3375,6 +3375,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3751118646353679376, guid: 7282dc34f5d5faa49a48b0c539dce7a5, type: 3}
   m_PrefabInstance: {fileID: 638286964}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &638286966 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 714357846499980601, guid: 7282dc34f5d5faa49a48b0c539dce7a5, type: 3}
+  m_PrefabInstance: {fileID: 638286964}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &691224209
 GameObject:
   m_ObjectHideFlags: 0
@@ -6767,6 +6772,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   questText: {fileID: 117543939}
+  questBoxAnim: {fileID: 638286966}
 --- !u!1 &1620669259
 GameObject:
   m_ObjectHideFlags: 0

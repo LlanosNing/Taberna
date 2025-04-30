@@ -98,6 +98,8 @@ public class ClickFastMinigame : MonoBehaviour
         playerController.canMove = false;
         playerController.canJump = false;
 
+        progressBar.fillAmount = 0;
+
         fadeScreen.SetTrigger("FadeIn");
 
         yield return new WaitForSeconds(0.5f);
