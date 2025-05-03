@@ -105,7 +105,7 @@ public class UltimatePlayerController : MonoBehaviour
             coyoteTimeCounter -= Time.deltaTime;
         }
 
-        if (Input.GetButtonDown("Run") && isGrounded)
+        if (Input.GetButton("Run") && isGrounded)
         {
             speed = maxSpeed * 1.5f;
         }
