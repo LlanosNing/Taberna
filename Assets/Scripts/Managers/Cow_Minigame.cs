@@ -21,6 +21,8 @@ public class Cow_Minigame : MonoBehaviour
     public Transform minigameStartPosition;
     public Vector3 minigameEndPosition;
 
+    public ParticleSystem playerQuestVFX;
+
     private void Start()
     {
         StartCoroutine(StartTransitionCO());
@@ -113,6 +115,12 @@ public class Cow_Minigame : MonoBehaviour
 
     IEnumerator EndTransitionCO()
     {
+        GameObject.FindWithTag("QuestCompleted").GetComponent<Animator>().SetTrigger("QuestCompleted");
+
+        playerQuestVFX.Play();
+
+        yield return new WaitForSeconds(2);
+
         fadeScreenAnim.SetTrigger("FadeOut");
 
         yield return new WaitForSeconds(1);

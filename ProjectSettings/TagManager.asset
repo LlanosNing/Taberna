@@ -20,6 +20,7 @@ TagManager:
   - Portal3
   - DropPoint
   - Pickupable
+  - QuestCompleted
   layers:
   - Default
   - TransparentFX

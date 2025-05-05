@@ -9,6 +9,8 @@ public class Desert_Minigame : MonoBehaviour
     public TextMeshProUGUI uiCounterText;
     public GameObject lizardQuest, portalStoneQuest;
 
+    public ParticleSystem playerQuestVFX;
+
     public void AddLizardTail()
     {
         lizardTails++;
@@ -22,6 +24,10 @@ public class Desert_Minigame : MonoBehaviour
             {
                 GameObject.FindWithTag("GameManager").GetComponent<GameManager>().NextQuest();
             }
+
+            GameObject.FindWithTag("QuestCompleted").GetComponent<Animator>().SetTrigger("QuestCompleted");
+
+            playerQuestVFX.Play();
         }
     }
 }

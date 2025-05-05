@@ -9,6 +9,8 @@ public class World3Manager : MonoBehaviour
     public int rootsCollected;
     bool world3Cleared;
     public TextMeshProUGUI uiText;
+
+    public ParticleSystem playerQuestVFX;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,8 +34,12 @@ public class World3Manager : MonoBehaviour
 
     void Level3Completed()
     {
-        GameObject.FindWithTag("GameManager").GetComponent<GameManager>().NextQuest();
+        GetComponent<GameManager>().NextQuest();
 
         world3Cleared = true;
+
+        GameObject.FindWithTag("QuestCompleted").GetComponent<Animator>().SetTrigger("QuestCompleted");
+
+        playerQuestVFX.Play();
     }
 }

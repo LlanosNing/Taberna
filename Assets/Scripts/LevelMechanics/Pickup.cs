@@ -11,9 +11,6 @@ public class Pickup : MonoBehaviour
 
     public GameObject minimapRepresentation;
 
-    public GameObject uiInteractMessage;
-    public bool canPick;
-
     public Animator pickAnim;
 
     bool isPicked;
@@ -23,9 +20,9 @@ public class Pickup : MonoBehaviour
         pickAnim = GetComponentInParent<Animator>();
     }
 
-    private void Update()
+    private void OnTriggerEnter(Collider other)
     {
-        if(canPick && Input.GetButtonDown("Interact") && !isPicked)
+        if (!isPicked)
         {
             if (isPortalTwoKey)
             {
@@ -57,24 +54,8 @@ public class Pickup : MonoBehaviour
                 minimapRepresentation.SetActive(false);
             }
 
-            uiInteractMessage.SetActive(false);
             pickAnim.SetTrigger("Pickup");
             isPicked = true;
-        }    
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (!isPicked)
-        {
-            uiInteractMessage.SetActive(true);
-            canPick = true;
         }
-    }
-
-    public void OnTriggerExit(Collider other)
-    {
-        uiInteractMessage.SetActive(false);
-        canPick = false;
     }
 }
