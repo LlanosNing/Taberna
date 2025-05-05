@@ -60,12 +60,14 @@ public class Cow_Minigame : MonoBehaviour
                 mole.SetActive(true);
                 mole.GetComponent<Mole>().minTimeToAppear = faseFourMinTime;
                 mole.GetComponent<Mole>().maxTimeToAppear = faseFourMaxTime;
+                mole.GetComponent<Mole>().animRef.Play("Underground", -1, 0f);
             }
             foreach (GameObject mole in molesFaseThree)
             {
                 mole.SetActive(true);
                 mole.GetComponent<Mole>().minTimeToAppear = faseFourMinTime;
                 mole.GetComponent<Mole>().maxTimeToAppear = faseFourMaxTime;
+                mole.GetComponent<Mole>().animRef.Play("Underground", -1, 0f);
             }
 
             lastCow.SetActive(true);
