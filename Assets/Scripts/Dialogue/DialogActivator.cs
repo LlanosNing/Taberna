@@ -10,7 +10,7 @@ public class DialogActivator : MonoBehaviour
     private bool canActivate;
     private bool hasBeenActivated;
     //Sprite de diálogo del NPC
-    public Sprite theNpcSprite;
+    public Sprite [] npcSprites;
 
     private void Update()
     {
@@ -18,12 +18,12 @@ public class DialogActivator : MonoBehaviour
         {
             if(!hasBeenActivated)
             {
-                DialogManager.instance.ShowDialog(firstLines, theNpcSprite);
+                DialogManager.instance.ShowDialog(firstLines, npcSprites);
                 hasBeenActivated = true;
             }
             else
             {
-                DialogManager.instance.ShowDialog(repeatedLines, theNpcSprite);
+                DialogManager.instance.ShowDialog(repeatedLines, npcSprites);
             }
         }
     }

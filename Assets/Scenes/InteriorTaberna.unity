@@ -3195,7 +3195,10 @@ MonoBehaviour:
   canMove: 1
   cameraTransform: {fileID: 1672681541}
   playerVisual: {fileID: 1652253070}
-  thePlayerSprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  thePlayerSprites:
+  - {fileID: 21300000, guid: b02cc2c4a6d65f64caedb03e9a48b329, type: 3}
+  - {fileID: 21300000, guid: 270b959b02741994abe0dfed8dd5d1e0, type: 3}
+  - {fileID: 21300000, guid: 28267e6478a570f40a16aa1072553993, type: 3}
 --- !u!136 &466299148
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -22186,8 +22189,178 @@ PrefabInstance:
       value: Joaquin_NPC
       objectReference: {fileID: 0}
     - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
+      propertyPath: firstLines.Array.size
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
+      propertyPath: npcSprites.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
+      propertyPath: firstLines.Array.data[1]
+      value: e-0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
+      propertyPath: firstLines.Array.data[2]
+      value: "\xA1Fede! Ha llegado el d\xEDa... Tu t\xEDo ya est\xE1 muy mayor para
+        seguir solo con la taberna..."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
+      propertyPath: firstLines.Array.data[3]
+      value: ... y ya tienes edad para empezar a ayudarme con el negocio.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
+      propertyPath: firstLines.Array.data[4]
+      value: e-1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
+      propertyPath: firstLines.Array.data[5]
+      value: "Ma\xF1ana reabrimos el local y necesito reponer provisiones, pero de
+        esa labor te vas a encargar t\xFA."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
+      propertyPath: firstLines.Array.data[6]
+      value: n-Fede
+      objectReference: {fileID: 0}
+    - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
+      propertyPath: firstLines.Array.data[7]
+      value: e-0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
+      propertyPath: firstLines.Array.data[8]
+      value: "\xA1De acuerdo t\xEDo Joaqu\xEDn! \xBFQu\xE9 debo hacer?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
+      propertyPath: firstLines.Array.data[9]
+      value: "n-Joaqu\xEDn"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
+      propertyPath: npcSprites.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: df6bd992b7486bb499d9f05dd4b7ff00, type: 3}
+    - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
+      propertyPath: npcSprites.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: f46f09df997a65441a657093c0c41972, type: 3}
+    - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
+      propertyPath: npcSprites.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: 81a123faeb2ba62498ccb63102ce85d5, type: 3}
+    - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
+      propertyPath: npcSprites.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: 9406d35452bae00408ab8c4c9f8d5d8d, type: 3}
+    - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
+      propertyPath: repeatedLines.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
+      propertyPath: firstLines.Array.data[10]
+      value: e-0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
+      propertyPath: firstLines.Array.data[11]
+      value: "Te cuento... Primero deber\xE1s ir a la granja de Ryoma. Me ha dicho
+        que est\xE1 teniendo problemas con las vacas de la granja."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
+      propertyPath: firstLines.Array.data[12]
+      value: "Seguramente te d\xE9 algo por ayudarle..."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
+      propertyPath: firstLines.Array.data[13]
+      value: n-Fede
+      objectReference: {fileID: 0}
+    - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
+      propertyPath: firstLines.Array.data[14]
+      value: e-1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
+      propertyPath: firstLines.Array.data[15]
+      value: "T\xEDo Joaqu\xEDn, \xBFest\xE1s mendigando?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
+      propertyPath: firstLines.Array.data[16]
+      value: "n-Joaqu\xEDn"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
+      propertyPath: firstLines.Array.data[17]
+      value: e-2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
+      propertyPath: firstLines.Array.data[18]
+      value: "\xBFY-yo? Esto... no... Simplemente quiero hacerle un favor a un amigo."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
+      propertyPath: firstLines.Array.data[19]
+      value: (y si nos devuelve el favor con leche de buena calidad no nos vamos
+        a quejar).
+      objectReference: {fileID: 0}
+    - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
+      propertyPath: firstLines.Array.data[20]
+      value: e-0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
+      propertyPath: firstLines.Array.data[21]
+      value: "Peeero bueno, esta ser\xE1 tu primera prueba, \xA1as\xED que ya sabes!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
+      propertyPath: firstLines.Array.data[22]
+      value: n-Fede
+      objectReference: {fileID: 0}
+    - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
+      propertyPath: firstLines.Array.data[23]
+      value: e-2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
+      propertyPath: firstLines.Array.data[24]
+      value: "Lo que t\xFA digas..."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
+      propertyPath: firstLines.Array.data[25]
+      value: "n-Joaqu\xEDn"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
+      propertyPath: firstLines.Array.data[26]
+      value: e-1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
+      propertyPath: firstLines.Array.data[27]
+      value: "\xA1As\xED me gusta! Ahora prepar\xE1te y cuando est\xE9s listo atraviesa
+        la puerta arcana izquierda que conduce al rancho de Ryoma."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
       propertyPath: repeatedLines.Array.data[0]
       value: n-Joaquin
+      objectReference: {fileID: 0}
+    - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
+      propertyPath: repeatedLines.Array.data[1]
+      value: e-3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
+      propertyPath: repeatedLines.Array.data[2]
+      value: "\xBFA qu\xE9 esperas? Que voy a terminar echando ra\xEDces."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
+      propertyPath: repeatedLines.Array.data[3]
+      value: e-0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
+      propertyPath: repeatedLines.Array.data[4]
+      value: Recuerda, tienes que echarle una mano a Ryoma con sus vacas y traer
+        un poco de leche.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
+      propertyPath: repeatedLines.Array.data[5]
+      value: n-Fede
+      objectReference: {fileID: 0}
+    - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
+      propertyPath: repeatedLines.Array.data[6]
+      value: e-0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
+      propertyPath: repeatedLines.Array.data[7]
+      value: "\xA1Voy para all\xE1!"
       objectReference: {fileID: 0}
     - target: {fileID: 7078655811131166978, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
       propertyPath: m_Sources.Array.data[0].sourceTransform

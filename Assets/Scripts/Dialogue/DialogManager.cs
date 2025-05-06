@@ -25,7 +25,7 @@ public class DialogManager : MonoBehaviour
     //Nombre del personaje que habla en ese momento
     private string charName;
     //El sprite del NPC
-    private Sprite sNpc;
+    private Sprite[] sNpc;
 
     UltimatePlayerController playerRef;
     TavernPlayerController playerTavernRef;
@@ -88,30 +88,6 @@ public class DialogManager : MonoBehaviour
 
                 if (SceneManager.GetActiveScene().name != "InteriorTaberna")
                     playerRB.velocity = Vector3.zero;
-                ////Vamos a la siguiente línea de diálogo
-                //currentLine++;
-
-                ////Si se ha terminado el diálogo
-                //if (currentLine >= dialogLines.Length)
-                //{
-                //    //Desactivamos el cuadro de diálogo
-                //    dialogBox.SetActive(false);
-                //    //Permitimos que el jugador se mueva de nuevo
-                //    if (SceneManager.GetActiveScene().name == "InteriorTaberna")
-                //        playerTavernRef.canMove = true;
-                //    else
-                //        playerRef.canMove = true;
-                //}
-                ////Si el diálogo aún no ha terminado
-                //else
-                //{
-                //    //Comprobamos si hay un cambio de personaje en el diálogo
-                //    CheckIfName(sNpc);
-                //    //Muestra la línea de diálogo actual
-                //    //dialogText.text = dialogLines[currentLine];
-                //    StartCoroutine(ShowLine());
-                //    dialogCharName.text = charName;
-                //}
             }
         }
 
@@ -122,7 +98,7 @@ public class DialogManager : MonoBehaviour
     }
 
     //Método que muestra el diálogo pasado por parámetro
-    public void ShowDialog(string[] newLines, Sprite theSNpc)
+    public void ShowDialog(string[] newLines, Sprite[] theSNpc)
     {
         if (!dialogBox.activeInHierarchy && dialogueCDCounter <= 0)
         {
@@ -133,7 +109,9 @@ public class DialogManager : MonoBehaviour
             //Asignamos el Sprite del NPC
             sNpc = theSNpc;
             //Comprobamos si hay un cambio de personaje en el diálogo
-            CheckIfName(sNpc);
+            CheckIfName();
+
+            CheckIfEmotion(sNpc);
             //Muestro la línea de diálogo actual
             dialogText.text = dialogLines[currentLine];
 
@@ -149,7 +127,7 @@ public class DialogManager : MonoBehaviour
     }
 
     //Método para conocer si hay un cambio de personaje en el diálogo
-    public void CheckIfName(Sprite theSNpc)
+    public void CheckIfName()
     {
         //Si la línea empieza por n-
         if(dialogLines[lineIndex].StartsWith("n-"))
@@ -158,18 +136,29 @@ public class DialogManager : MonoBehaviour
             charName = dialogLines[lineIndex].Replace("n-", "");
 
             dialogCharName.text = charName;
-            //Si es distinto de los nombres de los personajes principales
-            if (charName != "Fede")
-                //Ponemos el sprite del npc en concreto
-                portrait.sprite = theSNpc;
-            //Si es el nombre de un personaje principal
-            else
-            //Ponemos el sprite de ese personaje
+
+            //Salto a la siguiente línea de diálogo
+            lineIndex++;
+        }
+    }
+    public void CheckIfEmotion(Sprite[] sprites)
+    {
+        if (dialogLines[lineIndex].StartsWith("e-"))
+        {
+            if(charName != "Fede")
             {
-                if (SceneManager.GetActiveScene().name == "InteriorTaberna")
-                    portrait.sprite = playerTavernRef.thePlayerSprite;
+                portrait.sprite = sprites[int.Parse(dialogLines[lineIndex].Replace("e-", ""))];
+            }
+            else
+            {
+                if(SceneManager.GetActiveScene().name == "InteriorTaberna")
+                {
+                    portrait.sprite = playerTavernRef.thePlayerSprites[int.Parse(dialogLines[lineIndex].Replace("e-", ""))];
+                }
                 else
-                    portrait.sprite = playerRef.thePlayerSprite;
+                {
+                    portrait.sprite = playerRef.thePlayerSprites[int.Parse(dialogLines[lineIndex].Replace("e-", ""))];
+                }
             }
 
             //Salto a la siguiente línea de diálogo
@@ -184,7 +173,9 @@ public class DialogManager : MonoBehaviour
             lineIndex = 0;
             canDialogueStart = true;
             dialogBox.SetActive(true);
-            CheckIfName(sNpc);
+            CheckIfName();
+            CheckIfEmotion(sNpc);
+            portrait.sprite = sNpc[0];
             StartCoroutine(ShowLine());
         }
     }
@@ -194,7 +185,8 @@ public class DialogManager : MonoBehaviour
         lineIndex++;
         if (lineIndex < dialogLines.Length)
         {
-            CheckIfName(sNpc);
+            CheckIfName();
+            CheckIfEmotion(sNpc);
             StartCoroutine(ShowLine());
         }
         else

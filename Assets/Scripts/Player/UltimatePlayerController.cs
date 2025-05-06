@@ -43,7 +43,7 @@ public class UltimatePlayerController : MonoBehaviour
     GravityBody gravityBodyRef;
     public bool isDancing;
 
-    public Sprite thePlayerSprite;
+    public Sprite[] thePlayerSprites;
 
     // Start is called before the first frame update
     void Start()
