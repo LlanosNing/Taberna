@@ -30,8 +30,8 @@ EditorBuildSettings:
     path: Assets/Scenes/Carrot_Planet.unity
     guid: 230a4953f06ca5a4e955c41e43d3a2f5
   - enabled: 1
-    path: Assets/Scenes/MarioPlaneta.unity
-    guid: e9cd09b157cabdb488becef6e874e593
+    path: Assets/Scenes/Credits.unity
+    guid: 407275db75f5958468dc277f36318534
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 6e016ca8c24bc5a4ca815e9192f2d28e, type: 2}
     com.unity.input.settings: {fileID: 11400000, guid: fda5ffa596e7d184c99b649f4fa8a7a6, type: 2}
