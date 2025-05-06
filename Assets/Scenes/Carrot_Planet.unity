@@ -16548,13 +16548,9 @@ PrefabInstance:
       value: '*Texto de Ejemplo*'
       objectReference: {fileID: 0}
     - target: {fileID: 807651678593610010, guid: 1c62f8749dec1fa4c88bf9f991226788, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-    - target: {fileID: 807651678593610010, guid: 1c62f8749dec1fa4c88bf9f991226788, type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1929353012399445683, guid: 1c62f8749dec1fa4c88bf9f991226788, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -16640,13 +16636,9 @@ PrefabInstance:
       value: Fede
       objectReference: {fileID: 0}
     - target: {fileID: 3756130108602747256, guid: 1c62f8749dec1fa4c88bf9f991226788, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-    - target: {fileID: 3756130108602747256, guid: 1c62f8749dec1fa4c88bf9f991226788, type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4085100304288450265, guid: 1c62f8749dec1fa4c88bf9f991226788, type: 3}
       propertyPath: m_text
       value: (Pulsa E)

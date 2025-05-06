@@ -102,7 +102,10 @@ MonoBehaviour:
   CameraArmTransform: {fileID: 0}
   animRef: {fileID: 8886469277429818415}
   isDancing: 0
-  thePlayerSprite: {fileID: 0}
+  thePlayerSprites:
+  - {fileID: 21300000, guid: b02cc2c4a6d65f64caedb03e9a48b329, type: 3}
+  - {fileID: 21300000, guid: 270b959b02741994abe0dfed8dd5d1e0, type: 3}
+  - {fileID: 21300000, guid: 28267e6478a570f40a16aa1072553993, type: 3}
 --- !u!114 &13226713053438399
 MonoBehaviour:
   m_ObjectHideFlags: 0
