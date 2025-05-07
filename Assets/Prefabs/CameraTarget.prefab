@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 9066272362310751026}
   m_Layer: 0
   m_Name: CameraTarget
-  m_TagString: Untagged
+  m_TagString: CameraTarget
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48,6 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   followDamping: 0.1
   playerTransform: {fileID: 0}
+  staticCamera: 0
 --- !u!114 &9066272362310751026
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,6 +67,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   zoomSpeed: 10
+  staticCamera: 0
 --- !u!1 &3941440092505241597
 GameObject:
   m_ObjectHideFlags: 0
@@ -301,3 +303,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   verticalClamp: 30
   sensitivity: {x: 4, y: 2}
+  staticCamera: 0

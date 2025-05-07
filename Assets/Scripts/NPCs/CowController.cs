@@ -23,6 +23,8 @@ public class CowController : MonoBehaviour
 
     public Animator cowAnim;
 
+    public GameObject interactMessage;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -47,9 +49,16 @@ public class CowController : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);            
         }
 
-        if ((transform.position - playerTransform.position).magnitude < hitRequiredDistance && Input.GetButtonDown("Interact"))
+        if ((transform.position - playerTransform.position).magnitude < hitRequiredDistance)
         {
-            MoveCowToDirection(playerTransform.position);
+            interactMessage.SetActive(true);
+
+            if(Input.GetButtonDown("Interact"))
+                MoveCowToDirection(playerTransform.position);
+        }
+        else if((transform.position - playerTransform.position).magnitude < hitRequiredDistance * 1.5)
+        {
+            interactMessage.SetActive(false);
         }
 
         if (isMoving)
@@ -74,10 +83,10 @@ public class CowController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Cow"))
+        if(other.CompareTag("Cow") && TryGetComponent(out CowController cow))
         {
-            if(!other.GetComponent<CowController>().isMoving)
-                other.GetComponent<CowController>().MoveCowToDirection(playerTransform.position);
+            if(!cow.isMoving)
+                cow.MoveCowToDirection(playerTransform.position);
         }
 
         if(other.CompareTag("Mole"))

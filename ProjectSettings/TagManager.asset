@@ -21,6 +21,8 @@ TagManager:
   - DropPoint
   - Pickupable
   - QuestCompleted
+  - DialogueManager
+  - CameraTarget
   layers:
   - Default
   - TransparentFX

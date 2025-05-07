@@ -9,6 +9,9 @@ public class Pickup : MonoBehaviour
     public bool isLizard;
     public bool showsOnMinimap;
 
+    public GameObject pickMessage;
+    public bool canPick;
+
     public GameObject minimapRepresentation;
 
     public Animator pickAnim;
@@ -20,11 +23,11 @@ public class Pickup : MonoBehaviour
         pickAnim = GetComponentInParent<Animator>();
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void Update()
     {
-        if (!isPicked)
+        if (canPick && !isPicked && Input.GetButtonDown("Interact")) 
         {
-            if (isPortalTwoKey)
+            if(isPortalTwoKey)
             {
                 GameManager.hasPortalTwoKey = true;
 
@@ -54,8 +57,27 @@ public class Pickup : MonoBehaviour
                 minimapRepresentation.SetActive(false);
             }
 
+            pickMessage.SetActive(false);
             pickAnim.SetTrigger("Pickup");
             isPicked = true;
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (!isPicked)
+        {
+            canPick = true;
+
+            pickMessage.SetActive(true);
+
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        canPick = false;
+
+        pickMessage.SetActive(false);
     }
 }

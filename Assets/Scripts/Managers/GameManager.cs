@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public static int lastPortal;
     public static int questNumber;
     public static bool endgame;
+    public GameObject endgameManager;
 
     public static string[] quests = 
         { 
@@ -39,7 +40,13 @@ public class GameManager : MonoBehaviour
                 GameObject.FindWithTag("Portal3").SetActive(false);
         }
 
-        questText.text = quests[questIndex];
+        if(SceneManager.GetActiveScene().name == "InteriorTaberna" && endgame)
+        {
+            GameObject.FindWithTag("DialogueManager").GetComponent<DialogManager>().managerToActivate = endgameManager;
+        }
+
+        if(SceneManager.GetActiveScene().name != "InteriorTaberna")
+            questText.text = quests[questIndex];
     }
     public void NextQuest()
     {

@@ -89,7 +89,7 @@ MonoBehaviour:
   normalVector: {x: 0, y: 0, z: 0}
   canJump: 1
   isGrounded: 0
-  coyoteTime: 0.25
+  coyoteTime: 0.15
   detectedColliders: []
   groundCheckCenter: {fileID: 6121837305713044086}
   groundCheckSize: {x: 0.4, y: 0.1, z: 0.4}

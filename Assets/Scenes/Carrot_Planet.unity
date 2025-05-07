@@ -698,6 +698,8 @@ MonoBehaviour:
   isPortalThreeKey: 0
   isLizard: 0
   showsOnMinimap: 0
+  pickMessage: {fileID: 0}
+  canPick: 0
   minimapRepresentation: {fileID: 0}
   pickAnim: {fileID: 0}
 --- !u!114 &119779079
@@ -13162,6 +13164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d62c272d7d8dea43bef57366f9b0e2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraTargetRef: {fileID: 0}
   fadeScreenAnim: {fileID: 1265144059}
 --- !u!1 &1467663491
 GameObject:
@@ -13555,6 +13558,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e43ab43f5089c9488b241834daea4fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  endgameManager: {fileID: 0}
   questText: {fileID: 1870082714}
   questBoxAnim: {fileID: 1870082715}
 --- !u!114 &1490891416
