@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     public static bool hasPortalThreeKey;
     public static int lastPortal;
     public static int questNumber;
-    public static int joaquinDialog;
+    public static bool endgame;
 
     public static string[] quests = 
         { 

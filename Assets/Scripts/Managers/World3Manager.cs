@@ -41,5 +41,7 @@ public class World3Manager : MonoBehaviour
         GameObject.FindWithTag("QuestCompleted").GetComponent<Animator>().SetTrigger("QuestCompleted");
 
         playerQuestVFX.Play();
+
+        GameManager.endgame = true;
     }
 }

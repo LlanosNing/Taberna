@@ -9,6 +9,14 @@ public class ChangeSceneTrigger : MonoBehaviour
     public Animator fadeScreenAnimator;
     public bool isPortalTwo, isPortalThree;
     public GameObject cantAccessMessage;
+    private void Update()
+    {
+        if(SceneManager.GetActiveScene().name == "Carrot_Planet"  && GameManager.endgame && sceneToLoad != "InteriorTaberna")
+        {
+            sceneToLoad = "InteriorTaberna";
+        }  
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))

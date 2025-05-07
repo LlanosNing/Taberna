@@ -2754,7 +2754,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Design
+  m_text: 'Level Design
 
 '
   m_isRightToLeft: 0
