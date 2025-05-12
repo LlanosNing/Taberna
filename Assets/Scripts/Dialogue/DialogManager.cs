@@ -20,8 +20,6 @@ public class DialogManager : MonoBehaviour
     public string[] dialogLines;
     public int lineIndex;
     public float typingTime;
-    //La línea actual de diálogo
-    public int currentLine;
     //Nombre del personaje que habla en ese momento
     private string charName;
     //El sprite del NPC
@@ -105,19 +103,12 @@ public class DialogManager : MonoBehaviour
             //El contenido de las líneas de diálogo del Manager pasa a ser el de las líneas de diálogo tras haber activado un diálogo
             dialogLines = newLines;
             //Vamos a la primera línea de diálogo
-            currentLine = 0;
+            lineIndex = 0;
             //Asignamos el Sprite del NPC
             sNpc = theSNpc;
-            //Comprobamos si hay un cambio de personaje en el diálogo
-            CheckIfName();
 
-            CheckIfEmotion(sNpc);
-            //Muestro la línea de diálogo actual
-            dialogText.text = dialogLines[currentLine];
+            StartDialogue();
 
-            dialogCharName.text = charName;
-            //Activamos el cuadro de diálogo
-            dialogBox.SetActive(true);
             //Hacemos que el jugador no se pueda mover
             if (SceneManager.GetActiveScene().name == "InteriorTaberna")
                 playerTavernRef.canMove = false;

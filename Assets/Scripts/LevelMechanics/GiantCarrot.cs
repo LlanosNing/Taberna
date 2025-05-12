@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GiantCarrot : MonoBehaviour
@@ -13,9 +14,10 @@ public class GiantCarrot : MonoBehaviour
 
     public Transform cameraWaypoint;
 
-    public float impulseForce;
     UltimatePlayerController playerController;
     Rigidbody rb;
+
+    public Transform checkpoint;
 
     private void Start()
     {
@@ -51,12 +53,7 @@ public class GiantCarrot : MonoBehaviour
     {
         yield return new WaitForSeconds(0.15f);
         alreadyActivated = true;
-        playerController.canMove = false;
-        playerController.Impulse(transform.right.normalized, impulseForce);
-        yield return new WaitForSeconds(1.5f);
         minigameManager.SetActive(true);
-        minigameManager.GetComponent<ClickFastMinigame>().ResetData();
-        yield return new WaitForSeconds(1f);
-        rb.velocity = Vector3.zero;
+        minigameManager.GetComponent<ClickFastMinigame>().ResetData(checkpoint);
     }
 }

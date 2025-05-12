@@ -6,6 +6,7 @@ public class Bouncer : MonoBehaviour
 {
     public float bounceForce = 800f;
     private UltimatePlayerController _playerController;
+    public ParticleSystem vfx;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +18,8 @@ public class Bouncer : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             _playerController.Bounce(bounceForce);
+
+            vfx.Play();
         }
     }
 }

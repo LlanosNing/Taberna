@@ -26,6 +26,7 @@ public class ClickFastMinigame : MonoBehaviour
     public ZoomCamera zoomScript;
 
     UltimatePlayerController playerController;
+    Rigidbody playerRB;
 
     public World3Manager world3Manager;
 
@@ -38,6 +39,7 @@ public class ClickFastMinigame : MonoBehaviour
         fadeScreen = GameObject.FindWithTag("FadeScreen").GetComponent<Animator>();
 
         playerController = GameObject.FindWithTag("Player").GetComponent<UltimatePlayerController>();
+        playerRB = GameObject.FindWithTag("Player").GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -77,12 +79,12 @@ public class ClickFastMinigame : MonoBehaviour
         } 
     }
 
-    void StartMinigame()
+    public void StartMinigame(Transform checkpoint)
     {
-        StartCoroutine(StartMinigameCO());
+        StartCoroutine(StartMinigameCO(checkpoint));
     }
 
-    IEnumerator StartMinigameCO()
+    IEnumerator StartMinigameCO(Transform checkpoint)
     {
         fadeScreen.SetTrigger("FadeOut");
 
@@ -95,12 +97,15 @@ public class ClickFastMinigame : MonoBehaviour
         armControllerScript.staticCamera = true;
         zoomScript.staticCamera = true;
 
+        playerController.gameObject.transform.position = checkpoint.position;
+        playerController.gameObject.transform.rotation = checkpoint.rotation;
         playerController.canMove = false;
         playerController.canJump = false;
+        fadeScreen.SetTrigger("FadeIn");
+        playerRB.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
 
         progressBar.fillAmount = 0;
 
-        fadeScreen.SetTrigger("FadeIn");
 
         yield return new WaitForSeconds(0.5f);
 
@@ -127,6 +132,8 @@ public class ClickFastMinigame : MonoBehaviour
 
         playerController.canMove = true;
         playerController.canJump = true;
+        playerRB.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
+
 
         mainCamera.SetActive(true);
         undergroundCamera.SetActive(false);
@@ -139,7 +146,7 @@ public class ClickFastMinigame : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    public void ResetData()
+    public void ResetData(Transform checkpoint)
     {
         timeCounter = minigameDuration;
         clicks = 0;
@@ -151,6 +158,6 @@ public class ClickFastMinigame : MonoBehaviour
         fadeScreen = GameObject.FindWithTag("FadeScreen").GetComponent<Animator>();
         playerController = GameObject.FindWithTag("Player").GetComponent<UltimatePlayerController>();
 
-        StartMinigame();
+        StartMinigame(checkpoint);
     }
 }
