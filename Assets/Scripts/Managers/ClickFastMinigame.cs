@@ -1,7 +1,9 @@
+using FirstGearGames.SmoothCameraShaker;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using FirstGearGames.SmoothCameraShaker;
 
 public class ClickFastMinigame : MonoBehaviour
 {
@@ -30,6 +32,10 @@ public class ClickFastMinigame : MonoBehaviour
 
     public World3Manager world3Manager;
 
+    public ShakeData cameraShakeData;
+    public float cameraShakeTime;
+    float cameraShakeCounter;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -52,6 +58,11 @@ public class ClickFastMinigame : MonoBehaviour
 
         if (timeCounter <= 0)
             EndMinigame();
+
+        if(cameraShakeCounter > 0)
+        {
+            cameraShakeCounter -= Time.deltaTime;
+        }
     }
 
     void CalculateCPS()
@@ -60,6 +71,14 @@ public class ClickFastMinigame : MonoBehaviour
         {
             clicks++;
             indicatorImage.color = new Color(1f, 1f, 0.4f, 1f);
+
+            if(cameraShakeCounter <= 0)
+            {
+                Debug.Log("Agitar Cámara");
+                cameraShakeCounter = cameraShakeTime;
+                CameraShakerHandler.Shake(cameraShakeData);
+            }
+                
         }
 
         timePassed += Time.deltaTime;
