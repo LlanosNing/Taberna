@@ -42,6 +42,8 @@ public class GiantCarrot : MonoBehaviour
                 sinkLevels++;
 
                 transform.localPosition -= new Vector3(0, sinkDistance, 0);
+
+                AudioManager.aMRef.PlaySFX(3);
             }
         }
     }

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 319348138568434088}
   - component: {fileID: 7893491315627928640}
   - component: {fileID: 615582213714512818}
+  - component: {fileID: 2049717585903453436}
   m_Layer: 0
   m_Name: Lizard
   m_TagString: Untagged
@@ -79,6 +80,18 @@ CapsuleCollider:
   m_Height: 3
   m_Direction: 2
   m_Center: {x: 0, y: -0.1, z: -0.5}
+--- !u!114 &2049717585903453436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2575701996979865244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a3f1f9f51439b6419259f299144de0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &505889712954783865
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -192,9 +205,9 @@ MonoBehaviour:
   isPortalThreeKey: 0
   isLizard: 1
   showsOnMinimap: 0
-  minimapRepresentation: {fileID: 0}
-  uiInteractMessage: {fileID: 0}
+  pickMessage: {fileID: 0}
   canPick: 0
+  minimapRepresentation: {fileID: 0}
   pickAnim: {fileID: 7893491315627928640}
 --- !u!135 &2488494327134801048
 SphereCollider:

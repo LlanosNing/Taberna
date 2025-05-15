@@ -11,11 +11,6 @@ public class World3Manager : MonoBehaviour
     public TextMeshProUGUI uiText;
 
     public ParticleSystem playerQuestVFX;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
@@ -41,6 +36,8 @@ public class World3Manager : MonoBehaviour
         GameObject.FindWithTag("QuestCompleted").GetComponent<Animator>().SetTrigger("QuestCompleted");
 
         playerQuestVFX.Play();
+
+        AudioManager.aMRef.PlaySFX(6);
 
         GameManager.endgame = true;
     }

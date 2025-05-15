@@ -124,9 +124,9 @@ MonoBehaviour:
   isPortalThreeKey: 0
   isLizard: 0
   showsOnMinimap: 0
-  minimapRepresentation: {fileID: 0}
-  uiInteractMessage: {fileID: 0}
+  pickMessage: {fileID: 0}
   canPick: 0
+  minimapRepresentation: {fileID: 0}
   pickAnim: {fileID: 5921787464087487021}
 --- !u!1 &6969132840746497519
 GameObject:
@@ -138,6 +138,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8300306266873801656}
   - component: {fileID: 5921787464087487021}
+  - component: {fileID: 3412429613709985760}
   m_Layer: 0
   m_Name: Portal_Key
   m_TagString: Untagged
@@ -183,6 +184,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3412429613709985760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6969132840746497519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a3f1f9f51439b6419259f299144de0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &9115249957507751502
 PrefabInstance:
   m_ObjectHideFlags: 0

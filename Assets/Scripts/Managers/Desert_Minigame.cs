@@ -28,6 +28,8 @@ public class Desert_Minigame : MonoBehaviour
             GameObject.FindWithTag("QuestCompleted").GetComponent<Animator>().SetTrigger("QuestCompleted");
 
             playerQuestVFX.Play();
+
+            AudioManager.aMRef.PlaySFX(6);
         }
     }
 }

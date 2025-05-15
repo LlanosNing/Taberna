@@ -53,8 +53,11 @@ public class CowController : MonoBehaviour
         {
             interactMessage.SetActive(true);
 
-            if(Input.GetButtonDown("Interact"))
+            if (Input.GetButtonDown("Interact"))
+            {
                 MoveCowToDirection(playerTransform.position);
+                AudioManager.aMRef.PlaySFX(4);
+            }
         }
         else if((transform.position - playerTransform.position).magnitude < hitRequiredDistance * 1.5)
         {
@@ -106,6 +109,7 @@ public class CowController : MonoBehaviour
     public void MoveCowToDirection(Vector3 chaser)
     {
         hitDirection = (transform.position - chaser).normalized;
+        AudioManager.aMRef.PlaySFX(9);
         movingTimer = maxMovingDuration;
         isMoving = true;
         cowAnim.SetBool("IsMoving", true);

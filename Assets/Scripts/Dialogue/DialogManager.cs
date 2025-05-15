@@ -215,6 +215,7 @@ public class DialogManager : MonoBehaviour
         foreach (char ch in dialogLines[lineIndex])
         {
             dialogText.text += ch;
+            AudioManager.aMRef.PlaySFX(7);
             yield return new WaitForSeconds(typingTime);
         }
     }

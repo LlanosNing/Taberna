@@ -18,6 +18,9 @@ public class SandMesh : MonoBehaviour
     UltimatePlayerController playerController;
     WindPush windController;
 
+    public float playSFXtime;
+    float playSFXcounter;
+
     public bool isPlayerOnSand;
 
     void Start()
@@ -80,6 +83,13 @@ public class SandMesh : MonoBehaviour
         if (isPlayerOnSand && Vector3.Distance(transform.position, playerTransform.position) <= 40)
         {
             playerController.speed = playerController.maxSpeed / 2;
+
+            playSFXcounter -= Time.deltaTime;
+            if (playSFXcounter <= 0)
+            {
+                playSFXcounter = playSFXtime;
+                AudioManager.aMRef.PlaySFX(10);
+            }
         }
         else if(Vector3.Distance(transform.position, playerTransform.position) < 40)
         {

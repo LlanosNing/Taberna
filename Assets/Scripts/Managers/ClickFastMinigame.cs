@@ -77,6 +77,7 @@ public class ClickFastMinigame : MonoBehaviour
                 Debug.Log("Agitar Cámara");
                 cameraShakeCounter = cameraShakeTime;
                 CameraShakerHandler.Shake(cameraShakeData);
+                AudioManager.aMRef.PlaySFX(14);
             }
                 
         }

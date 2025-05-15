@@ -62,7 +62,6 @@ public class Pickup : MonoBehaviour
             isPicked = true;
         }
     }
-
     private void OnTriggerEnter(Collider other)
     {
         if (!isPicked)

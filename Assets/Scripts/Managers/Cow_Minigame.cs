@@ -81,6 +81,7 @@ public class Cow_Minigame : MonoBehaviour
     {
         if (other.CompareTag("Cow"))
         {
+            AudioManager.aMRef.PlaySFX(9);
             UpdateCowCounter();
             other.gameObject.SetActive(false);
         }
@@ -118,6 +119,8 @@ public class Cow_Minigame : MonoBehaviour
         GameObject.FindWithTag("QuestCompleted").GetComponent<Animator>().SetTrigger("QuestCompleted");
 
         playerQuestVFX.Play();
+
+        AudioManager.aMRef.PlaySFX(6);
 
         yield return new WaitForSeconds(2);
 

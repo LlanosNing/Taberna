@@ -120,6 +120,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneToLoad: Cows_Planet
   fadeScreenAnimator: {fileID: 0}
+  isPortal: 1
   isPortalTwo: 0
   isPortalThree: 0
   cantAccessMessage: {fileID: 0}

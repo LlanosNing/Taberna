@@ -7,7 +7,7 @@ public class ChangeSceneTrigger : MonoBehaviour
 {
     public string sceneToLoad;
     public Animator fadeScreenAnimator;
-    public bool isPortalTwo, isPortalThree;
+    public bool isPortal, isPortalTwo, isPortalThree;
     public GameObject cantAccessMessage;
     private void Update()
     {
@@ -21,6 +21,10 @@ public class ChangeSceneTrigger : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            if (isPortal)
+            {
+                AudioManager.aMRef.PlaySFX(8);
+            }
             LoadScene();
         }
     }
@@ -78,7 +82,6 @@ public class ChangeSceneTrigger : MonoBehaviour
                     yield return new WaitForSeconds(1f);
                 SceneManager.LoadScene(sceneToLoad);
             }
-            
         }
     }
 }

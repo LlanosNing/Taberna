@@ -88,6 +88,7 @@ public class WindPush : MonoBehaviour
 
             if (windIntervalCounter <= 0)
             {
+                AudioManager.aMRef.PlaySFX(11);
                 windDurationCounter = windDuration;
                 pController.speed = pController.maxSpeed / 4;
             }

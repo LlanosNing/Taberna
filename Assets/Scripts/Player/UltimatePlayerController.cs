@@ -168,6 +168,7 @@ public class UltimatePlayerController : MonoBehaviour
         {
             rb.velocity *= 0;
             rb.AddForce(normalVector * jumpForce, ForceMode.Impulse);
+            AudioManager.aMRef.PlaySFX(2);
         }
     }
 
@@ -197,6 +198,8 @@ public class UltimatePlayerController : MonoBehaviour
         rb.velocity = Vector3.zero;
 
         rb.AddForce(normalVector * bounceForce, ForceMode.Impulse);
+
+        AudioManager.aMRef.PlaySFX(12);
     }
 
     public void Impulse(Vector3 impulseDirection, float impulseForce)

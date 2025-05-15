@@ -17,6 +17,7 @@ public class DeathZone : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            AudioManager.aMRef.PlaySFX(13);
             respawnRef.RespawnPlayer(spawnpoint.position, spawnpoint.rotation);
         }
     }
