@@ -3174,7 +3174,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 234.2
+  m_fontSize: 256
   m_fontSizeBase: 256
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -4541,6 +4541,7 @@ Transform:
   - {fileID: 1556497583}
   - {fileID: 1615805032}
   - {fileID: 186964272}
+  - {fileID: 1224871645}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &775014429
@@ -6739,7 +6740,7 @@ GameObject:
   - component: {fileID: 1224871643}
   - component: {fileID: 1224871642}
   m_Layer: 0
-  m_Name: e
+  m_Name: FakeSky
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6827,10 +6828,10 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.14584915, y: -0.12755908, z: 0.64585614, w: 0.7384623}
   m_LocalPosition: {x: 37.1, y: -4.7, z: 16.4}
-  m_LocalScale: {x: 9.6409, y: 9.6409, z: 9.6409}
+  m_LocalScale: {x: 9.6409, y: 9.640901, z: 9.6409}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 767336627}
   m_LocalEulerAnglesHint: {x: -2.903, y: -22.165, z: 82.914}
 --- !u!1 &1257272668
 GameObject:
@@ -8067,7 +8068,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 170.15
+  m_fontSize: 208
   m_fontSizeBase: 216
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -11194,4 +11195,3 @@ SceneRoots:
   - {fileID: 1623756633}
   - {fileID: 1576078845}
   - {fileID: 461455929}
-  - {fileID: 1224871645}

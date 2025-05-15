@@ -26,7 +26,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 44675a327c6f04e4c8a9a59c97d8d56d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Cube:
@@ -53,12 +53,12 @@ Material:
     - _BevelOffset: 0.07
     - _BevelRoundness: 1
     - _BevelWidth: -0.067
-    - _BumpFace: 0
+    - _BumpFace: 1
     - _BumpOutline: 0
     - _ColorMask: 15
     - _CullMode: 0
     - _Diffuse: 0.34
-    - _FaceDilate: 0.05
+    - _FaceDilate: 0.25
     - _FaceUVSpeedX: 0
     - _FaceUVSpeedY: 0
     - _GlowInner: 0.05
@@ -72,12 +72,12 @@ Material:
     - _OutlineSoftness: 0
     - _OutlineUVSpeedX: 0
     - _OutlineUVSpeedY: 0
-    - _OutlineWidth: 0.184
+    - _OutlineWidth: 0.2
     - _PerspectiveFilter: 0.875
     - _Reflectivity: 12.19
     - _ScaleRatioA: 0.8333333
-    - _ScaleRatioB: 0.6354167
-    - _ScaleRatioC: 0.26138076
+    - _ScaleRatioB: 0.46875
+    - _ScaleRatioC: 0.19282189
     - _ScaleX: 1
     - _ScaleY: 1
     - _ShaderFlags: 0

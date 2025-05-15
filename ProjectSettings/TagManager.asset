@@ -23,6 +23,7 @@ TagManager:
   - QuestCompleted
   - DialogueManager
   - CameraTarget
+  - CameraPivot
   layers:
   - Default
   - TransparentFX

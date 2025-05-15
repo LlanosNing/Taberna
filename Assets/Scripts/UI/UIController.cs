@@ -20,12 +20,17 @@ public class UIController : MonoBehaviour
 
     public GameObject optionsScreen, settingsScreen, winScreen;
     UltimatePlayerController playerRef;
+    TavernPlayerController tavernPlayerRef;
     public bool canAccessOptions;
 
     public bool canAccessTutorials;
 
     public Button mainOptionButton;
     public bool isSettingsOn;
+
+    CameraArmController armController;
+
+    public bool tavernScene;
 
     private void Start()
     {
@@ -37,8 +42,17 @@ public class UIController : MonoBehaviour
         }
 
         //maxLifeAmount = lifeAmount;
+        if (tavernScene)
+        {
+            tavernPlayerRef = GameObject.FindWithTag("Player").GetComponent<TavernPlayerController>();
+        }
+        else
+        {
+            playerRef = GameObject.FindWithTag("Player").GetComponent<UltimatePlayerController>();
 
-        playerRef = GameObject.FindWithTag("Player").GetComponent<UltimatePlayerController>();
+            armController = GameObject.FindWithTag("CameraPivot").GetComponent<CameraArmController>();
+        }
+
     }
 
     private void Update()
@@ -54,12 +68,14 @@ public class UIController : MonoBehaviour
         //    lifeAmount -= lifeLossSpeed * Time.deltaTime;
         //}
 
-        if (Input.GetKeyDown(KeyCode.Escape) && canAccessOptions) 
+        if (Input.GetButtonDown("Cancel") && canAccessOptions) 
         {
             if(isSettingsOn)
             {
                 isSettingsOn = false;
                 mainOptionButton.Select();
+                if(!tavernScene)
+                    armController.staticCamera = false;
                 settingsScreen.SetActive(false);
             }
             else
@@ -106,7 +122,17 @@ public class UIController : MonoBehaviour
         {
             optionsScreen.SetActive(true);
             canAccessTutorials = false;
-            playerRef.canMove = false;
+
+            if (tavernScene)
+            {
+                tavernPlayerRef.canMove = false;
+            }
+            else 
+            {
+                playerRef.canMove = false;
+                armController.staticCamera = true;
+            }
+            
             mainOptionButton.Select();
             Time.timeScale = 0f;
         }
@@ -114,7 +140,15 @@ public class UIController : MonoBehaviour
         {
             optionsScreen.SetActive(false);
             Time.timeScale = 1f;
-            playerRef.canMove = true;
+            if (tavernScene)
+            {
+                tavernPlayerRef.canMove = true;
+            }
+            else
+            {
+                playerRef.canMove = true;
+                armController.staticCamera = false;
+            }
             canAccessTutorials = true;
         }
     }
