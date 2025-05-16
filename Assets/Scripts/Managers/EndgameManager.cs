@@ -31,6 +31,6 @@ public class EndgameManager : MonoBehaviour
         yield return new WaitForSeconds(2.5f);
         fadeScreenAnim.SetTrigger("FadeOut");
         yield return new WaitForSeconds(1f);
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("Credits");
     }
 }
