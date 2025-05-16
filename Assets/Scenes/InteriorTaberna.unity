@@ -5142,6 +5142,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneToLoad: MainMenu
   fadeScreenAnimator: {fileID: 1684404394}
+  isPortal: 0
   isPortalTwo: 0
   isPortalThree: 0
   cantAccessMessage: {fileID: 0}
@@ -8189,7 +8190,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7420778333298387615, guid: 8503403f0a942fa4197e3e1888174590, type: 3}
       propertyPath: m_Volume
-      value: 0.3
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 7420778333298387615, guid: 8503403f0a942fa4197e3e1888174590, type: 3}
       propertyPath: m_audioClip
@@ -18185,6 +18186,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneToLoad: Lobby
   fadeScreenAnimator: {fileID: 1684404394}
+  isPortal: 0
   isPortalTwo: 0
   isPortalThree: 0
   cantAccessMessage: {fileID: 0}
@@ -19557,7 +19559,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
       propertyPath: firstLines.Array.data[3]
-      value: ... y ya tienes edad para empezar a ayudarme con el negocio.
+      value: y el Gremio Tavernerum tiene que renovarse.
       objectReference: {fileID: 0}
     - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
       propertyPath: firstLines.Array.data[4]
@@ -19565,8 +19567,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
       propertyPath: firstLines.Array.data[5]
-      value: "Ma\xF1ana reabrimos el local y necesito reponer provisiones, pero de
-        esa labor te vas a encargar t\xFA."
+      value: "Ma\xF1ana reabrimos y necesito reponer provisiones, pero de esa labor
+        te vas a encargar t\xFA."
       objectReference: {fileID: 0}
     - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
       propertyPath: firstLines.Array.data[6]
@@ -19610,8 +19612,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
       propertyPath: firstLines.Array.data[11]
-      value: "Te cuento... Primero deber\xE1s ir a la granja de Ryoma. Me ha dicho
-        que est\xE1 teniendo problemas con las vacas de la granja."
+      value: "Te cuento... Primero ve a la granja de Ryoma. Me ha dicho que est\xE1
+        teniendo problemas con las vacas de la granja."
       objectReference: {fileID: 0}
     - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
       propertyPath: firstLines.Array.data[12]
@@ -19676,6 +19678,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
       propertyPath: firstLines.Array.data[27]
+      value: "\xA1As\xED me gusta! Ahora prepar\xE1te y cuando est\xE9s listo atraviesa
+        la puerta arcana que conduce al rancho de Ryoma."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
+      propertyPath: firstLines.Array.data[28]
       value: "\xA1As\xED me gusta! Ahora prepar\xE1te y cuando est\xE9s listo atraviesa
         la puerta arcana izquierda que conduce al rancho de Ryoma."
       objectReference: {fileID: 0}

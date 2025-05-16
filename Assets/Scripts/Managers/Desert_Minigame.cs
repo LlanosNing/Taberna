@@ -11,6 +11,9 @@ public class Desert_Minigame : MonoBehaviour
 
     public ParticleSystem playerQuestVFX;
 
+    public string[] questCompletedDialogue;
+    public DialogActivator dialogActivator;
+
     public void AddLizardTail()
     {
         lizardTails++;
@@ -30,6 +33,8 @@ public class Desert_Minigame : MonoBehaviour
             playerQuestVFX.Play();
 
             AudioManager.aMRef.PlaySFX(6);
+
+            dialogActivator.repeatedLines = questCompletedDialogue;
         }
     }
 }

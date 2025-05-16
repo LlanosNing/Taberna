@@ -14236,7 +14236,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
       propertyPath: firstLines.Array.size
-      value: 7
+      value: 33
       objectReference: {fileID: 0}
     - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
       propertyPath: npcSprites.Array.size
@@ -14244,34 +14244,44 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
       propertyPath: firstLines.Array.data[0]
-      value: n-NPC3
+      value: n-Fede
       objectReference: {fileID: 0}
     - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
       propertyPath: firstLines.Array.data[1]
-      value: e-0
+      value: e-1
       objectReference: {fileID: 0}
     - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
       propertyPath: firstLines.Array.data[2]
-      value: "Bienvenido a este planeta. Aqu\xED lo \xFAnico que hay son zanahorias
-        fosilizadas gigantes."
+      value: "Hola... Disculpe, \xBFd\xF3nde estoy?"
       objectReference: {fileID: 0}
     - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
       propertyPath: firstLines.Array.data[3]
-      value: "Sus ra\xEDces son bastante valiosas, \xBFpor qu\xE9 no pruebas a extraerlas?"
+      value: n-Filabe
       objectReference: {fileID: 0}
     - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
       propertyPath: firstLines.Array.data[4]
-      value: "Primero tendr\xE1s que hundirlas en la tierra (Pulsa Q mientras est\xE1s
-        saltando para hacer un golpe en el suelo)."
+      value: e-0
       objectReference: {fileID: 0}
     - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
       propertyPath: firstLines.Array.data[5]
-      value: "Luego un topo te ayudar\xE1 a arrancar las ra\xEDces bajo tierra. (Pulsa
-        click izquierdo r\xE1pidamente)"
+      value: "\xBFUh? \xA1Hola! Est\xE1s en el Huerto Fosilizado, un planeta que
+        vara por la galaxia sin rumbo."
       objectReference: {fileID: 0}
     - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
       propertyPath: firstLines.Array.data[6]
-      value: Eso es todo, buena suerte. Y cuidado con la lava.
+      value: "Un inh\xF3spito lugar perdido de todo lo que conocemos..."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
+      propertyPath: firstLines.Array.data[7]
+      value: "\xBFY t\xFA qui\xE9n eres?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
+      propertyPath: firstLines.Array.data[8]
+      value: n-Fede
+      objectReference: {fileID: 0}
+    - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
+      propertyPath: firstLines.Array.data[9]
+      value: e-0
       objectReference: {fileID: 0}
     - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
       propertyPath: npcSprites.Array.data[0]
@@ -14290,8 +14300,106 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
+      propertyPath: firstLines.Array.data[10]
+      value: "Yo soy Fede se\xF1ora, el sobrino de Joaqu\xEDn el tabernero."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
+      propertyPath: firstLines.Array.data[11]
+      value: e-1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
+      propertyPath: firstLines.Array.data[12]
+      value: "No me avis\xF3 de que este planeta era as\xED, la verdad..."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
+      propertyPath: firstLines.Array.data[13]
+      value: n-Filabe
+      objectReference: {fileID: 0}
+    - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
+      propertyPath: firstLines.Array.data[14]
+      value: e-0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
+      propertyPath: firstLines.Array.data[15]
+      value: "Ya veo. Ver\xE1s, este sitio es el cementerio de un antiguo huerto
+        de zanahorias gigantes."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
+      propertyPath: firstLines.Array.data[16]
+      value: "\xC9stas crec\xEDan en los mont\xEDculos que ves a lo lejos. Lo curioso
+        es que lo m\xE1s valioso que ten\xEDan eran las ra\xEDces."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
+      propertyPath: firstLines.Array.data[17]
+      value: "Los del gremio Tavernerum las usaban en platos para las familias m\xE1s
+        adineradas debido a su dificultad para obtenerlas."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
+      propertyPath: firstLines.Array.data[18]
+      value: e-2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
+      propertyPath: firstLines.Array.data[19]
+      value: "Siempre pens\xE9 que si alguien estuviera debajo de la zanahoria podr\xEDa
+        recoger las ra\xEDces,"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
+      propertyPath: firstLines.Array.data[20]
+      value: mientras que desde arriba otros empujaran la zanahoria hacia abajo,
+        claro. (Saltando y pulsando Q)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
+      propertyPath: firstLines.Array.data[21]
+      value: "As\xED ser\xEDa m\xE1s f\xE1cil obtener dicha ra\xEDz."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
+      propertyPath: firstLines.Array.data[22]
+      value: n-Fede
+      objectReference: {fileID: 0}
+    - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
+      propertyPath: firstLines.Array.data[23]
+      value: e-1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
+      propertyPath: firstLines.Array.data[24]
+      value: "Hmm... Creo que s\xE9 c\xF3mo llegar a la ra\xEDz."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
+      propertyPath: firstLines.Array.data[25]
+      value: n-Filabe
+      objectReference: {fileID: 0}
+    - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
+      propertyPath: firstLines.Array.data[26]
+      value: e-0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
+      propertyPath: firstLines.Array.data[27]
+      value: "\xA1Vaya! En ese caso, adelante. Espero que sepas lo que haces."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
+      propertyPath: firstLines.Array.data[28]
+      value: e-2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
+      propertyPath: firstLines.Array.data[29]
+      value: "Ten mucho cuidado con las fosas de lava y los g\xE9iseres, podr\xEDas
+        salir volando."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
+      propertyPath: firstLines.Array.data[30]
+      value: n-Fede
+      objectReference: {fileID: 0}
+    - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
+      propertyPath: firstLines.Array.data[31]
+      value: e-0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
+      propertyPath: firstLines.Array.data[32]
+      value: "Descuide, gracias por la informaci\xF3n."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
       propertyPath: repeatedLines.Array.data[0]
-      value: n-NPC3
+      value: n-Filabe
       objectReference: {fileID: 0}
     - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
       propertyPath: repeatedLines.Array.data[1]
@@ -14299,11 +14407,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
       propertyPath: repeatedLines.Array.data[2]
-      value: "(Pulsa Q mientras est\xE1s saltando para hacer un golpe en el suelo)"
+      value: "As\xED que quieres las ra\xEDces, \xBFeh? \xA1Buena suerte!"
       objectReference: {fileID: 0}
     - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
       propertyPath: repeatedLines.Array.data[3]
-      value: "(En el minijuego del topo, pulsa click izquierdo r\xE1pidamente)"
+      value: (Pulsa Q en el aire para bajar la zanahoria y machaca el click izquierdo
+        para completar el minijuego)
       objectReference: {fileID: 0}
     - target: {fileID: 5036363909712305072, guid: 95cd5e6784a15b041ae632f75e13a428, type: 3}
       propertyPath: repeatedLines.Array.data[4]
