@@ -95,10 +95,6 @@ public class UltimatePlayerController : MonoBehaviour
             normalVector = -gravityScript.GravityDirection;
         }
 
-        if(Input.GetKeyDown(KeyCode.F2)) 
-        {
-            Dance();
-        }
 
         if(coyoteTimeCounter > 0 && !isGrounded)
         {
@@ -113,6 +109,11 @@ public class UltimatePlayerController : MonoBehaviour
         {
             speed = maxSpeed;
         }
+
+        //if(Input.GetKeyDown(KeyCode.F2)) 
+        //{
+        //    Dance();
+        //}
     }
 
     private void FixedUpdate()
@@ -183,11 +184,13 @@ public class UltimatePlayerController : MonoBehaviour
         canMove = false;
         gravityBodyRef.gravityForce = 0f;
         rb.velocity = Vector3.zero;
+        animRef.SetTrigger("GroundPound");
         yield return new WaitForSeconds(0.5f);
         gravityBodyRef.gravityForce = gravityBodyRef.defaultGravityForce;
         rb.AddForce(normalVector * -jumpForce * 2.5f, ForceMode.Impulse);
         canGroundPoundCarrot = true;
         yield return new WaitForSeconds(0.10f);
+        animRef.SetTrigger("GroundPoundOff");
         canMove = true;
         canJump = true;        
         canGroundPoundCarrot = false;
@@ -207,6 +210,11 @@ public class UltimatePlayerController : MonoBehaviour
         rb.velocity = Vector3.zero;
 
         rb.AddForce((impulseDirection * 2 + normalVector.normalized) * impulseForce, ForceMode.Impulse);
+    }
+
+    public void HeadButt()
+    {
+        animRef.SetTrigger("Headbutt");
     }
 
     public void Dance()

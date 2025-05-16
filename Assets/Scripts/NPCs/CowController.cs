@@ -17,6 +17,7 @@ public class CowController : MonoBehaviour
     public float hitRequiredDistance;
     public Transform cowVisual;
     Transform playerTransform;
+    UltimatePlayerController playerController;
 
     public float maxMovingDuration = 2.5f;
     float movingTimer;
@@ -32,6 +33,7 @@ public class CowController : MonoBehaviour
         rb.freezeRotation = true; // Evitar rotaciones raras
 
         playerTransform = GameObject.FindWithTag("Player").GetComponent<Transform>();
+        playerController = GameObject.FindWithTag("Player").GetComponent<UltimatePlayerController>();
     }
 
     void Update()
@@ -57,6 +59,7 @@ public class CowController : MonoBehaviour
             {
                 MoveCowToDirection(playerTransform.position);
                 AudioManager.aMRef.PlaySFX(4);
+                playerController.HeadButt();
             }
         }
         else if((transform.position - playerTransform.position).magnitude < hitRequiredDistance * 1.5)
