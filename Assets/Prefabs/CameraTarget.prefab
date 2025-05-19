@@ -302,5 +302,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   verticalClamp: 30
-  sensitivity: {x: 4, y: 2}
+  sensitivity: {x: 3.5, y: 2}
   staticCamera: 0

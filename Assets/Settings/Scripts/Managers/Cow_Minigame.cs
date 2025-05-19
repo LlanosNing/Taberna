@@ -23,6 +23,8 @@ public class Cow_Minigame : MonoBehaviour
 
     public ParticleSystem playerQuestVFX;
 
+    public GameObject interactCowMessage;
+
     private void Start()
     {
         StartCoroutine(StartTransitionCO());
@@ -121,6 +123,11 @@ public class Cow_Minigame : MonoBehaviour
         playerQuestVFX.Play();
 
         AudioManager.aMRef.PlaySFX(6);
+
+        if (interactCowMessage.activeInHierarchy)
+        {
+            interactCowMessage.SetActive(false);
+        }
 
         yield return new WaitForSeconds(2);
 

@@ -68,8 +68,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Mant\xE9n E para Agarrarte"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ad6f5688b895dcd4ab9c1aabfa0f8f11, type: 2}
-  m_sharedMaterial: {fileID: 8202119631912926333, guid: ad6f5688b895dcd4ab9c1aabfa0f8f11, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d23b364491d66e94ba189a918739722b, type: 2}
+  m_sharedMaterial: {fileID: -2787533753207374492, guid: d23b364491d66e94ba189a918739722b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -93,7 +93,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 43.05
+  m_fontSize: 38.05
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1

@@ -29,8 +29,10 @@ public class CreditsManager : MonoBehaviour
             exitButton.SetActive(true);
 
             button.Select();
+
+            return;
         }
-        if (Input.GetKeyDown(KeyCode.Escape) && canExit)
+        if ((Input.GetButtonDown("Cancel") || Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.KeypadEnter)) && canExit)
         {
             ReturnToMainMenu();
         }

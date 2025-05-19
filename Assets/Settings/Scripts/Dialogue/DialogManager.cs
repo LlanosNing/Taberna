@@ -40,6 +40,7 @@ public class DialogManager : MonoBehaviour
     float dialogueCDCounter;
 
     public GameObject objectToActivatePostDialogue;
+    public bool cantActivatePostDialogue;
 
     //Hacemos una referencia (Singleton)
     public static DialogManager instance;
@@ -113,7 +114,10 @@ public class DialogManager : MonoBehaviour
             if (SceneManager.GetActiveScene().name == "InteriorTaberna")
                 playerTavernRef.canMove = false;
             else
+            {
                 playerRef.canMove = false;
+                playerRB.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
+            }
         }
     }
 
@@ -187,9 +191,12 @@ public class DialogManager : MonoBehaviour
             if (SceneManager.GetActiveScene().name == "InteriorTaberna")
                 playerTavernRef.canMove = true;
             else
+            {
                 playerRef.canMove = true;
+                playerRB.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
+            }
 
-            if(objectToActivatePostDialogue != null)
+            if(objectToActivatePostDialogue != null && !cantActivatePostDialogue)
             {
                 objectToActivatePostDialogue.SetActive(true);
             }

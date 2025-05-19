@@ -43,6 +43,7 @@ public class GameManager : MonoBehaviour
         if(SceneManager.GetActiveScene().name == "InteriorTaberna" && endgame)
         {
             GameObject.FindWithTag("DialogueManager").GetComponent<DialogManager>().managerToActivate = endgameManager;
+            GameObject.FindWithTag("DialogueManager").GetComponent<DialogManager>().cantActivatePostDialogue = true;
         }
 
         if(SceneManager.GetActiveScene().name != "InteriorTaberna")
