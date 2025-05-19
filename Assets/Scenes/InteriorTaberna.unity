@@ -19276,16 +19276,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalDialogue:
+  - n-Fede
+  - e-0
+  - "\xA1T\xEDo Joaqu\xEDn, ya he recogido todos los ingredientes!"
   - "n-Joaqu\xEDn"
   - e-1
-  - "Vaya Fede... \xA1Menudos ingredientes me has tra\xEDdo!"
+  - "\xA1Vaya, vaya! No est\xE1 nada mal, vas progresando chaval. Muchas gracias
+    por ayudarme. Ahora me llegan recuerdos de tu padre..."
   - e-0
-  - Creo que ha llegado el momento... Has demostrado tu aptitud para convertirte
-    en uno de los nuestros
+  - "Ay, Antonio... Recuerdo cuando \xE9ramos peque\xF1os, tu padre y yo \xEDbamos
+    de all\xE1 para ac\xE1 explorando la galaxia en busca de nueva aventuras."
+  - "Recorrimos cientos de planetas en busca de nuevos ingredientes. Eso s\xED que
+    eran buenos tiempos..."
+  - n-Fede
+  - e-1
+  - "T\xEDo Joaqu\xEDn, no llores..."
+  - "n-Joaqu\xEDn"
+  - e-0
+  - No estoy llorando... Solo siento nostalgia...
+  - Pero bueno, creo que ha llegado el momento... Has demostrado tu aptitud para
+    convertirte en uno de los nuestros.
+  - e-1
   - "Te doy la bienvenida al Gremio de los Tavernerum. A partir de hoy trabajar\xE1s
-    conmigo sirviendo a los clientes y preparando platos."
+    conmigo sirviendo a los clientes y preparando platos. "
   - e-2
-  - "\xBFEst\xE1s listo?"
+  - "Presiento que grandes aventuras te esperan \xBFEst\xE1s listo?"
   - n-Fede
   - e-0
   - "\xA1Por supuesto, t\xEDo Joaqu\xEDn!"
