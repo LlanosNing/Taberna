@@ -24,6 +24,7 @@ public class WindPush : MonoBehaviour
     public Vector3 currentWindDirection; // Dirección ajustada según la posición del jugador
 
     private UltimatePlayerController pController;
+    Animator playerAnim;
     GravityBody gravityScript;
     private GravityBody gravityController;
 
@@ -32,7 +33,7 @@ public class WindPush : MonoBehaviour
 
     public Transform sandstormParent;
 
-    Sandstorm_Animation animController;
+    Sandstorm_Animation sandstormAnim;
 
     public GameObject gripSignUI;
     public TextMeshProUGUI gripSignUIText;
@@ -44,7 +45,8 @@ public class WindPush : MonoBehaviour
         gravityScript = GameObject.FindWithTag("Player").GetComponent<GravityBody>();
         pController = GetComponent<UltimatePlayerController>();
         gravityController = GetComponent<GravityBody>();
-        animController = GetComponent<Sandstorm_Animation>();
+        sandstormAnim = GetComponent<Sandstorm_Animation>();
+        playerAnim = GetComponentInChildren<Animator>();
 
         windIntervalCounter = windInterval;
 
@@ -56,6 +58,10 @@ public class WindPush : MonoBehaviour
     {
         if (canGrip && Input.GetButton("Interact"))
         {
+            if (!isGripped)
+            {
+                playerAnim.SetBool("Grip", true);
+            }
             isGripped = true;
             pController.canMove = false;
             rb.velocity = Vector3.zero;
@@ -66,6 +72,10 @@ public class WindPush : MonoBehaviour
 
         if (Input.GetButtonUp("Interact"))
         {
+            if (isGripped)
+            {
+                playerAnim.SetBool("Grip", false);
+            }
             isGripped = false;
             pController.canMove = true;
             gravityScript.gravityForce = gravityScript.defaultGravityForce;
@@ -100,9 +110,9 @@ public class WindPush : MonoBehaviour
                 RenderSettings.fogDensity = Mathf.MoveTowards(RenderSettings.fogDensity, 0.02f, Time.deltaTime * 5);
 
 
-                if (!animController.animationOn) 
+                if (!sandstormAnim.animationOn) 
                 { 
-                    animController.StartPartycleSystem();
+                    sandstormAnim.StartPartycleSystem();
                 }
             }
             else
