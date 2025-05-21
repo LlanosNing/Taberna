@@ -25,6 +25,7 @@ public class EndgameManager : MonoBehaviour
 
     IEnumerator EndGameCO()
     {
+        AudioManager.aMRef.PlaySFX(6);
         newParticleSystem.Play();
         uIMessage.SetActive(true);
         playerController.canMove = false;

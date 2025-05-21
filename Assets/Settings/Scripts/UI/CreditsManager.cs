@@ -24,6 +24,7 @@ public class CreditsManager : MonoBehaviour
 
         if (Input.anyKeyDown && timeToCanExitCounter <= 0 && !canExit)
         {
+            AudioManager.aMRef.PlaySFX(0);
             canExit = true;
 
             exitButton.SetActive(true);
@@ -34,6 +35,7 @@ public class CreditsManager : MonoBehaviour
         }
         if ((Input.GetButtonDown("Cancel") || Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.KeypadEnter)) && canExit)
         {
+            AudioManager.aMRef.PlaySFX(1);
             ReturnToMainMenu();
         }
     }
