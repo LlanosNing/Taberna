@@ -356,6 +356,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1484960184}
+  - {fileID: 1815329768}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &90038602
@@ -12492,7 +12493,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1265144056
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14660,6 +14661,7 @@ MonoBehaviour:
   managerToActivate: {fileID: 0}
   dialogueCooldown: 0.5
   objectToActivatePostDialogue: {fileID: 0}
+  cantActivatePostDialogue: 0
 --- !u!4 &1467663493
 Transform:
   m_ObjectHideFlags: 0
@@ -18387,18 +18389,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: DialogueBox
       objectReference: {fileID: 0}
-    - target: {fileID: 699437151574471370, guid: 1c62f8749dec1fa4c88bf9f991226788, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 807651678593610010, guid: 1c62f8749dec1fa4c88bf9f991226788, type: 3}
-      propertyPath: m_text
-      value: '*Texto de Ejemplo*'
-      objectReference: {fileID: 0}
-    - target: {fileID: 807651678593610010, guid: 1c62f8749dec1fa4c88bf9f991226788, type: 3}
-      propertyPath: m_hasFontAssetChanged
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1929353012399445683, guid: 1c62f8749dec1fa4c88bf9f991226788, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -18479,30 +18469,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3756130108602747256, guid: 1c62f8749dec1fa4c88bf9f991226788, type: 3}
-      propertyPath: m_text
-      value: Fede
-      objectReference: {fileID: 0}
-    - target: {fileID: 3756130108602747256, guid: 1c62f8749dec1fa4c88bf9f991226788, type: 3}
-      propertyPath: m_hasFontAssetChanged
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4085100304288450265, guid: 1c62f8749dec1fa4c88bf9f991226788, type: 3}
-      propertyPath: m_text
-      value: (Pulsa E)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4085100304288450265, guid: 1c62f8749dec1fa4c88bf9f991226788, type: 3}
-      propertyPath: m_fontSize
-      value: 36
-      objectReference: {fileID: 0}
-    - target: {fileID: 4085100304288450265, guid: 1c62f8749dec1fa4c88bf9f991226788, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-    - target: {fileID: 4085100304288450265, guid: 1c62f8749dec1fa4c88bf9f991226788, type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -18575,12 +18541,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1815329767}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 89583939}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1825611241
 GameObject:
@@ -23273,7 +23239,6 @@ SceneRoots:
   - {fileID: 515511975}
   - {fileID: 752107168}
   - {fileID: 1189724346}
-  - {fileID: 1815329768}
   - {fileID: 89583939}
   - {fileID: 90038603}
   - {fileID: 1325826457}
