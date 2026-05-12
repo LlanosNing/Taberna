@@ -23886,6 +23886,55 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2017976482659718921, guid: f40ad0fbb0f1c4e498c6155ada097ef9, type: 3}
   m_PrefabInstance: {fileID: 435778016}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &435985781
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 435985782}
+  - component: {fileID: 435985783}
+  m_Layer: 0
+  m_Name: Global Volume
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &435985782
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 435985781}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 491302501}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &435985783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 435985781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: 4b5d5ec37192dae448383dc641546845, type: 2}
 --- !u!1 &439284191
 GameObject:
   m_ObjectHideFlags: 0
@@ -25348,6 +25397,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 349971676452943185}
+  - {fileID: 435985782}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &491693796
@@ -59082,7 +59132,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1289051228
 Transform:
   m_ObjectHideFlags: 0
@@ -89578,7 +89628,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 0e0d755b22aec9a46961023f9357513a, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 76ef6eaafbc200548b743855dfb89410, type: 2}
+      objectReference: {fileID: 2100000, guid: 0a64f12e93afa654cb058a720c8ee696, type: 2}
     - target: {fileID: 919132149155446097, guid: 0e0d755b22aec9a46961023f9357513a, type: 3}
       propertyPath: m_Name
       value: SandPile_Small
